@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let logger = Logger()
             let stack = CoreDataStack(logger: logger)
-            let router = NavigationRouter(coreDataStack: stack, baseNavigationController: rootNavigationController, logger: logger)
+            let router = NavigationRouter(schema: "GitHubSpy", coreDataStack: stack, baseNavigationController: rootNavigationController, logger: logger)
             
             self.appContext = AppContext(navigationController: rootNavigationController,
                 coreDataStack: stack,

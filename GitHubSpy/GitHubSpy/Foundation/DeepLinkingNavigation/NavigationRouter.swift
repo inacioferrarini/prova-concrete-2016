@@ -3,11 +3,13 @@ import UIKit
 
 class NavigationRouter: NSObject {
     
+    let schema:String!
     let coreDataStack: CoreDataStack!
     let baseNavigationController: UINavigationController!
     let logger:Logger!
     
-    init(coreDataStack: CoreDataStack!, baseNavigationController: UINavigationController!, logger:Logger!) {
+    init(schema:String!, coreDataStack: CoreDataStack!, baseNavigationController: UINavigationController!, logger:Logger!) {
+        self.schema = schema
         self.coreDataStack = coreDataStack
         self.baseNavigationController = baseNavigationController
         self.logger = logger
@@ -15,7 +17,7 @@ class NavigationRouter: NSObject {
     }
     
     func registerRoutes() {
-        let routes = JLRoutes(forScheme: "GitHubSpy")
+        let routes = JLRoutes(forScheme: self.schema)
         
         routes.addRoute("/") { (params: [NSObject : AnyObject]) -> Bool in
             
