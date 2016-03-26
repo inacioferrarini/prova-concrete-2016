@@ -23,6 +23,8 @@
 		34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */; };
 		34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C661CA5EAFA0056B07C /* BaseViewController.swift */; };
 		34D07C6E1CA5EAFA0056B07C /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */; };
+		34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C751CA5EF150056B07C /* FetcherDataSource.swift */; };
+		34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		34D07C661CA5EAFA0056B07C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
+		34D07C751CA5EF150056B07C /* FetcherDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherDataSource.swift; sourceTree = "<group>"; };
+		34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPresenter.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				34D07C5D1CA5EAFA0056B07C /* Context */,
 				34D07C601CA5EAFA0056B07C /* DeepLinkingNavigation */,
 				34D07C621CA5EAFA0056B07C /* Persistence */,
+				34D07CB61CA6098F0056B07C /* Presenter */,
 				34D07C641CA5EAFA0056B07C /* ViewController */,
 			);
 			path = Foundation;
@@ -182,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07C631CA5EAFA0056B07C /* CoreDataStack.swift */,
+				34D07C741CA5EEDD0056B07C /* DataSource */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -189,11 +195,27 @@
 		34D07C641CA5EAFA0056B07C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */,
 				34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */,
 				34D07C661CA5EAFA0056B07C /* BaseViewController.swift */,
-				34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		34D07C741CA5EEDD0056B07C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				34D07C751CA5EF150056B07C /* FetcherDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		34D07CB61CA6098F0056B07C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
@@ -399,7 +421,9 @@
 				34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */,
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */,
+				34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */,
 				34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */,
+				34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */,
 				34D07C6B1CA5EAFA0056B07C /* CoreDataStack.swift in Sources */,
 				34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */,
 				34D07C6A1CA5EAFA0056B07C /* NavigationRouter.swift in Sources */,
