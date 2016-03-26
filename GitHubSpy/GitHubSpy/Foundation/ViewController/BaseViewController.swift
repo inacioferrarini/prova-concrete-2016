@@ -4,7 +4,7 @@ class BaseViewController: UIViewController, AppContextAwareProtocol {
 
     // MARK: - Properties
     
-    var appContext: AppContext?
+    var appContext: AppContext!
     
     
     // MARK: - Lifecycle
@@ -30,9 +30,7 @@ class BaseViewController: UIViewController, AppContextAwareProtocol {
                 if let identifier = label.accessibilityIdentifier {
                     let text = NSLocalizedString(identifier, comment: "")
                     if (text == identifier) {
-                        if let appContext = self.appContext {
-                            appContext.logger.logError("Missing string for \(identifier)")
-                        }
+                        self.appContext.logger.logError("Missing string for \(identifier)")
                     } else {
                         label.text = text
                     }
