@@ -26,11 +26,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             firstViewController.appContext = self.appContext
             
             router.registerRoutes()
+            
+//self.createTestDatabase()
         }
         
         return true
     }
 
+    func createTestDatabase() {
+        
+        let ctx = self.appContext!.coreDataStack.managedObjectContext
+        
+        if let author = EntityAuthor.entityAuthorWithLogin("User0", inManagedObjectContext: ctx) {
+            if let repo0 = EntityRepository.entityRepositoryWithName("Repo0", owner: author, inManagedObjectContext: ctx) {
+                EntityPullRequest.entityPullRequestWithUid(12, owner: author, repository: repo0, inManagedObjectContext: ctx)
+                EntityPullRequest.entityPullRequestWithUid(16, owner: author, repository: repo0, inManagedObjectContext: ctx)
+                EntityPullRequest.entityPullRequestWithUid(90, owner: author, repository: repo0, inManagedObjectContext: ctx)
+            }
+            if let repo1 = EntityRepository.entityRepositoryWithName("Repo1", owner: author, inManagedObjectContext: ctx) {
+                EntityPullRequest.entityPullRequestWithUid(100, owner: author, repository: repo1, inManagedObjectContext: ctx)
+                EntityPullRequest.entityPullRequestWithUid(200, owner: author, repository: repo1, inManagedObjectContext: ctx)
+                EntityPullRequest.entityPullRequestWithUid(300, owner: author, repository: repo1, inManagedObjectContext: ctx)
+            }
+        }
+        
+        self.appContext!.coreDataStack.saveContext()
+        
+    }
     
     // MARK: - Deep Linking Navigation
     
