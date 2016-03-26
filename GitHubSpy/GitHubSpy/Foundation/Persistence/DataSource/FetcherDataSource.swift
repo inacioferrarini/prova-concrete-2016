@@ -19,6 +19,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     var cacheName: String?
     private(set) weak var managedObjectContext:NSManagedObjectContext!
     private(set) var presenter:TableViewCellPresenter<EntityType, UITableViewCell>!
+    let logger:Logger!
     
     // MARK: - Initialization
     
@@ -26,12 +27,15 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
          presenter:TableViewCellPresenter<EntityType, UITableViewCell>!,
          entityName: String!,
          sortDescriptors: [NSSortDescriptor]!,
-         managedObjectContext context:NSManagedObjectContext!) {
+         managedObjectContext context:NSManagedObjectContext!,
+         logger:Logger!) {
     
         self.tableView = tableView
         self.presenter = presenter
         self.entityName = entityName
+        self.sortDescriptors = sortDescriptors
         self.managedObjectContext = context
+        self.logger = logger
         super.init()
     }
     
@@ -40,13 +44,13 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
          entityName: String!,
          sortDescriptors: [NSSortDescriptor]!,
          managedObjectContext context:NSManagedObjectContext!,
+         logger:Logger!,
          predicate: NSPredicate?,
          fetchLimit: NSInteger?,
          sectionNamesKeyPath: String?,
          cacheName: String?) {
             
-            self.init(targetingTableView: tableView, presenter:presenter, entityName: entityName, sortDescriptors: sortDescriptors, managedObjectContext: context)
-        
+        self.init(targetingTableView: tableView, presenter:presenter, entityName: entityName, sortDescriptors: sortDescriptors, managedObjectContext: context, logger:logger)
         self.predicate = predicate
         self.fetchLimit = fetchLimit
         self.sectionNamesKeyPath = sectionNamesKeyPath
@@ -61,7 +65,8 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         do {
             try _fetchedResultsController!.performFetch()
         } catch {
-            
+            let nserror = error as NSError
+            self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
 
         self.tableView.reloadData()
@@ -143,7 +148,8 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         do {
             try _fetchedResultsController!.performFetch()
         } catch {
-//            print("Unresolved error \(error), \(error.userInfo)")
+            let nserror = error as NSError
+            self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
         
         return _fetchedResultsController!

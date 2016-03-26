@@ -5,10 +5,13 @@ class NavigationRouter: NSObject {
     
     let coreDataStack: CoreDataStack!
     let baseNavigationController: UINavigationController!
+    let logger:Logger!
     
-    init(coreDataStack: CoreDataStack!, baseNavigationController: UINavigationController!) {
+    init(coreDataStack: CoreDataStack!, baseNavigationController: UINavigationController!, logger:Logger!) {
         self.coreDataStack = coreDataStack
         self.baseNavigationController = baseNavigationController
+        self.logger = logger
+        super.init()
     }
     
     func registerRoutes() {
@@ -16,7 +19,7 @@ class NavigationRouter: NSObject {
         
         routes.addRoute("/") { (params: [NSObject : AnyObject]) -> Bool in
             
-            print("Showing root ... ")
+            self.logger.logInfo("Showing root ... ")
             
             return true
         }
@@ -24,8 +27,8 @@ class NavigationRouter: NSObject {
         routes.addRoute("/pr/:owner/:repo") { (params: [NSObject : AnyObject]) -> Bool in
             guard let owner = params["owner"] as? String else { return false }
             guard let repository = params["repo"] as? String else { return false }
-            
-            print("Showing repository \(repository) from user \(owner)")
+
+            self.logger.logInfo("Showing repository \(repository) from user \(owner)")
             
             return true
         }

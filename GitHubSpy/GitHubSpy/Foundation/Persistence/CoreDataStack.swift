@@ -1,7 +1,14 @@
 import CoreData
 
 class CoreDataStack: NSObject {
-        
+    
+    let logger:Logger!
+    
+    init(logger:Logger!) {
+        self.logger = logger
+        super.init()
+    }
+    
     lazy var applicationDocumentsDirectory: NSURL = {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
@@ -26,8 +33,7 @@ class CoreDataStack: NSObject {
             
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
-            // abort()  - TODO: Solve this
+            self.logger.logError("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
         }
         
         return coordinator
@@ -49,8 +55,7 @@ class CoreDataStack: NSObject {
                 try managedObjectContext.save()
             } catch {
                 let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                // abort()  - TODO: Solve this
+                self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }

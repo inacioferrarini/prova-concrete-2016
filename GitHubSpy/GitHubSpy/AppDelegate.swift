@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var firstViewController = rootNavigationController.topViewController as! AppContextAwareProtocol
             firstViewController.appContext = self.appContext
             
-            let stack = CoreDataStack()
-            let router = NavigationRouter(coreDataStack: stack, baseNavigationController: rootNavigationController)
+            let logger = Logger()
+            let stack = CoreDataStack(logger: logger)
+            let router = NavigationRouter(coreDataStack: stack, baseNavigationController: rootNavigationController, logger: logger)
             
             self.appContext = AppContext(navigationController: rootNavigationController,
                 coreDataStack: stack,
-                router: router)
+                router: router,
+                logger: logger)
             
             router.registerRoutes()
         }

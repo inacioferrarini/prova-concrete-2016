@@ -30,7 +30,9 @@ class BaseViewController: UIViewController, AppContextAwareProtocol {
                 if let identifier = label.accessibilityIdentifier {
                     let text = NSLocalizedString(identifier, comment: "")
                     if (text == identifier) {
-                        print("Missing string for \(identifier)")
+                        if let appContext = self.appContext {
+                            appContext.logger.logError("Missing string for \(identifier)")
+                        }
                     } else {
                         label.text = text
                     }
