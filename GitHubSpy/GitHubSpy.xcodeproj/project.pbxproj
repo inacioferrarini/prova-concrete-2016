@@ -36,6 +36,7 @@
 		34D07CD11CA6396A0056B07C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D07CD31CA6396A0056B07C /* Localizable.strings */; };
 		34D07CDA1CA63D320056B07C /* PullRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CD91CA63D320056B07C /* PullRequestTableViewCell.swift */; };
 		34D07CDC1CA63D550056B07C /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */; };
+		34D07CDF1CA6D1690056B07C /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		34D07CD41CA6397C0056B07C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		34D07CD91CA63D320056B07C /* PullRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestTableViewCell.swift; sourceTree = "<group>"; };
 		34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07CC41CA634F20056B07C /* Entities */,
+				34D07CDD1CA6D1690056B07C /* Extensions */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -331,6 +334,14 @@
 				34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		34D07CDD1CA6D1690056B07C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
@@ -551,6 +562,7 @@
 				34D07CCB1CA635010056B07C /* EntityRepository+CoreDataProperties.swift in Sources */,
 				34D07CCD1CA635010056B07C /* EntityPullRequest+CoreDataProperties.swift in Sources */,
 				34D07CC21CA629AE0056B07C /* PullRequestListTableViewController.swift in Sources */,
+				34D07CDF1CA6D1690056B07C /* NSManagedObjectExtension.swift in Sources */,
 				34D07CDC1CA63D550056B07C /* RepositoryTableViewCell.swift in Sources */,
 				34D07CCF1CA635010056B07C /* EntityAuthor+CoreDataProperties.swift in Sources */,
 				34D07CD01CA635010056B07C /* EntityAuthor.swift in Sources */,

@@ -8,6 +8,7 @@ extension EntityPullRequest {
     @NSManaged var created: NSDate?
     @NSManaged var lastUpdated: NSDate?
     @NSManaged var url: String?
+    @NSManaged var uid: NSNumber?
     @NSManaged var owner: EntityAuthor?
     @NSManaged var repository: EntityRepository?
 
