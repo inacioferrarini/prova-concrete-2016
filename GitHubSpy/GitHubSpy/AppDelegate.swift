@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var firstViewController = rootNavigationController.topViewController as! AppContextAwareProtocol
             
             let logger = Logger()
-            let stack = CoreDataStack(logger: logger)
+            let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger)
             let router = NavigationRouter(schema: "GitHubSpy", coreDataStack: stack, baseNavigationController: rootNavigationController, logger: logger)
             
             self.appContext = AppContext(navigationController: rootNavigationController,

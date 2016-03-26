@@ -2,9 +2,13 @@ import CoreData
 
 class CoreDataStack: NSObject {
     
+    let modelFileName:String!
+    let databaseFileName:String!
     let logger:Logger!
     
-    init(logger:Logger!) {
+    init(modelFileName:String!, databaseFileName:String!, logger:Logger!) {
+        self.modelFileName = modelFileName
+        self.databaseFileName = databaseFileName
         self.logger = logger
         super.init()
     }
@@ -15,13 +19,13 @@ class CoreDataStack: NSObject {
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("GitHubSpy", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource(self.modelFileName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("GitHubSpy.sqlite")
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("\(self.databaseFileName).sqlite")
         self.logger.logInfo("\(url)")        
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
