@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class TableViewCellPresenter<EntityType: NSManagedObject, CellType: UITableViewCell>: NSObject {
+class TableViewCellPresenter<CellType: UITableViewCell, EntityType: NSManagedObject>: NSObject {
     
     let configureCellBlock:((CellType, EntityType) -> Void)!
     let cellReuseIdentifier:String!

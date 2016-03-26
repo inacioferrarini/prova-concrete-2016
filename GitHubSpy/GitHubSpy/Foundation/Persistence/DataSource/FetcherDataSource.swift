@@ -18,13 +18,13 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     var sectionNamesKeyPath: String?
     var cacheName: String?
     private(set) weak var managedObjectContext:NSManagedObjectContext!
-    private(set) var presenter:TableViewCellPresenter<EntityType, UITableViewCell>!
+    private(set) var presenter:TableViewCellPresenter<UITableViewCell, EntityType>!
     let logger:Logger!
     
     // MARK: - Initialization
     
     init(targetingTableView tableView:UITableView!,
-         presenter:TableViewCellPresenter<EntityType, UITableViewCell>!,
+         presenter:TableViewCellPresenter<UITableViewCell, EntityType>!,
          entityName: String!,
          sortDescriptors: [NSSortDescriptor]!,
          managedObjectContext context:NSManagedObjectContext!,
@@ -40,7 +40,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     }
     
     convenience init(targetingTableView tableView:UITableView!,
-         presenter:TableViewCellPresenter<EntityType, UITableViewCell>!,
+         presenter:TableViewCellPresenter<UITableViewCell, EntityType>!,
          entityName: String!,
          sortDescriptors: [NSSortDescriptor]!,
          managedObjectContext context:NSManagedObjectContext!,
