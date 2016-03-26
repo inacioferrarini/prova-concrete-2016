@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let rootNavigationController = window.rootViewController as! UINavigationController
             var firstViewController = rootNavigationController.topViewController as! AppContextAwareProtocol
-            firstViewController.appContext = self.appContext
             
             let logger = Logger()
             let stack = CoreDataStack(logger: logger)
@@ -23,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 coreDataStack: stack,
                 router: router,
                 logger: logger)
+            
+            firstViewController.appContext = self.appContext
             
             router.registerRoutes()
         }
