@@ -100,7 +100,7 @@
                                                     <rect key="frame" x="201" y="72" width="119" height="36"/>
                                                     <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKu-fg-Xpp">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tKu-fg-Xpp" customClass="AuthorInfoView" customModule="GitHubSpy" customModuleProvider="target">
                                                     <rect key="frame" x="419" y="18" width="125" height="85"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
