@@ -15,7 +15,6 @@
 		34D07C271CA5CBCC0056B07C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C251CA5CBCC0056B07C /* LaunchScreen.storyboard */; };
 		34D07C321CA5CBCC0056B07C /* GitHubSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C311CA5CBCC0056B07C /* GitHubSpyTests.swift */; };
 		34D07C3D1CA5CBCC0056B07C /* GitHubSpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C3C1CA5CBCC0056B07C /* GitHubSpyUITests.swift */; };
-		34D07C5B1CA5E9BF0056B07C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C5A1CA5E9BF0056B07C /* Localizable.strings */; };
 		34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5E1CA5EAFA0056B07C /* AppContext.swift */; };
 		34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5F1CA5EAFA0056B07C /* AppContextAwareProtocol.swift */; };
 		34D07C6A1CA5EAFA0056B07C /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C611CA5EAFA0056B07C /* NavigationRouter.swift */; };
@@ -34,6 +33,7 @@
 		34D07CCE1CA635010056B07C /* EntityPullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CC81CA635010056B07C /* EntityPullRequest.swift */; };
 		34D07CCF1CA635010056B07C /* EntityAuthor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CC91CA635010056B07C /* EntityAuthor+CoreDataProperties.swift */; };
 		34D07CD01CA635010056B07C /* EntityAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CCA1CA635010056B07C /* EntityAuthor.swift */; };
+		34D07CD11CA6396A0056B07C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D07CD31CA6396A0056B07C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		34D07C381CA5CBCC0056B07C /* GitHubSpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C3C1CA5CBCC0056B07C /* GitHubSpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSpyUITests.swift; sourceTree = "<group>"; };
 		34D07C3E1CA5CBCC0056B07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34D07C5A1CA5E9BF0056B07C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		34D07C5E1CA5EAFA0056B07C /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		34D07C5F1CA5EAFA0056B07C /* AppContextAwareProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContextAwareProtocol.swift; sourceTree = "<group>"; };
 		34D07C611CA5EAFA0056B07C /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -86,6 +85,8 @@
 		34D07CC81CA635010056B07C /* EntityPullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityPullRequest.swift; sourceTree = "<group>"; };
 		34D07CC91CA635010056B07C /* EntityAuthor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityAuthor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		34D07CCA1CA635010056B07C /* EntityAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityAuthor.swift; sourceTree = "<group>"; };
+		34D07CD21CA6396A0056B07C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		34D07CD41CA6397C0056B07C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +152,7 @@
 				34D07C251CA5CBCC0056B07C /* LaunchScreen.storyboard */,
 				34D07C281CA5CBCC0056B07C /* Info.plist */,
 				34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */,
-				34D07C5A1CA5E9BF0056B07C /* Localizable.strings */,
+				34D07CD31CA6396A0056B07C /* Localizable.strings */,
 			);
 			path = GitHubSpy;
 			sourceTree = "<group>";
@@ -400,6 +401,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 34D07C0D1CA5CBCC0056B07C;
 			productRefGroup = 34D07C171CA5CBCC0056B07C /* Products */;
@@ -419,7 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D07C271CA5CBCC0056B07C /* LaunchScreen.storyboard in Resources */,
-				34D07C5B1CA5E9BF0056B07C /* Localizable.strings in Resources */,
+				34D07CD11CA6396A0056B07C /* Localizable.strings in Resources */,
 				34D07C241CA5CBCC0056B07C /* Assets.xcassets in Resources */,
 				34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */,
 			);
@@ -563,6 +565,15 @@
 				34D07C261CA5CBCC0056B07C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		34D07CD31CA6396A0056B07C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34D07CD21CA6396A0056B07C /* en */,
+				34D07CD41CA6397C0056B07C /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
