@@ -2,8 +2,8 @@ import UIKit
 
 class Logger: NSObject {
 
-    func logError(message:String) {
-        print("Error: \(message)")
+    func logError(error:NSError) {
+        print("Unresolved error \(error), \(error.userInfo)")
     }
     
     func logInfo(message:String) {

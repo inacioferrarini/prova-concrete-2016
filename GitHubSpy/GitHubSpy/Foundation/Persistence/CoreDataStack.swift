@@ -37,7 +37,7 @@ class CoreDataStack: NSObject {
             
             dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            self.logger.logError("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            self.logger.logError(wrappedError)
         }
         
         return coordinator
@@ -59,7 +59,7 @@ class CoreDataStack: NSObject {
                 try managedObjectContext.save()
             } catch {
                 let nserror = error as NSError
-                self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
+                self.logger.logError(nserror)
             }
         }
     }
