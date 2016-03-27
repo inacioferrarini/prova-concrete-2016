@@ -66,7 +66,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
             try _fetchedResultsController!.performFetch()
         } catch {
             let nserror = error as NSError
-            self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
+            self.logger.logError(nserror)
         }
 
         self.tableView.reloadData()
@@ -149,7 +149,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
             try _fetchedResultsController!.performFetch()
         } catch {
             let nserror = error as NSError
-            self.logger.logError("Unresolved error \(nserror), \(nserror.userInfo)")
+            self.logger.logError(nserror)
         }
         
         return _fetchedResultsController!
