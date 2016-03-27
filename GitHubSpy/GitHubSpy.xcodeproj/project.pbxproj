@@ -21,7 +21,6 @@
 		34D07C6B1CA5EAFA0056B07C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C631CA5EAFA0056B07C /* CoreDataStack.swift */; };
 		34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */; };
 		34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C661CA5EAFA0056B07C /* BaseViewController.swift */; };
-		34D07C6E1CA5EAFA0056B07C /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */; };
 		34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C751CA5EF150056B07C /* FetcherDataSource.swift */; };
 		34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */; };
 		34D07CBB1CA61ED40056B07C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CBA1CA61ED40056B07C /* Logger.swift */; };
@@ -43,6 +42,7 @@
 		34D07CEE1CA727020056B07C /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CED1CA727020056B07C /* NSObjectExtensions.swift */; };
 		34D07CF11CA7777B0056B07C /* TableViewBlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */; };
 		34D07CF41CA77D390056B07C /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF31CA77D390056B07C /* Routes.swift */; };
+		34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF51CA8727A0056B07C /* ViewControllerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,6 @@
 		34D07C631CA5EAFA0056B07C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		34D07C661CA5EAFA0056B07C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		34D07C751CA5EF150056B07C /* FetcherDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherDataSource.swift; sourceTree = "<group>"; };
 		34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPresenter.swift; sourceTree = "<group>"; };
 		34D07CBA1CA61ED40056B07C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		34D07CED1CA727020056B07C /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBlockDelegate.swift; sourceTree = "<group>"; };
 		34D07CF31CA77D390056B07C /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		34D07CF51CA8727A0056B07C /* ViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 		34D07C641CA5EAFA0056B07C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				34D07C671CA5EAFA0056B07C /* ViewControllerManager.swift */,
 				34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */,
 				34D07C661CA5EAFA0056B07C /* BaseViewController.swift */,
 			);
@@ -275,6 +274,7 @@
 		34D07CBC1CA629350056B07C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				34D07CF51CA8727A0056B07C /* ViewControllerManager.swift */,
 				34D07CBE1CA629350056B07C /* Repositories */,
 				34D07CBD1CA629350056B07C /* PullRequests */,
 			);
@@ -616,6 +616,7 @@
 				34D07CF41CA77D390056B07C /* Routes.swift in Sources */,
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */,
+				34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */,
 				34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */,
 				34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */,
 				34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */,
@@ -629,7 +630,6 @@
 				34D07CC01CA629810056B07C /* RepositoryListTableViewController.swift in Sources */,
 				34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */,
 				34D07CCE1CA635010056B07C /* EntityPullRequest.swift in Sources */,
-				34D07C6E1CA5EAFA0056B07C /* ViewControllerManager.swift in Sources */,
 				34D07CCB1CA635010056B07C /* EntityRepository+CoreDataProperties.swift in Sources */,
 				34D07CCD1CA635010056B07C /* EntityPullRequest+CoreDataProperties.swift in Sources */,
 				34D07CC21CA629AE0056B07C /* PullRequestListTableViewController.swift in Sources */,
