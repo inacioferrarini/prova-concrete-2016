@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             firstViewController.appContext = self.appContext
             router.registerRoutes(self.createNavigationRoutes())
             
-self.createTestDatabase()
+// self.createTestDatabase()
         }
         
         return true
