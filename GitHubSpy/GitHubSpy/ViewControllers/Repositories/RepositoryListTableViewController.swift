@@ -20,8 +20,13 @@ class RepositoryListTableViewController: BaseTableViewController {
         
         let presenter = TableViewCellPresenter<UITableViewCell, EntityRepository>(
             configureCellBlock: { (cell: UITableViewCell, entity:EntityRepository) -> Void in
-    //            RepositoryTableViewCell
-                print(" Table view cell presenter configure cell block ... \(entity)")
+                
+                let cell = cell as! RepositoryTableViewCell
+                cell.repositoryNameLabel.text = entity.name ?? ""
+                cell.repositoryDescriptionLabel.text = entity.descriptionText ?? ""
+                cell.branchCountLabel.text = "\(entity.forksCount ?? 0)"
+                cell.starCountLabel.text = "\(entity.starsCount ?? 0)"
+                
             }, cellReuseIdentifier: "RepositoryTableViewCell")
         
         let sortDescriptors:[NSSortDescriptor] = [] // TODO: update
