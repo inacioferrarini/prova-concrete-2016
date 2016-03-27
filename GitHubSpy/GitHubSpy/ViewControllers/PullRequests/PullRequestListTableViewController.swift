@@ -22,8 +22,12 @@ class PullRequestListTableViewController: BaseTableViewController {
         
         let presenter = TableViewCellPresenter<UITableViewCell, EntityPullRequest>(
             configureCellBlock: { (cell: UITableViewCell, entity:EntityPullRequest) -> Void in
-                //            PullRequestTableViewCell
-                print(" Table view cell presenter configure cell block ... \(entity)")
+
+                let cell = cell as! PullRequestTableViewCell
+                cell.pullRequestTitleLabel.text = entity.title ?? ""
+                cell.pullRequestBodyLabel.text = entity.body ?? ""
+//                cell.authorInfoView
+                
             }, cellReuseIdentifier: "PullRequestTableViewCell")
         
         let sortDescriptors:[NSSortDescriptor] = [] // TODO: update
