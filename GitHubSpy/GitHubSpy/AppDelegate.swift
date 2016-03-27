@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let logger = Logger()
             let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger)
-            let router = NavigationRouter(schema: "GitHubSpy", coreDataStack: stack, baseNavigationController: rootNavigationController, logger: logger)
+            let router = NavigationRouter(schema: "GitHubSpy", logger: logger)
             
             self.appContext = AppContext(navigationController: rootNavigationController,
                 coreDataStack: stack,
@@ -24,15 +24,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 logger: logger)
             
             firstViewController.appContext = self.appContext
-            
-            router.registerRoutes()
+            router.registerRoutes(self.createNavigationRoutes())
             
 self.createTestDatabase()
         }
         
         return true
     }
-
+    
+    func createNavigationRoutes() -> [RoutingElement] {
+        
+        var routes = [RoutingElement]()
+        
+        routes.append(RoutingElement(pattern: "/", handler: { (params: [NSObject : AnyObject]) -> Bool in
+            print("Showing root ... ")
+            return true
+        }))
+    
+        routes.append(RoutingElement(pattern: "/pr/:owner/:repo", handler: { (params: [NSObject : AnyObject]) -> Bool in
+            guard let owner = params["owner"] as? String else { return false }
+            guard let repository = params["repo"] as? String else { return false }
+            
+            if let appContext = self.appContext {
+                let context = appContext.coreDataStack.managedObjectContext
+                let viewController = ViewControllerManager().pullRequestListTableViewController(appContext)
+                
+                if let owner = EntityAuthor.entityAuthorWithLogin(owner, inManagedObjectContext: context),
+                    let repository = EntityRepository.entityRepositoryWithName(repository, owner: owner, inManagedObjectContext: context) {
+                        viewController.repository = repository
+                }
+                appContext.navigationController.pushViewController(viewController, animated: true)
+            }
+            
+            return true
+        }))
+        
+        return routes
+    }
+    
     func createTestDatabase() {
         
         let ctx = self.appContext!.coreDataStack.managedObjectContext
@@ -46,14 +75,17 @@ self.createTestDatabase()
                 if let pr = EntityPullRequest.entityPullRequestWithUid(12, owner: author, repository: repo0, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
                 if let pr = EntityPullRequest.entityPullRequestWithUid(16, owner: author, repository: repo0, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
                 if let pr = EntityPullRequest.entityPullRequestWithUid(90, owner: author, repository: repo0, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
             }
             if let repo1 = EntityRepository.entityRepositoryWithName("Repo 1", owner: author, inManagedObjectContext: ctx) {
@@ -64,18 +96,22 @@ self.createTestDatabase()
                 if let pr = EntityPullRequest.entityPullRequestWithUid(100, owner: author, repository: repo1, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
                 if let pr = EntityPullRequest.entityPullRequestWithUid(200, owner: author, repository: repo1, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
                 if let pr = EntityPullRequest.entityPullRequestWithUid(300, owner: author, repository: repo1, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
                 if let pr = EntityPullRequest.entityPullRequestWithUid(400, owner: author, repository: repo1, inManagedObjectContext: ctx) {
                     pr.title = "Pull Request asdasdaasdasd"
                     pr.body = "PR Body asdas dasd asda sdasdasddas"
+                    pr.url = "https://github.com/elastic/elasticsearch/pull/17351"
                 }
             }
         }
