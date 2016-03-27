@@ -44,6 +44,9 @@
 		34D07CF41CA77D390056B07C /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF31CA77D390056B07C /* Routes.swift */; };
 		34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF51CA8727A0056B07C /* ViewControllerManager.swift */; };
 		34D07CF81CA877C60056B07C /* RoutingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF71CA877C60056B07C /* RoutingElement.swift */; };
+		34D07CFB1CA8874B0056B07C /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFA1CA8874B0056B07C /* GitHubApiClient.swift */; };
+		34D07CFE1CA88F5F0056B07C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFD1CA88F5F0056B07C /* Repository.swift */; };
+		34D07D001CA88F700056B07C /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFF1CA88F700056B07C /* PullRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,9 @@
 		34D07CF31CA77D390056B07C /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		34D07CF51CA8727A0056B07C /* ViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerManager.swift; sourceTree = "<group>"; };
 		34D07CF71CA877C60056B07C /* RoutingElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingElement.swift; sourceTree = "<group>"; };
+		34D07CFA1CA8874B0056B07C /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
+		34D07CFD1CA88F5F0056B07C /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		34D07CFF1CA88F700056B07C /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +174,8 @@
 				34D07CF21CA77D290056B07C /* Routing */,
 				34D07CC31CA634C00056B07C /* Persistence */,
 				34D07CD51CA63D0A0056B07C /* ViewComponents */,
+				34D07CF91CA8858F0056B07C /* Networking */,
+				34D07CFC1CA88E520056B07C /* Model */,
 				34D07C191CA5CBCC0056B07C /* AppDelegate.swift */,
 				34D07C1D1CA5CBCC0056B07C /* Main.storyboard */,
 				34D07C231CA5CBCC0056B07C /* Assets.xcassets */,
@@ -413,6 +421,23 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
+		34D07CF91CA8858F0056B07C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				34D07CFA1CA8874B0056B07C /* GitHubApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		34D07CFC1CA88E520056B07C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34D07CFD1CA88F5F0056B07C /* Repository.swift */,
+				34D07CFF1CA88F700056B07C /* PullRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,12 +640,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D07CFE1CA88F5F0056B07C /* Repository.swift in Sources */,
 				34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */,
 				34D07CF41CA77D390056B07C /* Routes.swift in Sources */,
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */,
 				34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */,
 				34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */,
+				34D07CFB1CA8874B0056B07C /* GitHubApiClient.swift in Sources */,
 				34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */,
 				34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */,
 				34D07CF81CA877C60056B07C /* RoutingElement.swift in Sources */,
@@ -631,6 +658,7 @@
 				34D07CE31CA6ED4F0056B07C /* AuthorInfoView.swift in Sources */,
 				34D07CDA1CA63D320056B07C /* PullRequestTableViewCell.swift in Sources */,
 				34D07C6A1CA5EAFA0056B07C /* NavigationRouter.swift in Sources */,
+				34D07D001CA88F700056B07C /* PullRequest.swift in Sources */,
 				34D07CC01CA629810056B07C /* RepositoryListTableViewController.swift in Sources */,
 				34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */,
 				34D07CCE1CA635010056B07C /* EntityPullRequest.swift in Sources */,

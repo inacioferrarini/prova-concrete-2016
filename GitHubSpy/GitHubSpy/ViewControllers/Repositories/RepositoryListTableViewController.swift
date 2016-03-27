@@ -9,11 +9,21 @@ class RepositoryListTableViewController: BaseTableViewController {
     }
     
     override func shouldCheckTodayData() -> Bool {
-        return false
+        return true
     }
     
     override func syncDataWithServer() {
-        self.syncDataComplete()
+        
+        GitHubApiClient().getRepositories(atPage: 1,
+            completionBlock: { (repositories:[Repository]?) -> Void in
+//                print("syncDataWithServer: response block: \(repositories)")
+                self.syncDataComplete()
+            }) { (error: NSError) -> Void in
+                self.appContext.logger.logError(error)
+//                print("syncDataWithServer: error block: \(error)")
+                self.syncDataComplete()
+        }
+        
     }
     
     override func createDataSource() -> UITableViewDataSource? {

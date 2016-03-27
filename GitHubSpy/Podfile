@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'GitHubSpy' do
 pod 'JLRoutes'
+pod 'AFNetworking', '~> 2.5'
 end
 
 target 'GitHubSpyTests' do
