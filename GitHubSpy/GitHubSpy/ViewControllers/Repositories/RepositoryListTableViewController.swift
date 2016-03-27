@@ -44,4 +44,20 @@ class RepositoryListTableViewController: BaseTableViewController {
         return dataSource
     }
     
+    override func createDelegate() -> UITableViewDelegate? {
+        
+        let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
+            if let dataSource = self.dataSource as? FetcherDataSource<EntityRepository> {
+                let selectedValue = dataSource.objectAtIndexPath(indexPath)
+                let ownerLogin = selectedValue.owner?.login ?? ""
+                let repositoryName = selectedValue.name ?? ""
+
+                print("Selected repository [\(repositoryName)] for Owner [\(ownerLogin)]")
+                
+            }
+        }
+        
+        return TableViewBlockDelegate(itemSelectionBlock: itemSelectionBlock)
+    }
+    
 }
