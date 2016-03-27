@@ -29,11 +29,17 @@ class NavigationRouter: NSObject {
         routes.addRoute("/pr/:owner/:repo") { (params: [NSObject : AnyObject]) -> Bool in
             guard let owner = params["owner"] as? String else { return false }
             guard let repository = params["repo"] as? String else { return false }
-
-            self.logger.logInfo("Showing repository \(repository) from user \(owner)")
             
-            // instantiate view controller
-            // display it! :)
+            let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let appContext = delegate.appContext!
+            let context = self.coreDataStack.managedObjectContext
+            
+            let viewController = ViewControllerManager().pullRequestListTableViewController(appContext)
+            if let owner = EntityAuthor.entityAuthorWithLogin(owner, inManagedObjectContext: context),
+                let repository = EntityRepository.entityRepositoryWithName(repository, owner: owner, inManagedObjectContext: context) {
+                viewController.repository = repository
+            }
+            self.baseNavigationController.pushViewController(viewController, animated: true)
             
             return true
         }

@@ -2,6 +2,8 @@ import UIKit
 
 class PullRequestListTableViewController: BaseTableViewController {
 
+    var repository:EntityRepository?
+    
     // MARK: - BaseTableViewController override
     
     override func viewControllerTitle() -> String? {
@@ -31,10 +33,14 @@ class PullRequestListTableViewController: BaseTableViewController {
         let dataSource = FetcherDataSource<EntityPullRequest>(
             targetingTableView: self.tableView!,
             presenter: presenter,
-            entityName: EntityRepository.entityName(),
+            entityName: EntityPullRequest.entityName(),
             sortDescriptors: sortDescriptors,
             managedObjectContext: context,
             logger: logger)
+        
+        if let repository = self.repository {
+            dataSource.predicate = NSPredicate(format: "repository = %@", repository)
+        }
         
         return dataSource
     }
