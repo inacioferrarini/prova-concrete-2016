@@ -49,4 +49,18 @@ class PullRequestListTableViewController: BaseTableViewController {
         return dataSource
     }
 
+    override func createDelegate() -> UITableViewDelegate? {
+        
+        let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
+            if let dataSource = self.dataSource as? FetcherDataSource<EntityPullRequest> {
+                let selectedValue = dataSource.objectAtIndexPath(indexPath)
+                if let url = selectedValue.url {
+                    self.appContext.router.navigateExternal(url)
+                }
+            }
+        }
+        
+        return TableViewBlockDelegate(itemSelectionBlock: itemSelectionBlock)
+    }
+    
 }

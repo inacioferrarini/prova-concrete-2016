@@ -36,4 +36,11 @@ class NavigationRouter: NSObject {
         }
     }
     
+    func navigateExternal(targetUrl:String) {
+        let completeUrl = NSURL(string: targetUrl)
+        if let url = completeUrl {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
 }
