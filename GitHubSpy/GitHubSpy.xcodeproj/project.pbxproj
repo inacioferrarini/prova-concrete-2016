@@ -41,6 +41,7 @@
 		34D07CE51CA6ED9B0056B07C /* AuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D07CE41CA6ED9B0056B07C /* AuthorInfoView.xib */; };
 		34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CE71CA724300056B07C /* ViewComponent.swift */; };
 		34D07CEE1CA727020056B07C /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CED1CA727020056B07C /* NSObjectExtensions.swift */; };
+		34D07CF11CA7777B0056B07C /* TableViewBlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		34D07CE41CA6ED9B0056B07C /* AuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorInfoView.xib; sourceTree = "<group>"; };
 		34D07CE71CA724300056B07C /* ViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
 		34D07CED1CA727020056B07C /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBlockDelegate.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				34D07CB91CA61EA70056B07C /* Logging */,
 				34D07C621CA5EAFA0056B07C /* Persistence */,
 				34D07CB61CA6098F0056B07C /* Presenter */,
+				34D07CEF1CA777110056B07C /* TableViewDelegate */,
 				34D07CE61CA724150056B07C /* Views */,
 				34D07C641CA5EAFA0056B07C /* ViewController */,
 			);
@@ -386,6 +389,14 @@
 				34D07CED1CA727020056B07C /* NSObjectExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34D07CEF1CA777110056B07C /* TableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */,
+			);
+			path = TableViewDelegate;
 			sourceTree = "<group>";
 		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
@@ -615,6 +626,7 @@
 				34D07CCF1CA635010056B07C /* EntityAuthor+CoreDataProperties.swift in Sources */,
 				34D07CD01CA635010056B07C /* EntityAuthor.swift in Sources */,
 				34D07CCC1CA635010056B07C /* EntityRepository.swift in Sources */,
+				34D07CF11CA7777B0056B07C /* TableViewBlockDelegate.swift in Sources */,
 				34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
