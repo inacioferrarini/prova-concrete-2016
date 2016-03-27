@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             router.registerRoutes()
             
-//self.createTestDatabase()
+self.createTestDatabase()
         }
         
         return true
@@ -38,12 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let ctx = self.appContext!.coreDataStack.managedObjectContext
         
         if let author = EntityAuthor.entityAuthorWithLogin("User0", inManagedObjectContext: ctx) {
-            if let repo0 = EntityRepository.entityRepositoryWithName("Repo0", owner: author, inManagedObjectContext: ctx) {
+            if let repo0 = EntityRepository.entityRepositoryWithName("Repo 0", owner: author, descriptionText: "asd asd asd asda sd asdasdasdasda sdasda sd asdasd asd asd asdasdasdasda sda sda sda sdasd asd asd asds ", forksCount: 1250, starsCount: 350, pullRequests: nil, inManagedObjectContext: ctx) {
                 EntityPullRequest.entityPullRequestWithUid(12, owner: author, repository: repo0, inManagedObjectContext: ctx)
                 EntityPullRequest.entityPullRequestWithUid(16, owner: author, repository: repo0, inManagedObjectContext: ctx)
                 EntityPullRequest.entityPullRequestWithUid(90, owner: author, repository: repo0, inManagedObjectContext: ctx)
             }
-            if let repo1 = EntityRepository.entityRepositoryWithName("Repo1", owner: author, inManagedObjectContext: ctx) {
+            if let repo1 = EntityRepository.entityRepositoryWithName("Repo 1", owner: author, descriptionText: "asd asd asd asda sd asdasdasdasda sdasda sd asdasd asd asd aasdasdasdasdasdasdasd asdasdsadasdadsasd", forksCount: 25, starsCount: 1350, pullRequests: nil, inManagedObjectContext: ctx) {
                 EntityPullRequest.entityPullRequestWithUid(100, owner: author, repository: repo1, inManagedObjectContext: ctx)
                 EntityPullRequest.entityPullRequestWithUid(200, owner: author, repository: repo1, inManagedObjectContext: ctx)
                 EntityPullRequest.entityPullRequestWithUid(300, owner: author, repository: repo1, inManagedObjectContext: ctx)
