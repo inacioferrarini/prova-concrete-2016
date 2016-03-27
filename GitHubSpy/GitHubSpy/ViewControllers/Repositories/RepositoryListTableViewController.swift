@@ -51,9 +51,9 @@ class RepositoryListTableViewController: BaseTableViewController {
                 let selectedValue = dataSource.objectAtIndexPath(indexPath)
                 let ownerLogin = selectedValue.owner?.login ?? ""
                 let repositoryName = selectedValue.name ?? ""
-
-                print("Selected repository [\(repositoryName)] for Owner [\(ownerLogin)]")
                 
+                let route = Routes().showPullRequestsUrl(ownerLogin, repositoryName: repositoryName)
+                self.appContext.router.navigateInternal(route)
             }
         }
         

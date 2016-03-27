@@ -32,6 +32,9 @@ class NavigationRouter: NSObject {
 
             self.logger.logInfo("Showing repository \(repository) from user \(owner)")
             
+            // instantiate view controller
+            // display it! :)
+            
             return true
         }
     }
@@ -43,6 +46,13 @@ class NavigationRouter: NSObject {
         }
         
         return result
+    }
+    
+    func navigateInternal(targetUrl:String) {
+        let completeUrl = NSURL(string: "\(self.schema):/\(targetUrl)")
+        if let url = completeUrl {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
     
 }
