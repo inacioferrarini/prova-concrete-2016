@@ -61,4 +61,20 @@ class EntityRepository: NSManagedObject {
         return entityRepository
     }
     
+    func openPullRequestCount(inManagedObjectContext context:NSManagedObjectContext) -> Int {
+        let request:NSFetchRequest = NSFetchRequest(entityName: "EntityPullRequest")
+        let pullRequestRepositoryName = NSPredicate(format: "repository.name = %@", self.name!)
+        let pullRequestStatus = NSPredicate(format: "status = %@", "O")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [pullRequestRepositoryName, pullRequestStatus])
+        return context.countForFetchRequest(request, error: nil)
+    }
+    
+    func closedPullRequestCount(inManagedObjectContext context:NSManagedObjectContext) -> Int {
+        let request:NSFetchRequest = NSFetchRequest(entityName: "EntityPullRequest")
+        let pullRequestRepositoryName = NSPredicate(format: "repository.name = %@", self.name!)
+        let pullRequestStatus = NSPredicate(format: "status = %@", "C")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [pullRequestRepositoryName, pullRequestStatus])
+        return context.countForFetchRequest(request, error: nil)
+    }
+    
 }
