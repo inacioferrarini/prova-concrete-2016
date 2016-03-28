@@ -179,8 +179,9 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
             let value = self.objectAtIndexPath(indexPath!)
-            let cell = tableView.cellForRowAtIndexPath(indexPath!)!
-            self.presenter.configureCellBlock(cell, value)
+            if let cell = tableView.cellForRowAtIndexPath(indexPath!) {
+                self.presenter.configureCellBlock(cell, value)
+            }
         case .Move:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
