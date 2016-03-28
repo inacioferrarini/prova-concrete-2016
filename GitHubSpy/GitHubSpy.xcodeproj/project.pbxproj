@@ -52,6 +52,8 @@
 		34D07D071CA8D9840056B07C /* UIViewControllerImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D061CA8D9840056B07C /* UIViewControllerImageExtension.swift */; };
 		34D07D0A1CA8E4DD0056B07C /* AuthorInfoViewHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D081CA8E4DD0056B07C /* AuthorInfoViewHorizontal.swift */; };
 		34D07D0B1CA8E4DD0056B07C /* AuthorInfoViewHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D07D091CA8E4DD0056B07C /* AuthorInfoViewHorizontal.xib */; };
+		34D07D0D1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D0C1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift */; };
+		34D07D0F1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D0E1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		34D07D061CA8D9840056B07C /* UIViewControllerImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerImageExtension.swift; sourceTree = "<group>"; };
 		34D07D081CA8E4DD0056B07C /* AuthorInfoViewHorizontal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorInfoViewHorizontal.swift; sourceTree = "<group>"; };
 		34D07D091CA8E4DD0056B07C /* AuthorInfoViewHorizontal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorInfoViewHorizontal.xib; sourceTree = "<group>"; };
+		34D07D0C1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryListTableViewControllerJsonExtension.swift; sourceTree = "<group>"; };
+		34D07D0E1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestListTableViewControllerJsonExtension.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07CC11CA629AE0056B07C /* PullRequestListTableViewController.swift */,
+				34D07D0E1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift */,
 			);
 			path = PullRequests;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07CBF1CA629810056B07C /* RepositoryListTableViewController.swift */,
+				34D07D0C1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 			files = (
 				34D07CFE1CA88F5F0056B07C /* Repository.swift in Sources */,
 				34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */,
+				34D07D0F1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift in Sources */,
 				34D07CF41CA77D390056B07C /* Routes.swift in Sources */,
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */,
@@ -686,6 +693,7 @@
 				34D07C6A1CA5EAFA0056B07C /* NavigationRouter.swift in Sources */,
 				34D07D001CA88F700056B07C /* PullRequest.swift in Sources */,
 				34D07CC01CA629810056B07C /* RepositoryListTableViewController.swift in Sources */,
+				34D07D0D1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift in Sources */,
 				34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */,
 				34D07CCE1CA635010056B07C /* EntityPullRequest.swift in Sources */,
 				34D07CCB1CA635010056B07C /* EntityRepository+CoreDataProperties.swift in Sources */,
