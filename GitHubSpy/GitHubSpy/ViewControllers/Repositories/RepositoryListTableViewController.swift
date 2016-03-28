@@ -20,9 +20,11 @@ class RepositoryListTableViewController: BaseTableViewController {
                     self.processRepositories(repositories)
                 }
                 
+                self.appContext.coreDataStack.saveContext()
                 self.syncDataComplete()
             }) { (error: NSError) -> Void in
                 self.appContext.logger.logError(error)
+                self.appContext.coreDataStack.saveContext()
                 self.syncDataComplete()
         }
     }
