@@ -1,3 +1,5 @@
 "VC_REPOSITORY_LIST_TITLE" = "Repositórios";
 
 "VC_PULL_REQUEST_LIST_TITLE" = "Pull Requests";
+"VC_PULL_REQUEST_LIST_OPEN_PR_COUNT" = " aberto(s)";
+"VC_PULL_REQUEST_LIST_CLOSED_PR_COUNT" = " fechado(s)";
