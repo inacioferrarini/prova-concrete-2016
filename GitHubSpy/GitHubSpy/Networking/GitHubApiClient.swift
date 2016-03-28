@@ -3,9 +3,6 @@ import AFNetworking
 
 class GitHubApiClient: NSObject {
     
-//    https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1
-//    https://api.github.com/repos/<criador>/<repositório>/pulls
-    
     let rootUrl = "https://api.github.com/"
     
     func getRepositories(atPage page:Int, completionBlock: (([Repository]?) -> Void), errorHandlerBlock: ((NSError) -> Void)) {
@@ -47,7 +44,7 @@ class GitHubApiClient: NSObject {
         
         if let url = NSURL(string: rootUrl) {
             let manager = AFHTTPSessionManager(baseURL: url)
-            let targetUrl = "repos/{:owner}/{:repository}/pulls"
+            let targetUrl = "repos/{:owner}/{:repository}/pulls?state=all"
                 .stringByReplacingOccurrencesOfString("{:owner}", withString: owner)
                 .stringByReplacingOccurrencesOfString("{:repository}", withString: repository)
             manager.GET(targetUrl, parameters: nil, success: successBlock, failure: failureBlock)
