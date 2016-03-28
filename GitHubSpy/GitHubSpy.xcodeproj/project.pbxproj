@@ -47,6 +47,8 @@
 		34D07CFB1CA8874B0056B07C /* GitHubApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFA1CA8874B0056B07C /* GitHubApiClient.swift */; };
 		34D07CFE1CA88F5F0056B07C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFD1CA88F5F0056B07C /* Repository.swift */; };
 		34D07D001CA88F700056B07C /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CFF1CA88F700056B07C /* PullRequest.swift */; };
+		34D07D031CA8CC140056B07C /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D021CA8CC140056B07C /* ImageStore.swift */; };
+		34D07D051CA8D68C0056B07C /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D041CA8D68C0056B07C /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		34D07CFA1CA8874B0056B07C /* GitHubApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubApiClient.swift; sourceTree = "<group>"; };
 		34D07CFD1CA88F5F0056B07C /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		34D07CFF1CA88F700056B07C /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
+		34D07D021CA8CC140056B07C /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		34D07D041CA8D68C0056B07C /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				34D07CB91CA61EA70056B07C /* Logging */,
 				34D07C621CA5EAFA0056B07C /* Persistence */,
 				34D07CB61CA6098F0056B07C /* Presenter */,
+				34D07D011CA8CC050056B07C /* Stores */,
 				34D07CEF1CA777110056B07C /* TableViewDelegate */,
 				34D07CE61CA724150056B07C /* Views */,
 				34D07C641CA5EAFA0056B07C /* ViewController */,
@@ -401,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07CED1CA727020056B07C /* NSObjectExtensions.swift */,
+				34D07D041CA8D68C0056B07C /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +442,14 @@
 				34D07CFF1CA88F700056B07C /* PullRequest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		34D07D011CA8CC050056B07C /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				34D07D021CA8CC140056B07C /* ImageStore.swift */,
+			);
+			path = Stores;
 			sourceTree = "<group>";
 		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
@@ -651,6 +665,7 @@
 				34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */,
 				34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */,
 				34D07CF81CA877C60056B07C /* RoutingElement.swift in Sources */,
+				34D07D031CA8CC140056B07C /* ImageStore.swift in Sources */,
 				34D07C6B1CA5EAFA0056B07C /* CoreDataStack.swift in Sources */,
 				34D07CBB1CA61ED40056B07C /* Logger.swift in Sources */,
 				34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */,
@@ -672,6 +687,7 @@
 				34D07CCC1CA635010056B07C /* EntityRepository.swift in Sources */,
 				34D07CF11CA7777B0056B07C /* TableViewBlockDelegate.swift in Sources */,
 				34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */,
+				34D07D051CA8D68C0056B07C /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
