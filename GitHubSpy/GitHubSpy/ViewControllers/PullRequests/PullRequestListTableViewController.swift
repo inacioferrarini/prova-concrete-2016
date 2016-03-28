@@ -47,9 +47,14 @@ class PullRequestListTableViewController: BaseTableViewController {
         let ctx = self.appContext.coreDataStack.managedObjectContext
         
         if let repository = self.repository,
-            let author = repository.owner,
+            let entityAuthor = repository.owner,
             let pullRequestUid = pullRequest.uid,
-            let entityPullRequest = EntityPullRequest.entityPullRequestWithUid(pullRequestUid, owner: author, repository: repository, inManagedObjectContext: ctx) {
+            let entityPullRequest = EntityPullRequest.entityPullRequestWithUid(pullRequestUid, owner: entityAuthor, repository: repository, inManagedObjectContext: ctx) {
+
+                entityAuthor.login = pullRequest.ownerLogin
+                entityAuthor.firstName = ""
+                entityAuthor.lastName = ""
+                entityAuthor.avatarUrl = pullRequest.ownerAvatarUrl
                 
                 entityPullRequest.title = pullRequest.title ?? ""
                 entityPullRequest.body = pullRequest.body ?? ""
@@ -57,7 +62,6 @@ class PullRequestListTableViewController: BaseTableViewController {
                 entityPullRequest.lastUpdated = pullRequest.updatedDate
                 entityPullRequest.url = pullRequest.url ?? ""
         }
-        
     }
     
     override func createDataSource() -> UITableViewDataSource? {
@@ -68,7 +72,14 @@ class PullRequestListTableViewController: BaseTableViewController {
                 let cell = cell as! PullRequestTableViewCell
                 cell.pullRequestTitleLabel.text = entity.title ?? ""
                 cell.pullRequestBodyLabel.text = entity.body ?? ""
-//              cell.authorInfoView
+                
+                if let owner = entity.owner {
+                    let placeHolderImage = UIImage(named: "git star")!
+                    cell.authorInfoView.userLoginLabel.text = owner.login ?? ""
+                    cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"                    
+                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
+                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
+                }
                 
             }, cellReuseIdentifier: "PullRequestTableViewCell")
         

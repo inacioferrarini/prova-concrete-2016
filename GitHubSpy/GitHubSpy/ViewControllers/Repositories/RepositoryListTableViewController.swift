@@ -41,6 +41,11 @@ class RepositoryListTableViewController: BaseTableViewController {
             let entityRepositoryName = repository.name,
             let entityRepository = EntityRepository.entityRepositoryWithName(entityRepositoryName, owner: entityAuthor, inManagedObjectContext: ctx) {
                 
+                entityAuthor.login = repository.ownerLogin
+                entityAuthor.firstName = ""
+                entityAuthor.lastName = ""
+                entityAuthor.avatarUrl = repository.ownerAvatarUrl
+                
                 entityRepository.descriptionText = repository.descriptionText ?? ""
                 entityRepository.forksCount = repository.forksCount ?? 0
                 entityRepository.starsCount = repository.starsCount ?? 0
@@ -57,6 +62,14 @@ class RepositoryListTableViewController: BaseTableViewController {
                 cell.repositoryDescriptionLabel.text = entity.descriptionText ?? ""
                 cell.branchCountLabel.text = "\(entity.forksCount ?? 0)"
                 cell.starCountLabel.text = "\(entity.starsCount ?? 0)"
+
+                if let owner = entity.owner {
+                    let placeHolderImage = UIImage(named: "git star")!
+                    cell.authorInfoView.userLoginLabel.text = owner.login ?? ""
+                    cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"
+                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
+                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
+                }
                 
             }, cellReuseIdentifier: "RepositoryTableViewCell")
         
