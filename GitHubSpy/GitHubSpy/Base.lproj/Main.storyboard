@@ -20,9 +20,50 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="130" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-kT-iIb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="yBx-0H-Nwk">
+                                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="283-5X-QoP">
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.79607843140000001" green="0.4549019608" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5T-v3-FO9">
+                                            <rect key="frame" x="315" y="0.0" width="285" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msl-0W-ajf">
+                                            <rect key="frame" x="293" y="0.0" width="14" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="Toq-gU-RFb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="283-5X-QoP" firstAttribute="leading" secondItem="yBx-0H-Nwk" secondAttribute="leading" id="LM6-q1-JS9"/>
+                                        <constraint firstAttribute="bottom" secondItem="msl-0W-ajf" secondAttribute="bottom" id="Nwj-0K-YLV"/>
+                                        <constraint firstItem="msl-0W-ajf" firstAttribute="top" secondItem="yBx-0H-Nwk" secondAttribute="top" id="RCg-YR-L4A"/>
+                                        <constraint firstItem="F5T-v3-FO9" firstAttribute="leading" secondItem="msl-0W-ajf" secondAttribute="trailing" constant="8" id="S6w-sD-sbm"/>
+                                        <constraint firstAttribute="bottom" secondItem="283-5X-QoP" secondAttribute="bottom" id="Sha-bl-tOc"/>
+                                        <constraint firstItem="msl-0W-ajf" firstAttribute="leading" secondItem="283-5X-QoP" secondAttribute="trailing" constant="8" id="Wi3-6S-CqA"/>
+                                        <constraint firstItem="F5T-v3-FO9" firstAttribute="top" secondItem="yBx-0H-Nwk" secondAttribute="top" id="Xgx-Or-vhj"/>
+                                        <constraint firstItem="283-5X-QoP" firstAttribute="top" secondItem="yBx-0H-Nwk" secondAttribute="top" id="caU-6M-pOS"/>
+                                        <constraint firstAttribute="bottom" secondItem="F5T-v3-FO9" secondAttribute="bottom" id="hh1-x9-NYX"/>
+                                        <constraint firstItem="283-5X-QoP" firstAttribute="width" secondItem="F5T-v3-FO9" secondAttribute="width" id="yWn-8g-hO8"/>
+                                        <constraint firstAttribute="trailing" secondItem="F5T-v3-FO9" secondAttribute="trailing" id="zaU-Jp-wwQ"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PullRequestTableViewCell" rowHeight="130" id="Ojb-YT-7g7" customClass="PullRequestTableViewCell" customModule="GitHubSpy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="130"/>
+                                        <rect key="frame" x="0.0" y="158" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ojb-YT-7g7" id="xe9-zG-PYO">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
@@ -90,6 +131,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="CMb-Fj-WK2"/>
                     <connections>
+                        <outlet property="closedPRCountLabel" destination="F5T-v3-FO9" id="09N-TV-V1I"/>
+                        <outlet property="openPRCountLabel" destination="283-5X-QoP" id="5mZ-wS-tbb"/>
                         <outlet property="tableView" destination="gtc-kT-iIb" id="3MJ-Yl-QRa"/>
                     </connections>
                 </viewController>
