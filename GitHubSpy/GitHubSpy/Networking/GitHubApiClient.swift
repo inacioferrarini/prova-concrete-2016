@@ -31,33 +31,27 @@ class GitHubApiClient: NSObject {
         }
     }
     
-//    func getPullRequests(owner:String, repository:String, completion: (([PullRequest]?) -> Void)) {
-//        
-//    }
- 
     
-    
-    
-//    void (^successBlock)(id cell, id item) = ^(AFHTTPRequestOperation *operation, id responseObject) {
-//    if (nil != completionBlock) {
-//    completionBlock(YES, responseObject);
-//    }
-//    };
-//    
-//    void (^failureBlock)(AFHTTPRequestOperation *operation, NSError *error) = ^(AFHTTPRequestOperation *operation, NSError *error) {
-//    if (nil != completionBlock) {
-//    completionBlock(NO, nil);
-//    }
-//    };
-//    
-//      NSURL *url = [self baseServiceUrl];
-//      AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
-//      NSString *targetUrl = @"/?t={movieName}&y=&plot=short&r=json";
-//      // todo: fazer escape do nome
-//      name = [name stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-//    targetUrl = [targetUrl stringByReplacingOccurrencesOfString:@"{movieName}" withString:name];
-//    
-//    [manager GET:targetUrl parameters:nil success:successBlock failure:failureBlock];
-    
+    func getPullRequests(owner:String, repository:String, completionBlock: (([PullRequest]?) -> Void), errorHandlerBlock: ((NSError) -> Void)) {
+        
+        let successBlock = { (dataTask: NSURLSessionDataTask, responseObject:AnyObject?) -> Void in
+            if let dictionaryArray = responseObject as? [[String : AnyObject]] {
+                let pullRequests = PullRequest.fromArrayOfDictionaries(dictionaryArray)
+                completionBlock(pullRequests)
+            }
+        }
+        
+        let failureBlock = { (dataTask: NSURLSessionDataTask?, error: NSError) -> Void in
+            errorHandlerBlock(error)
+        }
+        
+        if let url = NSURL(string: rootUrl) {
+            let manager = AFHTTPSessionManager(baseURL: url)
+            let targetUrl = "repos/{:owner}/{:repository}/pulls"
+                .stringByReplacingOccurrencesOfString("{:owner}", withString: owner)
+                .stringByReplacingOccurrencesOfString("{:repository}", withString: repository)
+            manager.GET(targetUrl, parameters: nil, success: successBlock, failure: failureBlock)
+        }
+    }
     
 }
