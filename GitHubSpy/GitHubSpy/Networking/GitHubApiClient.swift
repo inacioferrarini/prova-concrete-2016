@@ -9,7 +9,7 @@ class GitHubApiClient: NSObject {
 
         let successBlock = { (dataTask: NSURLSessionDataTask, responseObject:AnyObject?) -> Void in
             if let dictionary = responseObject as? [String : AnyObject] {
-                if let repoDictionaryArray = dictionary["items"] as? [[String : AnyObject]] {
+                if let repoDictionaryArray = dictionary["items"] as? [[String : AnyObject]] {                    
                     let repositories = Repository.fromArrayOfDictionaries(repoDictionaryArray)
                     completionBlock(repositories)
                 }

@@ -2,6 +2,8 @@ import UIKit
 
 class RepositoryListTableViewController: BaseTableViewController {
 
+    private var lastFetchedPage = 1
+    
     // MARK: - BaseTableViewController override
     
     override func viewControllerTitle() -> String? {
@@ -13,7 +15,10 @@ class RepositoryListTableViewController: BaseTableViewController {
     }
     
     override func syncDataWithServer() {
-        GitHubApiClient().getRepositories(atPage: 1,
+        
+        self.lastFetchedPage = self.lastFetchedPage + 1
+        
+        GitHubApiClient().getRepositories(atPage: self.lastFetchedPage,
             completionBlock: { (repositories:[Repository]?) -> Void in
                 
                 if let repositories = repositories {
@@ -78,7 +83,12 @@ class RepositoryListTableViewController: BaseTableViewController {
             }
         }
         
-        return TableViewBlockDelegate(itemSelectionBlock: itemSelectionBlock)
+        let loadMoreDataBlock = { () -> Void in
+            self.syncDataWithServer()
+        }
+        
+        return TableViewBlockDelegate(tableView: self.tableView!, itemSelectionBlock: itemSelectionBlock, loadMoreDataBlock: loadMoreDataBlock)
+//        return TableViewBlockDelegate(tableView: self.tableView!, itemSelectionBlock: itemSelectionBlock, loadMoreDataBlock: 
     }
     
 }

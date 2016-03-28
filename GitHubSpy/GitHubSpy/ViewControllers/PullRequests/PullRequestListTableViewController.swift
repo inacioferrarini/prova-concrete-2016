@@ -112,7 +112,7 @@ class PullRequestListTableViewController: BaseTableViewController {
             }
         }
         
-        return TableViewBlockDelegate(itemSelectionBlock: itemSelectionBlock)
+        return TableViewBlockDelegate(tableView: self.tableView!, itemSelectionBlock: itemSelectionBlock, loadMoreDataBlock: nil)
     }
     
 }
