@@ -19,7 +19,6 @@ class Repository: NSObject {
         return array
     }
     
-    
     class func fromDictionary(dictionary: [String : AnyObject]) -> Repository {
         let repository = Repository()
 

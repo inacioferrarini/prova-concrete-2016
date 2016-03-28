@@ -13,7 +13,6 @@ class RepositoryListTableViewController: BaseTableViewController {
     }
     
     override func syncDataWithServer() {
-        
         GitHubApiClient().getRepositories(atPage: 1,
             completionBlock: { (repositories:[Repository]?) -> Void in
                 
@@ -24,10 +23,8 @@ class RepositoryListTableViewController: BaseTableViewController {
                 self.syncDataComplete()
             }) { (error: NSError) -> Void in
                 self.appContext.logger.logError(error)
-//                print("syncDataWithServer: error block: \(error)")
                 self.syncDataComplete()
         }
-        
     }
     
     func processRepositories(repositories: [Repository]) {
