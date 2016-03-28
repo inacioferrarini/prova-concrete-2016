@@ -12,6 +12,7 @@
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,8 +28,8 @@
         <relationship name="pullRequests" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntityPullRequest" inverseName="repository" inverseEntity="EntityPullRequest" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EntityRepository" positionX="-243" positionY="-52" width="128" height="133"/>
-        <element name="EntityPullRequest" positionX="216" positionY="-67" width="128" height="163"/>
         <element name="EntityAuthor" positionX="27" positionY="-277" width="128" height="133"/>
+        <element name="EntityPullRequest" positionX="216" positionY="-67" width="128" height="180"/>
+        <element name="EntityRepository" positionX="-243" positionY="-52" width="128" height="135"/>
     </elements>
 </model>
