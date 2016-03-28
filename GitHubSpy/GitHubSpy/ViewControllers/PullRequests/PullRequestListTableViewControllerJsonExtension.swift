@@ -26,6 +26,11 @@ extension PullRequestListTableViewController {
                 entityPullRequest.created = pullRequest.createdDate
                 entityPullRequest.lastUpdated = pullRequest.updatedDate
                 entityPullRequest.url = pullRequest.url ?? ""
+                if pullRequest.status == "closed" {
+                    entityPullRequest.status = "C"
+                } else {
+                    entityPullRequest.status = "O"
+                }
         }
     }    
     
