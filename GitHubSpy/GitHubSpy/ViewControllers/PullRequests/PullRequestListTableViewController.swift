@@ -3,8 +3,27 @@ import UIKit
 class PullRequestListTableViewController: BaseTableViewController {
 
     var repository:EntityRepository?
+    @IBOutlet weak var openPRCountLabel: UILabel!
+    @IBOutlet weak var closedPRCountLabel: UILabel!
     
     // MARK: - BaseTableViewController override
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)        
+        let ctx = self.appContext.coreDataStack.managedObjectContext
+        self.updateOpenPRCount(self.repository?.openPullRequestCount(inManagedObjectContext: ctx) ?? 0)
+        self.updateClosedPRCount(self.repository?.closedPullRequestCount(inManagedObjectContext: ctx) ?? 0)
+    }
+
+    func updateOpenPRCount(openPR:Int) {
+        let text = NSLocalizedString("VC_PULL_REQUEST_LIST_OPEN_PR_COUNT", comment: "VC_PULL_REQUEST_LIST_OPEN_PR_COUNT")
+        self.openPRCountLabel.text = "\(openPR)\(text)"
+    }
+
+    func updateClosedPRCount(closedPR:Int) {
+        let text = NSLocalizedString("VC_PULL_REQUEST_LIST_CLOSED_PR_COUNT", comment: "VC_PULL_REQUEST_LIST_CLOSED_PR_COUNT")
+        self.closedPRCountLabel.text = "\(closedPR)\(text)"
+    }
     
     override func viewControllerTitle() -> String? {
         return NSLocalizedString("VC_PULL_REQUEST_LIST_TITLE", comment: "VC_PULL_REQUEST_LIST_TITLE")
@@ -28,9 +47,16 @@ class PullRequestListTableViewController: BaseTableViewController {
                             self.processPullRequests(pullRequests)
                         }
                         
+                        self.appContext.coreDataStack.saveContext()
+
+                        let ctx = self.appContext.coreDataStack.managedObjectContext
+                        self.updateOpenPRCount(self.repository?.openPullRequestCount(inManagedObjectContext: ctx) ?? 0)
+                        self.updateClosedPRCount(self.repository?.closedPullRequestCount(inManagedObjectContext: ctx) ?? 0)
+                        
                         self.syncDataComplete()
                     }, errorHandlerBlock: { (error: NSError) -> Void in
                         self.appContext.logger.logError(error)
+                        self.appContext.coreDataStack.saveContext()
                         self.syncDataComplete()
                 })
         }
