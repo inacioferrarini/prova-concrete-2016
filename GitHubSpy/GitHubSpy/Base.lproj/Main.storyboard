@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PullRequestTableViewCell" id="Ojb-YT-7g7" customClass="PullRequestTableViewCell" customModule="GitHubSpy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PullRequestTableViewCell" rowHeight="130" id="Ojb-YT-7g7" customClass="PullRequestTableViewCell" customModule="GitHubSpy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="600" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ojb-YT-7g7" id="xe9-zG-PYO">
@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-k9-FUA">
-                                                    <rect key="frame" x="30" y="13" width="540" height="74"/>
+                                                    <rect key="frame" x="30" y="8" width="540" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Pull Request Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFA-pY-Voe">
                                                             <rect key="frame" x="0.0" y="0.0" width="540" height="33"/>
@@ -46,7 +46,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="uFA-pY-Voe" firstAttribute="top" secondItem="8CX-k9-FUA" secondAttribute="top" id="IL0-Iu-dzY"/>
-                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iOb-67-9jR" secondAttribute="bottom" id="RWb-T6-nyL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iOb-67-9jR" secondAttribute="bottom" id="RWb-T6-nyL"/>
                                                         <constraint firstAttribute="trailing" secondItem="iOb-67-9jR" secondAttribute="trailing" id="Uee-2D-c1P"/>
                                                         <constraint firstItem="iOb-67-9jR" firstAttribute="leading" secondItem="8CX-k9-FUA" secondAttribute="leading" id="Xp4-ox-Zcr"/>
                                                         <constraint firstItem="iOb-67-9jR" firstAttribute="top" secondItem="uFA-pY-Voe" secondAttribute="bottom" id="ehQ-i8-EIn"/>
@@ -54,11 +54,10 @@
                                                         <constraint firstItem="uFA-pY-Voe" firstAttribute="leading" secondItem="8CX-k9-FUA" secondAttribute="leading" id="uqq-U4-q1c"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7C-xA-Jzf" customClass="AuthorInfoView" customModule="GitHubSpy" customModuleProvider="target">
-                                                    <rect key="frame" x="30" y="87" width="540" height="29"/>
-                                                    <color key="backgroundColor" red="0.79607843140000001" green="0.4549019608" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7C-xA-Jzf" customClass="AuthorInfoViewHorizontal" customModule="GitHubSpy" customModuleProvider="target">
+                                                    <rect key="frame" x="30" y="61" width="540" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="29" id="Lw8-PC-96U"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Lw8-PC-96U"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -66,10 +65,10 @@
                                                 <constraint firstItem="M7C-xA-Jzf" firstAttribute="top" secondItem="8CX-k9-FUA" secondAttribute="bottom" id="9rQ-RF-dnP"/>
                                                 <constraint firstItem="8CX-k9-FUA" firstAttribute="leading" secondItem="xe9-zG-PYO" secondAttribute="leading" constant="30" id="DE7-jc-muq"/>
                                                 <constraint firstAttribute="trailing" secondItem="M7C-xA-Jzf" secondAttribute="trailing" constant="30" id="IxP-VG-ZkR"/>
-                                                <constraint firstItem="8CX-k9-FUA" firstAttribute="top" secondItem="xe9-zG-PYO" secondAttribute="top" constant="13" id="fXB-8J-3GL"/>
+                                                <constraint firstItem="8CX-k9-FUA" firstAttribute="top" secondItem="xe9-zG-PYO" secondAttribute="top" constant="8" id="fXB-8J-3GL"/>
                                                 <constraint firstAttribute="trailing" secondItem="8CX-k9-FUA" secondAttribute="trailing" constant="30" id="hWT-qc-GYc"/>
                                                 <constraint firstItem="M7C-xA-Jzf" firstAttribute="leading" secondItem="xe9-zG-PYO" secondAttribute="leading" constant="30" id="lDr-si-QCA"/>
-                                                <constraint firstAttribute="bottom" secondItem="M7C-xA-Jzf" secondAttribute="bottom" constant="13" id="xgO-AD-wh9"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="M7C-xA-Jzf" secondAttribute="bottom" constant="6" id="xgO-AD-wh9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

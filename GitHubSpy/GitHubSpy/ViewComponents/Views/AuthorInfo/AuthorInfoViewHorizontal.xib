@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthorInfoViewHorizontal" customModule="GitHubSpy" customModuleProvider="target">
+            <connections>
+                <outlet property="userAvatarImage" destination="TeB-X4-cBN" id="Jxv-4B-6De"/>
+                <outlet property="userLoginLabel" destination="nEY-BT-cBW" id="i22-Ug-oKF"/>
+                <outlet property="userNameLabel" destination="qeo-q1-9h7" id="lr2-Nn-hJ0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TeB-X4-cBN">
+                    <rect key="frame" x="8" y="10" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6LU-Fu-lJJ"/>
+                        <constraint firstAttribute="width" constant="40" id="qWi-jr-EMa"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEY-BT-cBW">
+                    <rect key="frame" x="56" y="10" width="261" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeo-q1-9h7">
+                    <rect key="frame" x="56" y="27" width="261" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.45000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="nEY-BT-cBW" firstAttribute="top" secondItem="TeB-X4-cBN" secondAttribute="top" id="Dr9-QA-Rx2"/>
+                <constraint firstItem="nEY-BT-cBW" firstAttribute="leading" secondItem="TeB-X4-cBN" secondAttribute="trailing" constant="8" id="P82-ew-6he"/>
+                <constraint firstItem="qeo-q1-9h7" firstAttribute="leading" secondItem="nEY-BT-cBW" secondAttribute="leading" id="TpO-2X-RwD"/>
+                <constraint firstAttribute="trailing" secondItem="nEY-BT-cBW" secondAttribute="trailing" constant="8" id="YBr-mQ-Iup"/>
+                <constraint firstItem="qeo-q1-9h7" firstAttribute="trailing" secondItem="nEY-BT-cBW" secondAttribute="trailing" id="ff0-nr-4Ea"/>
+                <constraint firstItem="qeo-q1-9h7" firstAttribute="top" secondItem="nEY-BT-cBW" secondAttribute="bottom" id="iCT-64-r6d"/>
+                <constraint firstItem="TeB-X4-cBN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="orO-U2-Z12"/>
+                <constraint firstItem="TeB-X4-cBN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tYR-dC-aNK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="463.5" y="93"/>
+        </view>
+    </objects>
+</document>
