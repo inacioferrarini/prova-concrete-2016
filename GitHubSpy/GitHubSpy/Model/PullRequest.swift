@@ -10,6 +10,7 @@ class PullRequest: NSObject {
     var createdDate:NSDate?
     var updatedDate:NSDate?
     var url:String?
+    var status:String?
     
     class func fromArrayOfDictionaries(arrayOfDictionaries: [[String : AnyObject]]) -> [PullRequest] {
         var array = [PullRequest]()
@@ -42,6 +43,7 @@ class PullRequest: NSObject {
         }
         
         pullRequest.url = dictionary["html_url"] as? String ?? ""
+        pullRequest.status = dictionary["state"] as? String ?? "closed"
         
         return pullRequest
     }
