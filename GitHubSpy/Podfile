@@ -6,6 +6,7 @@ use_frameworks!
 target 'GitHubSpy' do
 pod 'JLRoutes'
 pod 'AFNetworking', '~> 2.5'
+pod 'CocoaLumberjack/Swift'
 end
 
 target 'GitHubSpyTests' do

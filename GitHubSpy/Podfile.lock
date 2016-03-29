@@ -20,14 +20,23 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (2.2.0):
+    - CocoaLumberjack/Extensions
   - JLRoutes (1.5.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - CocoaLumberjack/Swift
   - JLRoutes
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   JLRoutes: d191a496b820f60d70225202d04289582da962df
 
 COCOAPODS: 0.39.0
