@@ -3,10 +3,10 @@ import UIKit
 
 class NavigationRouter: NSObject {
     
-    let schema:String!
-    let logger:Logger!
+    let schema:String
+    let logger:Logger
     
-    init(schema:String!, logger:Logger!) {
+    init(schema:String, logger:Logger) {
         self.schema = schema
         self.logger = logger
         super.init()

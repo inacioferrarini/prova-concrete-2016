@@ -2,11 +2,11 @@ import CoreData
 
 class CoreDataStack: NSObject {
     
-    let modelFileName:String!
-    let databaseFileName:String!
-    let logger:Logger!
+    let modelFileName:String
+    let databaseFileName:String
+    let logger:Logger
     
-    init(modelFileName:String!, databaseFileName:String!, logger:Logger!) {
+    init(modelFileName:String, databaseFileName:String, logger:Logger) {
         self.modelFileName = modelFileName
         self.databaseFileName = databaseFileName
         self.logger = logger

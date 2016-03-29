@@ -5,8 +5,8 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     
     // MARK: - Properties
     
-    private(set) weak var tableView:UITableView!
-    private(set) var entityName: String!
+    let tableView:UITableView
+    private(set) var entityName: String
     var predicate: NSPredicate? {
         didSet {
             self.fetchedResultsController.fetchRequest.predicate = predicate
@@ -14,21 +14,21 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         }
     }
     var fetchLimit: NSInteger?
-    var sortDescriptors: [NSSortDescriptor]!
+    var sortDescriptors: [NSSortDescriptor]
     var sectionNamesKeyPath: String?
     var cacheName: String?
-    private(set) weak var managedObjectContext:NSManagedObjectContext!
-    private(set) var presenter:TableViewCellPresenter<UITableViewCell, EntityType>!
-    let logger:Logger!
+    let managedObjectContext:NSManagedObjectContext
+    private(set) var presenter:TableViewCellPresenter<UITableViewCell, EntityType>
+    let logger:Logger
     
     // MARK: - Initialization
     
-    init(targetingTableView tableView:UITableView!,
-         presenter:TableViewCellPresenter<UITableViewCell, EntityType>!,
-         entityName: String!,
-         sortDescriptors: [NSSortDescriptor]!,
-         managedObjectContext context:NSManagedObjectContext!,
-         logger:Logger!) {
+    init(targetingTableView tableView:UITableView,
+         presenter:TableViewCellPresenter<UITableViewCell, EntityType>,
+         entityName: String,
+         sortDescriptors: [NSSortDescriptor],
+         managedObjectContext context:NSManagedObjectContext,
+         logger:Logger) {
     
         self.tableView = tableView
         self.presenter = presenter
@@ -39,12 +39,12 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         super.init()
     }
     
-    convenience init(targetingTableView tableView:UITableView!,
-         presenter:TableViewCellPresenter<UITableViewCell, EntityType>!,
-         entityName: String!,
-         sortDescriptors: [NSSortDescriptor]!,
-         managedObjectContext context:NSManagedObjectContext!,
-         logger:Logger!,
+    convenience init(targetingTableView tableView:UITableView,
+         presenter:TableViewCellPresenter<UITableViewCell, EntityType>,
+         entityName: String,
+         sortDescriptors: [NSSortDescriptor],
+         managedObjectContext context:NSManagedObjectContext,
+         logger:Logger,
          predicate: NSPredicate?,
          fetchLimit: NSInteger?,
          sectionNamesKeyPath: String?,
@@ -129,7 +129,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         }
         
         let fetchRequest = NSFetchRequest()
-        let entity = NSEntityDescription.entityForName(self.entityName, inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName(self.entityName, inManagedObjectContext: self.managedObjectContext)
         fetchRequest.entity = entity
         
         fetchRequest.predicate = self.predicate
@@ -141,7 +141,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         fetchRequest.fetchBatchSize = 100
         fetchRequest.sortDescriptors = self.sortDescriptors
 
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: self.sectionNamesKeyPath, cacheName: self.cacheName)
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: self.sectionNamesKeyPath, cacheName: self.cacheName)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
