@@ -13,7 +13,6 @@
 		34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */; };
 		34D07C241CA5CBCC0056B07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C231CA5CBCC0056B07C /* Assets.xcassets */; };
 		34D07C271CA5CBCC0056B07C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C251CA5CBCC0056B07C /* LaunchScreen.storyboard */; };
-		34D07C321CA5CBCC0056B07C /* GitHubSpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C311CA5CBCC0056B07C /* GitHubSpyTests.swift */; };
 		34D07C3D1CA5CBCC0056B07C /* GitHubSpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C3C1CA5CBCC0056B07C /* GitHubSpyUITests.swift */; };
 		34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5E1CA5EAFA0056B07C /* AppContext.swift */; };
 		34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5F1CA5EAFA0056B07C /* AppContextAwareProtocol.swift */; };
@@ -54,6 +53,49 @@
 		34D07D0B1CA8E4DD0056B07C /* AuthorInfoViewHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D07D091CA8E4DD0056B07C /* AuthorInfoViewHorizontal.xib */; };
 		34D07D0D1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D0C1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift */; };
 		34D07D0F1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D0E1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift */; };
+		BBAFFB341CAC1F64003B5EDE /* BaseDataBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */; };
+		BBAFFB4D1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */; };
+		BBAFFB4F1CAC39DA003B5EDE /* DataSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */; };
+		BBAFFB6C1CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB641CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift */; };
+		BBAFFB6D1CAC5156003B5EDE /* EntityBaseSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB651CAC5156003B5EDE /* EntityBaseSyncRules.swift */; };
+		BBAFFB6E1CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB661CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift */; };
+		BBAFFB6F1CAC5156003B5EDE /* EntityDailySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB671CAC5156003B5EDE /* EntityDailySyncRule.swift */; };
+		BBAFFB701CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB681CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift */; };
+		BBAFFB711CAC5156003B5EDE /* EntityHourlySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */; };
+		BBAFFB721CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */; };
+		BBAFFB731CAC5156003B5EDE /* EntitySyncHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */; };
+		BBAFFB781CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB771CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift */; };
+		BBAFFB7A1CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB791CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift */; };
+		BBAFFB861CAC704C003B5EDE /* AppContextAwareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5F1CA5EAFA0056B07C /* AppContextAwareProtocol.swift */; };
+		BBAFFB871CAC704C003B5EDE /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5E1CA5EAFA0056B07C /* AppContext.swift */; };
+		BBAFFB881CAC704C003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */; };
+		BBAFFB891CAC704C003B5EDE /* EntitySyncHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */; };
+		BBAFFB8A1CAC704C003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB641CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift */; };
+		BBAFFB8B1CAC704C003B5EDE /* EntityBaseSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB651CAC5156003B5EDE /* EntityBaseSyncRules.swift */; };
+		BBAFFB8C1CAC704C003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB661CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift */; };
+		BBAFFB8D1CAC704C003B5EDE /* EntityDailySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB671CAC5156003B5EDE /* EntityDailySyncRule.swift */; };
+		BBAFFB8E1CAC704C003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB681CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift */; };
+		BBAFFB8F1CAC704C003B5EDE /* EntityHourlySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */; };
+		BBAFFB901CAC704C003B5EDE /* DataSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */; };
+		BBAFFB911CAC704C003B5EDE /* RoutingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF71CA877C60056B07C /* RoutingElement.swift */; };
+		BBAFFB921CAC704C003B5EDE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C611CA5EAFA0056B07C /* NavigationRouter.swift */; };
+		BBAFFB931CAC704C003B5EDE /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CED1CA727020056B07C /* NSObjectExtensions.swift */; };
+		BBAFFB941CAC704C003B5EDE /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D041CA8D68C0056B07C /* UIImageExtensions.swift */; };
+		BBAFFB951CAC704C003B5EDE /* UIViewControllerImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D061CA8D9840056B07C /* UIViewControllerImageExtension.swift */; };
+		BBAFFB961CAC704C003B5EDE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CBA1CA61ED40056B07C /* Logger.swift */; };
+		BBAFFB971CAC704C003B5EDE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C631CA5EAFA0056B07C /* CoreDataStack.swift */; };
+		BBAFFB981CAC704C003B5EDE /* FetcherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C751CA5EF150056B07C /* FetcherDataSource.swift */; };
+		BBAFFB991CAC704C003B5EDE /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */; };
+		BBAFFB9A1CAC704C003B5EDE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D021CA8CC140056B07C /* ImageStore.swift */; };
+		BBAFFB9B1CAC704C003B5EDE /* TableViewBlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */; };
+		BBAFFB9C1CAC704C003B5EDE /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CE71CA724300056B07C /* ViewComponent.swift */; };
+		BBAFFB9D1CAC704C003B5EDE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */; };
+		BBAFFB9E1CAC704C003B5EDE /* BaseDataBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */; };
+		BBAFFB9F1CAC704C003B5EDE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C661CA5EAFA0056B07C /* BaseViewController.swift */; };
+		BBAFFBA01CAC78AD003B5EDE /* DataSyncRules.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */; };
+		BBAFFBA31CAC8077003B5EDE /* TableViewCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFBA21CAC8077003B5EDE /* TableViewCellPresenterTests.swift */; };
+		BBAFFBA71CAC84AD003B5EDE /* RoutingElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFBA61CAC84AD003B5EDE /* RoutingElementTests.swift */; };
+		BBAFFBA91CAC92CC003B5EDE /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFBA81CAC92CC003B5EDE /* TestUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +124,6 @@
 		34D07C261CA5CBCC0056B07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34D07C281CA5CBCC0056B07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D07C2D1CA5CBCC0056B07C /* GitHubSpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34D07C311CA5CBCC0056B07C /* GitHubSpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSpyTests.swift; sourceTree = "<group>"; };
 		34D07C331CA5CBCC0056B07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D07C381CA5CBCC0056B07C /* GitHubSpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C3C1CA5CBCC0056B07C /* GitHubSpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSpyUITests.swift; sourceTree = "<group>"; };
@@ -130,6 +171,23 @@
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
+		BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataBasedViewController.swift; sourceTree = "<group>"; };
+		BBAFFB4C1CAC39B9003B5EDE /* DataSyncRules.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataSyncRules.xcdatamodel; sourceTree = "<group>"; };
+		BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncRules.swift; sourceTree = "<group>"; };
+		BBAFFB641CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityBaseSyncRules+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BBAFFB651CAC5156003B5EDE /* EntityBaseSyncRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBaseSyncRules.swift; sourceTree = "<group>"; };
+		BBAFFB661CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityDailySyncRule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BBAFFB671CAC5156003B5EDE /* EntityDailySyncRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDailySyncRule.swift; sourceTree = "<group>"; };
+		BBAFFB681CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntityHourlySyncRule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRule.swift; sourceTree = "<group>"; };
+		BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntitySyncHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySyncHistory.swift; sourceTree = "<group>"; };
+		BBAFFB761CAC69FD003B5EDE /* GitHubSpyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpyTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBAFFB771CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncHourlyRulesTests.swift; sourceTree = "<group>"; };
+		BBAFFB791CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncDailyRulesTests.swift; sourceTree = "<group>"; };
+		BBAFFBA21CAC8077003B5EDE /* TableViewCellPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPresenterTests.swift; sourceTree = "<group>"; };
+		BBAFFBA61CAC84AD003B5EDE /* RoutingElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingElementTests.swift; sourceTree = "<group>"; };
+		BBAFFBA81CAC92CC003B5EDE /* TestUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +262,7 @@
 		34D07C301CA5CBCC0056B07C /* GitHubSpyTests */ = {
 			isa = PBXGroup;
 			children = (
-				34D07C311CA5CBCC0056B07C /* GitHubSpyTests.swift */,
+				BBAFFB741CAC696C003B5EDE /* Foundation */,
 				34D07C331CA5CBCC0056B07C /* Info.plist */,
 			);
 			path = GitHubSpyTests;
@@ -223,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07C5D1CA5EAFA0056B07C /* Context */,
+				BBAFFB351CAC2E9A003B5EDE /* DataSyncRules */,
 				34D07C601CA5EAFA0056B07C /* DeepLinkingNavigation */,
 				34D07CEC1CA726EE0056B07C /* Extensions */,
 				34D07CB91CA61EA70056B07C /* Logging */,
@@ -267,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */,
+				BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */,
 				34D07C661CA5EAFA0056B07C /* BaseViewController.swift */,
 			);
 			path = ViewController;
@@ -484,6 +544,76 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BBAFFB351CAC2E9A003B5EDE /* DataSyncRules */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFB391CAC30CF003B5EDE /* Entities */,
+				BBAFFB4A1CAC39B9003B5EDE /* Resources */,
+				BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */,
+			);
+			path = DataSyncRules;
+			sourceTree = "<group>";
+		};
+		BBAFFB391CAC30CF003B5EDE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */,
+				BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */,
+				BBAFFB641CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift */,
+				BBAFFB651CAC5156003B5EDE /* EntityBaseSyncRules.swift */,
+				BBAFFB661CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift */,
+				BBAFFB671CAC5156003B5EDE /* EntityDailySyncRule.swift */,
+				BBAFFB681CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift */,
+				BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BBAFFB4A1CAC39B9003B5EDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBAFFB741CAC696C003B5EDE /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFBA81CAC92CC003B5EDE /* TestUtil.swift */,
+				BBAFFB751CAC696C003B5EDE /* DataSyncRules */,
+				BBAFFBA51CAC8492003B5EDE /* DeepLinkingNavigation */,
+				BBAFFBA11CAC805C003B5EDE /* Presenter */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		BBAFFB751CAC696C003B5EDE /* DataSyncRules */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFB761CAC69FD003B5EDE /* GitHubSpyTests-Bridging-Header.h */,
+				BBAFFB771CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift */,
+				BBAFFB791CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift */,
+			);
+			path = DataSyncRules;
+			sourceTree = "<group>";
+		};
+		BBAFFBA11CAC805C003B5EDE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFBA21CAC8077003B5EDE /* TableViewCellPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BBAFFBA51CAC8492003B5EDE /* DeepLinkingNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFFBA61CAC84AD003B5EDE /* RoutingElementTests.swift */,
+			);
+			path = DeepLinkingNavigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -674,27 +804,38 @@
 				34D07C691CA5EAFA0056B07C /* AppContextAwareProtocol.swift in Sources */,
 				34D07D0F1CA8EEE20056B07C /* PullRequestListTableViewControllerJsonExtension.swift in Sources */,
 				34D07CF41CA77D390056B07C /* Routes.swift in Sources */,
+				BBAFFB6C1CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */,
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07C681CA5EAFA0056B07C /* AppContext.swift in Sources */,
 				34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */,
 				34D07CB81CA60F260056B07C /* TableViewCellPresenter.swift in Sources */,
 				34D07CFB1CA8874B0056B07C /* GitHubApiClient.swift in Sources */,
 				34D07C6C1CA5EAFA0056B07C /* BaseTableViewController.swift in Sources */,
+				BBAFFB6D1CAC5156003B5EDE /* EntityBaseSyncRules.swift in Sources */,
 				34D07D0A1CA8E4DD0056B07C /* AuthorInfoViewHorizontal.swift in Sources */,
 				34D07C761CA5EF150056B07C /* FetcherDataSource.swift in Sources */,
+				BBAFFB701CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */,
 				34D07CF81CA877C60056B07C /* RoutingElement.swift in Sources */,
 				34D07D031CA8CC140056B07C /* ImageStore.swift in Sources */,
+				BBAFFB4F1CAC39DA003B5EDE /* DataSyncRules.swift in Sources */,
+				BBAFFB341CAC1F64003B5EDE /* BaseDataBasedViewController.swift in Sources */,
+				BBAFFB4D1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld in Sources */,
 				34D07C6B1CA5EAFA0056B07C /* CoreDataStack.swift in Sources */,
 				34D07CBB1CA61ED40056B07C /* Logger.swift in Sources */,
+				BBAFFB731CAC5156003B5EDE /* EntitySyncHistory.swift in Sources */,
 				34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */,
 				34D07CEE1CA727020056B07C /* NSObjectExtensions.swift in Sources */,
 				34D07CE31CA6ED4F0056B07C /* AuthorInfoView.swift in Sources */,
+				BBAFFB6F1CAC5156003B5EDE /* EntityDailySyncRule.swift in Sources */,
 				34D07CDA1CA63D320056B07C /* PullRequestTableViewCell.swift in Sources */,
 				34D07C6A1CA5EAFA0056B07C /* NavigationRouter.swift in Sources */,
+				BBAFFB721CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */,
 				34D07D001CA88F700056B07C /* PullRequest.swift in Sources */,
+				BBAFFB6E1CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift in Sources */,
 				34D07CC01CA629810056B07C /* RepositoryListTableViewController.swift in Sources */,
 				34D07D0D1CA8EEC10056B07C /* RepositoryListTableViewControllerJsonExtension.swift in Sources */,
 				34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */,
+				BBAFFB711CAC5156003B5EDE /* EntityHourlySyncRule.swift in Sources */,
 				34D07CCE1CA635010056B07C /* EntityPullRequest.swift in Sources */,
 				34D07CCB1CA635010056B07C /* EntityRepository+CoreDataProperties.swift in Sources */,
 				34D07CCD1CA635010056B07C /* EntityPullRequest+CoreDataProperties.swift in Sources */,
@@ -715,7 +856,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D07C321CA5CBCC0056B07C /* GitHubSpyTests.swift in Sources */,
+				BBAFFBA01CAC78AD003B5EDE /* DataSyncRules.xcdatamodeld in Sources */,
+				BBAFFB861CAC704C003B5EDE /* AppContextAwareProtocol.swift in Sources */,
+				BBAFFB871CAC704C003B5EDE /* AppContext.swift in Sources */,
+				BBAFFB881CAC704C003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */,
+				BBAFFB891CAC704C003B5EDE /* EntitySyncHistory.swift in Sources */,
+				BBAFFB8A1CAC704C003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */,
+				BBAFFB8B1CAC704C003B5EDE /* EntityBaseSyncRules.swift in Sources */,
+				BBAFFBA91CAC92CC003B5EDE /* TestUtil.swift in Sources */,
+				BBAFFB8C1CAC704C003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift in Sources */,
+				BBAFFB8D1CAC704C003B5EDE /* EntityDailySyncRule.swift in Sources */,
+				BBAFFB8E1CAC704C003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */,
+				BBAFFB8F1CAC704C003B5EDE /* EntityHourlySyncRule.swift in Sources */,
+				BBAFFB901CAC704C003B5EDE /* DataSyncRules.swift in Sources */,
+				BBAFFBA31CAC8077003B5EDE /* TableViewCellPresenterTests.swift in Sources */,
+				BBAFFBA71CAC84AD003B5EDE /* RoutingElementTests.swift in Sources */,
+				BBAFFB911CAC704C003B5EDE /* RoutingElement.swift in Sources */,
+				BBAFFB921CAC704C003B5EDE /* NavigationRouter.swift in Sources */,
+				BBAFFB931CAC704C003B5EDE /* NSObjectExtensions.swift in Sources */,
+				BBAFFB941CAC704C003B5EDE /* UIImageExtensions.swift in Sources */,
+				BBAFFB951CAC704C003B5EDE /* UIViewControllerImageExtension.swift in Sources */,
+				BBAFFB961CAC704C003B5EDE /* Logger.swift in Sources */,
+				BBAFFB971CAC704C003B5EDE /* CoreDataStack.swift in Sources */,
+				BBAFFB981CAC704C003B5EDE /* FetcherDataSource.swift in Sources */,
+				BBAFFB991CAC704C003B5EDE /* TableViewCellPresenter.swift in Sources */,
+				BBAFFB9A1CAC704C003B5EDE /* ImageStore.swift in Sources */,
+				BBAFFB9B1CAC704C003B5EDE /* TableViewBlockDelegate.swift in Sources */,
+				BBAFFB9C1CAC704C003B5EDE /* ViewComponent.swift in Sources */,
+				BBAFFB9D1CAC704C003B5EDE /* BaseTableViewController.swift in Sources */,
+				BBAFFB9E1CAC704C003B5EDE /* BaseDataBasedViewController.swift in Sources */,
+				BBAFFB9F1CAC704C003B5EDE /* BaseViewController.swift in Sources */,
+				BBAFFB7A1CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift in Sources */,
+				BBAFFB781CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,10 +1054,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GitHubSpyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/Foundation/DataSyncRules/GitHubSpyTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSpy.app/GitHubSpy";
 			};
 			name = Debug;
@@ -894,10 +1069,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GitHubSpyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/Foundation/DataSyncRules/GitHubSpyTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSpy.app/GitHubSpy";
 			};
 			name = Release;
@@ -975,6 +1152,16 @@
 			);
 			currentVersion = 34D07C211CA5CBCC0056B07C /* GitHubSpy.xcdatamodel */;
 			path = GitHubSpy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BBAFFB4C1CAC39B9003B5EDE /* DataSyncRules.xcdatamodel */,
+			);
+			currentVersion = BBAFFB4C1CAC39B9003B5EDE /* DataSyncRules.xcdatamodel */;
+			path = DataSyncRules.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

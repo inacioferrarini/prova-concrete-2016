@@ -29,11 +29,11 @@ class PullRequestListTableViewController: BaseTableViewController {
         return NSLocalizedString("VC_PULL_REQUEST_LIST_TITLE", comment: "VC_PULL_REQUEST_LIST_TITLE")
     }
     
-    override func shouldCheckTodayData() -> Bool {
+    override func shouldSyncData() -> Bool {
         return true
     }
     
-    override func syncDataWithServer() {
+    override func performDataSync() {
         
         if let repository = self.repository,
             let repositoryName = repository.name,
@@ -53,11 +53,11 @@ class PullRequestListTableViewController: BaseTableViewController {
                         self.updateOpenPRCount(self.repository?.openPullRequestCount(inManagedObjectContext: ctx) ?? 0)
                         self.updateClosedPRCount(self.repository?.closedPullRequestCount(inManagedObjectContext: ctx) ?? 0)
                         
-                        self.syncDataComplete()
+                        self.dataSyncCompleted()
                     }, errorHandlerBlock: { (error: NSError) -> Void in
                         self.appContext.logger.logError(error)
                         self.appContext.coreDataStack.saveContext()
-                        self.syncDataComplete()
+                        self.dataSyncCompleted()
                 })
         }
         

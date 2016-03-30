@@ -1,12 +1,11 @@
 import UIKit
 
-class BaseTableViewController: BaseViewController {
+class BaseTableViewController: BaseDataBasedViewController {
 
     // MARK: - Properties
     
     var refreshControl:UIRefreshControl?
-    @IBOutlet weak var tableView: UITableView?
-    @IBOutlet weak var courtain: UIView?
+    @IBOutlet weak var tableView: UITableView?    
     
     var dataSource:UITableViewDataSource?
     var delegate:UITableViewDelegate?
@@ -42,7 +41,7 @@ class BaseTableViewController: BaseViewController {
             if let refreshControl = self.refreshControl {
                 refreshControl.backgroundColor = UIColor.blackColor()
                 refreshControl.tintColor = UIColor.whiteColor()
-                refreshControl.addTarget(self, action: Selector("syncDataWithServer"), forControlEvents: .ValueChanged)
+                refreshControl.addTarget(self, action: Selector("performDataSync"), forControlEvents: .ValueChanged)
 
                 tableView.addSubview(refreshControl)
                 tableView.reloadData()
@@ -52,7 +51,7 @@ class BaseTableViewController: BaseViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.checkTodayData()
+        self.performDataSyncIfNeeded()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -68,33 +67,17 @@ class BaseTableViewController: BaseViewController {
     
     // MARK: - Data Syncrhonization
     
-    func checkTodayData() {
-        if self.shouldCheckTodayData() {
-            self.syncDataWithServer()
-        }
+    override func performDataSync() {
+        dataSyncCompleted()
     }
     
-    func shouldCheckTodayData() -> Bool { return false }
-    
-    func syncDataComplete() {
+    override func dataSyncCompleted() {
         if let refreshControl = self.refreshControl {
             refreshControl.endRefreshing()
         }
+        super.dataSyncCompleted()
     }
     
-    func showCourtain() {
-        if let courtain = self.courtain {
-            courtain.hidden = false
-        }
-        self.view.userInteractionEnabled = false
-    }
-    
-    func hideCourtain() {
-        if let courtain = self.courtain {
-            courtain.hidden = true
-        }
-        self.view.userInteractionEnabled = true
-    }
     
     // MARK: - TableView Appearance
     
@@ -114,9 +97,5 @@ class BaseTableViewController: BaseViewController {
     func createDataSource() -> UITableViewDataSource? { return nil }
     
     func createDelegate() -> UITableViewDelegate? { return nil }
-    
-    func syncDataWithServer() {
-        syncDataComplete()
-    }
     
 }

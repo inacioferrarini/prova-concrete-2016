@@ -10,11 +10,11 @@ class RepositoryListTableViewController: BaseTableViewController {
         return NSLocalizedString("VC_REPOSITORY_LIST_TITLE", comment: "VC_REPOSITORY_LIST_TITLE")
     }
     
-    override func shouldCheckTodayData() -> Bool {
+    override func shouldSyncData() -> Bool {
         return true
     }
     
-    override func syncDataWithServer() {
+    override func performDataSync() {
         
         self.lastFetchedPage = self.lastFetchedPage + 1
         
@@ -26,11 +26,11 @@ class RepositoryListTableViewController: BaseTableViewController {
                 }
                 
                 self.appContext.coreDataStack.saveContext()
-                self.syncDataComplete()
+                self.dataSyncCompleted()
             }) { (error: NSError) -> Void in
                 self.appContext.logger.logError(error)
                 self.appContext.coreDataStack.saveContext()
-                self.syncDataComplete()
+                self.dataSyncCompleted()
         }
     }
     
@@ -84,11 +84,10 @@ class RepositoryListTableViewController: BaseTableViewController {
         }
         
         let loadMoreDataBlock = { () -> Void in
-            self.syncDataWithServer()
+            self.performDataSync()
         }
         
         return TableViewBlockDelegate(tableView: self.tableView!, itemSelectionBlock: itemSelectionBlock, loadMoreDataBlock: loadMoreDataBlock)
-//        return TableViewBlockDelegate(tableView: self.tableView!, itemSelectionBlock: itemSelectionBlock, loadMoreDataBlock: 
     }
     
 }
