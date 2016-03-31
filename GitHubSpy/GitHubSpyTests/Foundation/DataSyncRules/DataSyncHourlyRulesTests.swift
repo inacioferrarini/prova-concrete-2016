@@ -3,12 +3,8 @@ import GitHubSpy
 
 class DataSyncHourlyRulesTests: XCTestCase {
     
-    static let modelFileName = "DataSyncRules"
-    static let databaseFileName = "DataSyncHourlyRulesTests"
-    
     func createRules() -> DataSyncRules {
-        let logger = Logger()
-        let dataSyncRulesStack = CoreDataStack(modelFileName: DataSyncHourlyRulesTests.modelFileName, databaseFileName: DataSyncHourlyRulesTests.databaseFileName, logger: logger)
+        let dataSyncRulesStack = TestUtil().createCoreDataStack()
         return DataSyncRules(coreDataStack: dataSyncRulesStack)
     }
     

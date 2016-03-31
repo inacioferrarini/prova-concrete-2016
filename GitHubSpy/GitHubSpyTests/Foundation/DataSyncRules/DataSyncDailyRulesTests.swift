@@ -1,13 +1,9 @@
 import XCTest
 
 class DataSyncDailyRulesTests: XCTestCase {
-
-    static let modelFileName = "DataSyncRules"
-    static let databaseFileName = "DataSyncDailyRulesTests"
     
     func createRules() -> DataSyncRules {
-        let logger = Logger()
-        let dataSyncRulesStack = CoreDataStack(modelFileName: DataSyncDailyRulesTests.modelFileName, databaseFileName: DataSyncDailyRulesTests.databaseFileName, logger: logger)
+        let dataSyncRulesStack = TestUtil().createCoreDataStack()
         return DataSyncRules(coreDataStack: dataSyncRulesStack)
     }
     
