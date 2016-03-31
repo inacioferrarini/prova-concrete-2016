@@ -51,7 +51,6 @@ class EntityDailySyncRule: EntityBaseSyncRules {
         } else {
             return true
         }
-        
     }
 
 }
