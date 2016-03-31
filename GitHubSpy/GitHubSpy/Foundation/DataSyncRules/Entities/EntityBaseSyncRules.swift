@@ -3,7 +3,7 @@ import CoreData
 
 class EntityBaseSyncRules: NSManagedObject {
 
-    class func fetchEntityAutoBaseSyncRulesByName(name: String, inManagedObjectContext context:NSManagedObjectContext) -> EntityBaseSyncRules? {
+    class func fetchEntityBaseSyncRulesByName(name: String, inManagedObjectContext context:NSManagedObjectContext) -> EntityBaseSyncRules? {
         
         guard name.characters.count > 0 else {
             return nil

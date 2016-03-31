@@ -10,6 +10,8 @@
 		139859E10805E542D71A2B47 /* Pods_GitHubSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */; };
 		3460E4F91CACB6F600AD5392 /* EntitySyncHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4F81CACB6F600AD5392 /* EntitySyncHistoryTests.swift */; };
 		3460E4FB1CACB96900AD5392 /* EntityDailySyncRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */; };
+		3460E4FD1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */; };
+		3460E4FF1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
 		34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */; };
@@ -120,6 +122,8 @@
 /* Begin PBXFileReference section */
 		3460E4F81CACB6F600AD5392 /* EntitySyncHistoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySyncHistoryTests.swift; sourceTree = "<group>"; };
 		3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDailySyncRuleTests.swift; sourceTree = "<group>"; };
+		3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRuleTests.swift; sourceTree = "<group>"; };
+		3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBaseSyncRulesTests.swift; sourceTree = "<group>"; };
 		34D07C161CA5CBCC0056B07C /* GitHubSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C191CA5CBCC0056B07C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D07C1E1CA5CBCC0056B07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 			children = (
 				3460E4F81CACB6F600AD5392 /* EntitySyncHistoryTests.swift */,
 				3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */,
+				3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */,
+				3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -889,6 +895,8 @@
 				3460E4F91CACB6F600AD5392 /* EntitySyncHistoryTests.swift in Sources */,
 				BBAFFB911CAC704C003B5EDE /* RoutingElement.swift in Sources */,
 				BBAFFB921CAC704C003B5EDE /* NavigationRouter.swift in Sources */,
+				3460E4FD1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift in Sources */,
+				3460E4FF1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift in Sources */,
 				BBAFFB931CAC704C003B5EDE /* NSObjectExtensions.swift in Sources */,
 				BBAFFB941CAC704C003B5EDE /* UIImageExtensions.swift in Sources */,
 				BBAFFB951CAC704C003B5EDE /* UIViewControllerImageExtension.swift in Sources */,

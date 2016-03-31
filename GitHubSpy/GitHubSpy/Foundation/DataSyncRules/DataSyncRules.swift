@@ -26,7 +26,7 @@ class DataSyncRules: NSObject {
         let context = self.coreDataStack.managedObjectContext
         switch rule {
         case let .Hourly(hours):
-            EntityHourlySyncRule.entityDailySyncRuleByName(ruleName, hours: hours, inManagedObjectContext: context)
+            EntityHourlySyncRule.entityHourlySyncRuleByName(ruleName, hours: hours, inManagedObjectContext: context)
         case let .Daily(days):
             EntityDailySyncRule.entityDailySyncRuleByName(ruleName, days: days, inManagedObjectContext: context)
         }
@@ -35,7 +35,7 @@ class DataSyncRules: NSObject {
     
     func shouldPerformSyncRule(ruleName: String, atDate date:NSDate) -> Bool {
         let context = self.coreDataStack.managedObjectContext
-        if let rule = EntityBaseSyncRules.fetchEntityAutoBaseSyncRulesByName(ruleName, inManagedObjectContext: context) {
+        if let rule = EntityBaseSyncRules.fetchEntityBaseSyncRulesByName(ruleName, inManagedObjectContext: context) {
             return rule.shouldRunSyncRuleWithName(ruleName, date: date, inManagedObjectContext: context)
         }
         

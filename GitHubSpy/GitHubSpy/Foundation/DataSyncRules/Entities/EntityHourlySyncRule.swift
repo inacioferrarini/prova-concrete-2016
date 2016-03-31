@@ -20,7 +20,7 @@ class EntityHourlySyncRule: EntityBaseSyncRules {
         return nil
     }
     
-    class func entityDailySyncRuleByName(name:String, hours: NSNumber?, inManagedObjectContext context:NSManagedObjectContext) -> EntityHourlySyncRule? {
+    class func entityHourlySyncRuleByName(name:String, hours: NSNumber?, inManagedObjectContext context:NSManagedObjectContext) -> EntityHourlySyncRule? {
         
         guard name.characters.count > 0 else {
             return nil
