@@ -5,27 +5,21 @@ class NavigationRouterTests: XCTestCase {
     
     override func setUp() {
         self.router = self.createNavigationRouter()
-        self.routeWasCalled = false
         super.setUp()
     }
     
-    var routeWasCalled:Bool = false
     var router:NavigationRouter!
     
     func createNavigationRouter() -> NavigationRouter {
         let navigationRouter = NavigationRouter(schema: "TesteScheme", logger: Logger())
-        let route = RoutingElement(pattern: "/testUrlScheme") { (params: [NSObject : AnyObject]) -> Bool in
-            self.routeWasCalled = true
-            return true
-        }
-        navigationRouter.registerRoutes([route])
         return navigationRouter
     }
     
     func test_dispatch_mustReturnTrue() {
-        // TODO: This method with require some sorting of change on JLRoutes methods.
-//        let result = self.router.dispatch(NSURL(fileURLWithPath: "TesteScheme://invalidTestUrlScheme"))
-//        XCTAssertTrue(result)
+        let navigationRouter = NavigationRouter(router: JLRoutesMock(), schema:
+                    "TesteScheme", logger: Logger())
+        let result = navigationRouter.dispatch(NSURL(fileURLWithPath: "TesteScheme://invalidTestUrlScheme"))
+        XCTAssertTrue(result)
     }
     
     func test_dispatch_mustReturnFalse() {
