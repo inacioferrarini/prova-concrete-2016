@@ -12,6 +12,7 @@
 		3460E4FB1CACB96900AD5392 /* EntityDailySyncRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */; };
 		3460E4FD1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */; };
 		3460E4FF1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */; };
+		34BC4CCE1CB009920013A028 /* AppContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CCD1CB009920013A028 /* AppContextTests.swift */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
 		34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */; };
@@ -124,6 +125,7 @@
 		3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDailySyncRuleTests.swift; sourceTree = "<group>"; };
 		3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRuleTests.swift; sourceTree = "<group>"; };
 		3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityBaseSyncRulesTests.swift; sourceTree = "<group>"; };
+		34BC4CCD1CB009920013A028 /* AppContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContextTests.swift; sourceTree = "<group>"; };
 		34D07C161CA5CBCC0056B07C /* GitHubSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C191CA5CBCC0056B07C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D07C1E1CA5CBCC0056B07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -233,6 +235,14 @@
 				3460E4FE1CACC4A600AD5392 /* EntityBaseSyncRulesTests.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		34BC4CCC1CB0096C0013A028 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				34BC4CCD1CB009920013A028 /* AppContextTests.swift */,
+			);
+			path = Context;
 			sourceTree = "<group>";
 		};
 		34D07C0D1CA5CBCC0056B07C = {
@@ -600,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAFFBA81CAC92CC003B5EDE /* TestUtil.swift */,
+				34BC4CCC1CB0096C0013A028 /* Context */,
 				BBAFFB751CAC696C003B5EDE /* DataSyncRules */,
 				BBAFFBA51CAC8492003B5EDE /* DeepLinkingNavigation */,
 				BBAFFBA11CAC805C003B5EDE /* Presenter */,
@@ -882,6 +893,7 @@
 				3460E4FB1CACB96900AD5392 /* EntityDailySyncRuleTests.swift in Sources */,
 				BBAFFB881CAC704C003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */,
 				BBAFFB891CAC704C003B5EDE /* EntitySyncHistory.swift in Sources */,
+				34BC4CCE1CB009920013A028 /* AppContextTests.swift in Sources */,
 				BBAFFB8A1CAC704C003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */,
 				BBAFFB8B1CAC704C003B5EDE /* EntityBaseSyncRules.swift in Sources */,
 				BBAFFBA91CAC92CC003B5EDE /* TestUtil.swift in Sources */,
