@@ -15,6 +15,8 @@
 		34BC4CCE1CB009920013A028 /* AppContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CCD1CB009920013A028 /* AppContextTests.swift */; };
 		34BC4CD11CB00A5D0013A028 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD01CB00A5D0013A028 /* NSObjectExtensionsTests.swift */; };
 		34BC4CD31CB00AD00013A028 /* NavigationRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD21CB00AD00013A028 /* NavigationRouterTests.swift */; };
+		34BC4CD61CB00BA20013A028 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */; };
+		34BC4CD91CB00BD30013A028 /* FetcherDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
 		34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */; };
@@ -130,6 +132,8 @@
 		34BC4CCD1CB009920013A028 /* AppContextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContextTests.swift; sourceTree = "<group>"; };
 		34BC4CD01CB00A5D0013A028 /* NSObjectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionsTests.swift; sourceTree = "<group>"; };
 		34BC4CD21CB00AD00013A028 /* NavigationRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouterTests.swift; sourceTree = "<group>"; };
+		34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
+		34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherDataSourceTests.swift; sourceTree = "<group>"; };
 		34D07C161CA5CBCC0056B07C /* GitHubSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C191CA5CBCC0056B07C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D07C1E1CA5CBCC0056B07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -255,6 +259,23 @@
 				34BC4CD01CB00A5D0013A028 /* NSObjectExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34BC4CD41CB00B910013A028 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				34BC4CD71CB00BC10013A028 /* DataSource */,
+				34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		34BC4CD71CB00BC10013A028 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		34D07C0D1CA5CBCC0056B07C = {
@@ -626,6 +647,7 @@
 				BBAFFB751CAC696C003B5EDE /* DataSyncRules */,
 				BBAFFBA51CAC8492003B5EDE /* DeepLinkingNavigation */,
 				34BC4CCF1CB00A4B0013A028 /* Extensions */,
+				34BC4CD41CB00B910013A028 /* Persistence */,
 				BBAFFBA11CAC805C003B5EDE /* Presenter */,
 			);
 			path = Foundation;
@@ -908,7 +930,9 @@
 				BBAFFB881CAC704C003B5EDE /* EntitySyncHistory+CoreDataProperties.swift in Sources */,
 				BBAFFB891CAC704C003B5EDE /* EntitySyncHistory.swift in Sources */,
 				34BC4CCE1CB009920013A028 /* AppContextTests.swift in Sources */,
+				34BC4CD61CB00BA20013A028 /* CoreDataStackTests.swift in Sources */,
 				BBAFFB8A1CAC704C003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */,
+				34BC4CD91CB00BD30013A028 /* FetcherDataSourceTests.swift in Sources */,
 				BBAFFB8B1CAC704C003B5EDE /* EntityBaseSyncRules.swift in Sources */,
 				BBAFFBA91CAC92CC003B5EDE /* TestUtil.swift in Sources */,
 				BBAFFB8C1CAC704C003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift in Sources */,
