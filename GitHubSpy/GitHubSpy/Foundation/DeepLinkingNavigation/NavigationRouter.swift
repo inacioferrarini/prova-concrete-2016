@@ -3,27 +3,31 @@ import UIKit
 
 class NavigationRouter: NSObject {
     
+    let router:JLRoutes
     let schema:String
     let logger:Logger
     
-    init(schema:String, logger:Logger) {
+    init(router: JLRoutes, schema: String, logger: Logger) {
+        self.router = router
         self.schema = schema
         self.logger = logger
         super.init()
     }
+
+    convenience init(schema:String, logger: Logger) {
+        self.init(router: JLRoutes(forScheme: schema), schema: schema, logger: logger)
+    }
     
     func registerRoutes(appRoutes: [RoutingElement]) {
-        let routes = JLRoutes(forScheme: self.schema)
-        
         for r:RoutingElement in appRoutes {
-            routes.addRoute(r.pattern, handler: r.handler)
+            self.router.addRoute(r.pattern, handler: r.handler)
         }
     }
     
     func dispatch(url:NSURL) -> Bool {
-        let result = JLRoutes.canRouteURL(url)
+        let result = self.router.canRouteURL(url)
         if (result) {
-            JLRoutes.routeURL(url)
+            self.router.routeURL(url)
         }
         return result
     }
