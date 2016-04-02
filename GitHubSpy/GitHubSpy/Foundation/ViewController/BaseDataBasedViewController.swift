@@ -45,7 +45,9 @@ class BaseDataBasedViewController: BaseViewController {
     
     // MARK: - Child classes are expected to override these methods
     
-    func shouldSyncData() -> Bool { return false }
+    func shouldSyncData() -> Bool {
+        return self.appContext.syncRules.shouldPerformSyncRule(self.dynamicType.simpleClassName(), atDate: NSDate())
+    }
     
     func performDataSync() {
         self.dataSyncCompleted()

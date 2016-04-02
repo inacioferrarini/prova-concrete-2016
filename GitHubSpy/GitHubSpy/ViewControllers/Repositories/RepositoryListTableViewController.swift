@@ -9,11 +9,7 @@ class RepositoryListTableViewController: BaseTableViewController {
     override func viewControllerTitle() -> String? {
         return NSLocalizedString("VC_REPOSITORY_LIST_TITLE", comment: "VC_REPOSITORY_LIST_TITLE")
     }
-    
-    override func shouldSyncData() -> Bool {
-        return true
-    }
-    
+        
     override func performDataSync() {
         
         self.lastFetchedPage = self.lastFetchedPage + 1

@@ -29,10 +29,6 @@ class PullRequestListTableViewController: BaseTableViewController {
         return NSLocalizedString("VC_PULL_REQUEST_LIST_TITLE", comment: "VC_PULL_REQUEST_LIST_TITLE")
     }
     
-    override func shouldSyncData() -> Bool {
-        return true
-    }
-    
     override func performDataSync() {
         
         if let repository = self.repository,
