@@ -17,15 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let logger = Logger()
             let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger)
             let router = NavigationRouter(schema: "GitHubSpy", logger: logger)
+            let syncRulesStack = CoreDataStack(modelFileName: "DataSyncRules", databaseFileName: "DataSyncRules", logger: logger)
+            let syncRules = DataSyncRules(coreDataStack: syncRulesStack)
             
             self.appContext = AppContext(navigationController: rootNavigationController,
                 coreDataStack: stack,
+                syncRules: syncRules,
                 router: router,
                 logger: logger)
             
             firstViewController.appContext = self.appContext
             router.registerRoutes(self.createNavigationRoutes())
             
+            self.addSyncRules(syncRules)
 // self.createTestDatabase()
         }
         
@@ -60,6 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }))
         
         return routes
+    }
+    
+    func addSyncRules(syncRules: DataSyncRules) {
+        syncRules.addSyncRule(RepositoryListTableViewController.simpleClassName(), rule: .Hourly(3))
+        syncRules.addSyncRule(PullRequestListTableViewController.simpleClassName(), rule: .Hourly(3))
     }
     
     func createTestDatabase() {
