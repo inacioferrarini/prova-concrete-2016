@@ -25,7 +25,6 @@ class NavigationRouter: NSObject {
         if (result) {
             JLRoutes.routeURL(url)
         }
-        
         return result
     }
     
