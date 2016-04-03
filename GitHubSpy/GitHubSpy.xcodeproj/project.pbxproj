@@ -17,6 +17,7 @@
 		34BC4CD31CB00AD00013A028 /* NavigationRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD21CB00AD00013A028 /* NavigationRouterTests.swift */; };
 		34BC4CD61CB00BA20013A028 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */; };
 		34BC4CD91CB00BD30013A028 /* FetcherDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */; };
+		34BC4CE51CB197E00013A028 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CE41CB197E00013A028 /* LoggerTests.swift */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
 		34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */; };
@@ -134,6 +135,7 @@
 		34BC4CD21CB00AD00013A028 /* NavigationRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouterTests.swift; sourceTree = "<group>"; };
 		34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherDataSourceTests.swift; sourceTree = "<group>"; };
+		34BC4CE41CB197E00013A028 /* LoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		34D07C161CA5CBCC0056B07C /* GitHubSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C191CA5CBCC0056B07C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34D07C1E1CA5CBCC0056B07C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -276,6 +278,14 @@
 				34BC4CD81CB00BD30013A028 /* FetcherDataSourceTests.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		34BC4CE31CB197E00013A028 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				34BC4CE41CB197E00013A028 /* LoggerTests.swift */,
+			);
+			path = Logging;
 			sourceTree = "<group>";
 		};
 		34D07C0D1CA5CBCC0056B07C = {
@@ -647,6 +657,7 @@
 				BBAFFB751CAC696C003B5EDE /* DataSyncRules */,
 				BBAFFBA51CAC8492003B5EDE /* DeepLinkingNavigation */,
 				34BC4CCF1CB00A4B0013A028 /* Extensions */,
+				34BC4CE31CB197E00013A028 /* Logging */,
 				34BC4CD41CB00B910013A028 /* Persistence */,
 				BBAFFBA11CAC805C003B5EDE /* Presenter */,
 			);
@@ -942,6 +953,7 @@
 				BBAFFB901CAC704C003B5EDE /* DataSyncRules.swift in Sources */,
 				BBAFFBA31CAC8077003B5EDE /* TableViewCellPresenterTests.swift in Sources */,
 				BBAFFBA71CAC84AD003B5EDE /* RoutingElementTests.swift in Sources */,
+				34BC4CE51CB197E00013A028 /* LoggerTests.swift in Sources */,
 				3460E4F91CACB6F600AD5392 /* EntitySyncHistoryTests.swift in Sources */,
 				BBAFFB911CAC704C003B5EDE /* RoutingElement.swift in Sources */,
 				BBAFFB921CAC704C003B5EDE /* NavigationRouter.swift in Sources */,
