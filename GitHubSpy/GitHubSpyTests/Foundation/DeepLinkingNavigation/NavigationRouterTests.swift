@@ -1,5 +1,6 @@
 import XCTest
 import JLRoutes
+@testable import GitHubSpy
 
 class NavigationRouterTests: XCTestCase {
     

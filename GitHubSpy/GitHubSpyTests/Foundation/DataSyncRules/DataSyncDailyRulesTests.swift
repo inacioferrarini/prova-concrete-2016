@@ -1,4 +1,5 @@
 import XCTest
+@testable import GitHubSpy
 
 class DataSyncDailyRulesTests: XCTestCase {
     

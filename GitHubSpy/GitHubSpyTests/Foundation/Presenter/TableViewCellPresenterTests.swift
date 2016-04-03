@@ -1,5 +1,6 @@
 import XCTest
 import CoreData
+@testable import GitHubSpy
 
 class TableViewCellPresenterTests: XCTestCase {
     
