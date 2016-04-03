@@ -48,10 +48,8 @@ class EntityHourlySyncRule: EntityBaseSyncRules {
                 let elapsedTime = NSDate().timeIntervalSinceDate(lastExecutionDate)
                 let targetTime = NSTimeInterval(hours.intValue * 60 * 60)
                 return elapsedTime >= targetTime
-        } else {
-            return true
         }
-        
+        return true
     }
     
 }

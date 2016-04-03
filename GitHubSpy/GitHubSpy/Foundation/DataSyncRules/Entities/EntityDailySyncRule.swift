@@ -48,9 +48,8 @@ class EntityDailySyncRule: EntityBaseSyncRules {
                 let elapsedTime = NSDate().timeIntervalSinceDate(lastExecutionDate)
                 let targetTime = NSTimeInterval(days.intValue * 24 * 60 * 60)
                 return elapsedTime >= targetTime
-        } else {
-            return true
         }
+        return true
     }
 
 }
