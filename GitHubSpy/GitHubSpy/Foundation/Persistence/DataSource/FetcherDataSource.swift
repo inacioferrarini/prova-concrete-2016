@@ -10,12 +10,17 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     var predicate: NSPredicate? {
         didSet {
             self.fetchedResultsController.fetchRequest.predicate = predicate
-            self.refreshData()
+           // self.refreshData()
         }
     }
     var fetchLimit: NSInteger?
-    var sortDescriptors: [NSSortDescriptor]
-    var sectionNamesKeyPath: String?
+    var sortDescriptors: [NSSortDescriptor] {
+        didSet {
+            self.fetchedResultsController.fetchRequest.sortDescriptors = sortDescriptors
+           // self.refreshData()
+        }
+    }
+    var sectionNameKeyPath: String?
     var cacheName: String?
     let managedObjectContext:NSManagedObjectContext
     private(set) var presenter:TableViewCellPresenter<UITableViewCell, EntityType>
@@ -47,13 +52,13 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
          logger:Logger,
          predicate: NSPredicate?,
          fetchLimit: NSInteger?,
-         sectionNamesKeyPath: String?,
+         sectionNameKeyPath: String?,
          cacheName: String?) {
             
         self.init(targetingTableView: tableView, presenter:presenter, entityName: entityName, sortDescriptors: sortDescriptors, managedObjectContext: context, logger:logger)
         self.predicate = predicate
         self.fetchLimit = fetchLimit
-        self.sectionNamesKeyPath = sectionNamesKeyPath
+        self.sectionNameKeyPath = sectionNameKeyPath
         self.cacheName = cacheName
     }
     
@@ -61,15 +66,13 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     // MARK: - Public Methods
     
     func refreshData() {
-        
         do {
             try _fetchedResultsController!.performFetch()
+            self.tableView.reloadData()
         } catch {
             let nserror = error as NSError
             self.logger.logError(nserror)
         }
-
-        self.tableView.reloadData()
     }
     
     func objectAtIndexPath(indexPath: NSIndexPath) -> EntityType {
@@ -88,8 +91,11 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section]
-        return sectionInfo.numberOfObjects
+        if let sections = self.fetchedResultsController.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
+        return 0
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -141,16 +147,16 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         fetchRequest.fetchBatchSize = 100
         fetchRequest.sortDescriptors = self.sortDescriptors
 
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: self.sectionNamesKeyPath, cacheName: self.cacheName)
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: self.sectionNameKeyPath, cacheName: self.cacheName)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
-        do {
-            try _fetchedResultsController!.performFetch()
-        } catch {
-            let nserror = error as NSError
-            self.logger.logError(nserror)
-        }
+//        do {
+//            try _fetchedResultsController!.performFetch()
+//        } catch {
+//            let nserror = error as NSError
+//            self.logger.logError(nserror)
+//        }
         
         return _fetchedResultsController!
     }

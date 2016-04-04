@@ -19,13 +19,6 @@ class EntityBaseSyncRulesTests: XCTestCase {
             let shouldRunSyncRule = rule.shouldRunSyncRuleWithName("", date: NSDate(), inManagedObjectContext: context)
             XCTAssertFalse(shouldRunSyncRule)
         }
-        
-        
-//        if let rule = EntityHourlySyncRule.entityHourlySyncRuleByName(ruleName, hours: nil, inManagedObjectContext:context) as? EntityBaseSyncRules {
-//            let shouldRunSyncRule = rule.shouldRunSyncRuleWithName("", date: NSDate(), inManagedObjectContext: context)
-//            XCTAssertFalse(shouldRunSyncRule)
-//        }
-        
     }
     
 }

@@ -3,8 +3,8 @@ import CoreData
 
 class TableViewCellPresenter<CellType: UITableViewCell, EntityType: NSManagedObject>: NSObject {
     
-    let configureCellBlock:((CellType, EntityType) -> Void)
-    let cellReuseIdentifier:String
+    var configureCellBlock:((CellType, EntityType) -> Void)
+    var cellReuseIdentifier:String
     var canEditRowAtIndexPathBlock:((indexPath: NSIndexPath) -> Bool)?
     var commitEditingStyleBlock:((editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath: NSIndexPath) -> Void)?
        

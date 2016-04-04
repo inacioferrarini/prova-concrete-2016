@@ -16,5 +16,21 @@ class EntitySyncHistoryTests: XCTestCase {
         let sincHistory = EntitySyncHistory.entityAutoSyncHistoryByName("", lastExecutionDate: nil, inManagedObjectContext: context)
         XCTAssertNil(sincHistory)
     }
+ 
+    func test_removeAll_withoutEntities_mustNotCrash() {
+        let coreDataStack = TestUtil().createCoreDataStack()
+        let context = coreDataStack.managedObjectContext
+        EntitySyncHistory.removeAll(inManagedObjectContext: context)
+    }
+
+    func test_removeAll_withEntities_mustNotCrash() {
+        let coreDataStack = TestUtil().createCoreDataStack()
+        let context = coreDataStack.managedObjectContext
+        let ruleName = TestUtil().randomRuleName()
+        let sincHistory = EntitySyncHistory.entityAutoSyncHistoryByName(ruleName, lastExecutionDate: nil, inManagedObjectContext: context)
+        coreDataStack.saveContext()
+        EntitySyncHistory.removeAll(inManagedObjectContext: context)
+        coreDataStack.saveContext()
+    }
     
 }

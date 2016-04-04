@@ -3,6 +3,11 @@ import CoreData
 
 class EntitySyncHistory: NSManagedObject {
     
+    class func fetchAllEntitiesAutoSyncHistory(inManagedObjectContext context:NSManagedObjectContext) -> [EntitySyncHistory] {
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        return (try! context.executeFetchRequest(request)) as! [EntitySyncHistory]
+    }
+    
     class func fetchEntityAutoSyncHistoryByName(name: String, inManagedObjectContext context:NSManagedObjectContext) -> EntitySyncHistory? {
         
         guard name.characters.count > 0 else {
@@ -38,6 +43,13 @@ class EntitySyncHistory: NSManagedObject {
         }
         
         return entityAutoSyncHistory
+    }
+    
+    class func removeAll(inManagedObjectContext context:NSManagedObjectContext) {
+        let allEntities = self.fetchAllEntitiesAutoSyncHistory(inManagedObjectContext: context)
+        for entity in allEntities {
+            context.deleteObject(entity)
+        }
     }
     
 }
