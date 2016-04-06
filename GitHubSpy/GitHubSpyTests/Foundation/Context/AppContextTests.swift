@@ -12,8 +12,8 @@ class AppContextTests: XCTestCase {
     func createAppContext() -> AppContext {
         self.logger = Logger()
         self.navigationController = UINavigationController()
-        self.coreDataStack = TestUtil().createCoreDataStack()
-        self.syncRules = DataSyncRules(coreDataStack: TestUtil().createCoreDataStack())
+        self.coreDataStack = TestUtil().appContext().coreDataStack
+        self.syncRules = DataSyncRules(coreDataStack: coreDataStack)
         self.router = NavigationRouter(schema: "", logger: self.logger)
         
         return AppContext(navigationController: self.navigationController,

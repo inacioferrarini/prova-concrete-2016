@@ -4,8 +4,8 @@ import XCTest
 class DataSyncDailyRulesTests: XCTestCase {
     
     func createRules() -> DataSyncRules {
-        let dataSyncRulesStack = TestUtil().createCoreDataStack()
-        return DataSyncRules(coreDataStack: dataSyncRulesStack)
+        let coreDataStack = TestUtil().appContext().coreDataStack
+        return DataSyncRules(coreDataStack: coreDataStack)
     }
     
     func test_nonExistingDailyRule_mustReturnFalse() {
