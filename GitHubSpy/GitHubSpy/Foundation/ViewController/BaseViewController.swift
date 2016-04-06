@@ -28,7 +28,7 @@ class BaseViewController: UIViewController, AppContextAwareProtocol {
         for view in self.view.subviews as [UIView] {
             if let label = view as? UILabel {
                 if let identifier = label.accessibilityIdentifier {
-                    let text = NSLocalizedString(identifier, comment: "")
+                    let text = localizedBundleString(identifier)
                     if (text == identifier) {
                         self.appContext.logger.logErrorMessage("Missing string for \(identifier)")
                     } else {
@@ -38,6 +38,11 @@ class BaseViewController: UIViewController, AppContextAwareProtocol {
             }
         }
         
+    }
+    
+    func localizedBundleString(key: String) -> String {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: "")
     }
     
 }
