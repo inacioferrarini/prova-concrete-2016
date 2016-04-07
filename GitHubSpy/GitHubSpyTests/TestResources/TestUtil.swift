@@ -62,5 +62,29 @@ class TestUtil: XCTestCase {
         viewController.appContext = appContext
         return viewController
     }
+
+    func baseTableViewController(appContext: AppContext!) -> BaseTableViewController {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+        let viewController = storyBoard.instantiateViewControllerWithIdentifier("BaseTableViewController") as! BaseTableViewController
+        viewController.appContext = appContext
+        return viewController
+    }
+    
+    func testBaseTableViewController(appContext: AppContext!) -> TestBaseTableViewController {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+        let viewController = storyBoard.instantiateViewControllerWithIdentifier("TestBaseTableViewController") as! TestBaseTableViewController
+        viewController.appContext = appContext
+        return viewController
+    }
+    
+    func testClassicTableViewController(appContext: AppContext!) -> TestClassicTableViewController {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
+        let viewController = storyBoard.instantiateViewControllerWithIdentifier("TestClassicTableViewController") as! TestClassicTableViewController
+        viewController.appContext = appContext
+        return viewController
+    }
     
 }

@@ -1,5 +1,6 @@
 import UIKit
 import CoreData
+import SwiftTryCatch
 
 class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
     
@@ -66,6 +67,32 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     // MARK: - Public Methods
     
     func refreshData() {
+////        SwiftTryCatch.tryBlock({
+////                try _fetchedResultsController!.performFetch()
+////                self.tableView.reloadData()
+////            }, catchBlock: { (error) in
+////                let nserror = error as NSError
+////                self.logger.logError(nserror)
+////            }, finallyBlock: {
+////        })
+//        
+//        
+//        
+//        SwiftTryCatch.tryBlock({ () -> Void in
+//                try self._fetchedResultsController!.performFetch()
+//                self.tableView.reloadData()
+//            }, catchBlock: { (error: NSException!) -> Void in
+////                let nserror = error as NSError
+//                //self.logger.logError(nserror)
+//                print("Error")
+//            }) { () -> Void in
+//        }
+//        
+//        
+
+     
+        
+        
         do {
             try _fetchedResultsController!.performFetch()
             self.tableView.reloadData()
@@ -73,6 +100,8 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
             let nserror = error as NSError
             self.logger.logError(nserror)
         }
+        
+        
     }
     
     func objectAtIndexPath(indexPath: NSIndexPath) -> EntityType {

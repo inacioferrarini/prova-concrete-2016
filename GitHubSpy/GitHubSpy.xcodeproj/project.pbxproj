@@ -80,11 +80,42 @@
 		34F805AD1CB4CFCB00289E11 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4CD51CB00BA20013A028 /* CoreDataStackTests.swift */; };
 		34F805AE1CB4CFCB00289E11 /* TableViewCellPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFBA21CAC8077003B5EDE /* TableViewCellPresenterTests.swift */; };
 		34F805AF1CB4CFCB00289E11 /* ViewComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805621CB4588E00289E11 /* ViewComponentTests.swift */; };
-		34F805B01CB4CFCB00289E11 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F8058F1CB4716900289E11 /* BaseViewControllerTests.swift */; };
-		34F805B11CB4CFCB00289E11 /* TestBaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805911CB490E500289E11 /* TestBaseViewControllerTests.swift */; };
-		34F805B21CB4CFCB00289E11 /* BaseDataBasedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805931CB4C04900289E11 /* BaseDataBasedViewControllerTests.swift */; };
-		34F805B31CB4CFCB00289E11 /* TestBaseDataBasedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805971CB4C8F400289E11 /* TestBaseDataBasedViewControllerTests.swift */; };
 		34F805B41CB4CFCB00289E11 /* TableViewBlockDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC4D1B1CB1BF3D0013A028 /* TableViewBlockDelegateTests.swift */; };
+		34F805B51CB5874F00289E11 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C651CA5EAFA0056B07C /* BaseTableViewController.swift */; };
+		34F805B71CB5882400289E11 /* TestBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805B61CB5882400289E11 /* TestBaseTableViewController.swift */; };
+		34F805BD1CB5894000289E11 /* BaseDataBasedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805B91CB5894000289E11 /* BaseDataBasedViewControllerTests.swift */; };
+		34F805BE1CB5894000289E11 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805BA1CB5894000289E11 /* BaseViewControllerTests.swift */; };
+		34F805BF1CB5894000289E11 /* TestBaseDataBasedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805BB1CB5894000289E11 /* TestBaseDataBasedViewControllerTests.swift */; };
+		34F805C01CB5894000289E11 /* TestBaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805BC1CB5894000289E11 /* TestBaseViewControllerTests.swift */; };
+		34F805C21CB5897A00289E11 /* BaseTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805C11CB5897A00289E11 /* BaseTableViewControllerTests.swift */; };
+		34F805C41CB5899900289E11 /* TestBaseTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805C31CB5899900289E11 /* TestBaseTableViewControllerTests.swift */; };
+		34F805C51CB58D9600289E11 /* AppContextAwareProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5F1CA5EAFA0056B07C /* AppContextAwareProtocol.swift */; };
+		34F805C61CB58D9600289E11 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C5E1CA5EAFA0056B07C /* AppContext.swift */; };
+		34F805C71CB58D9600289E11 /* EntitySyncHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */; };
+		34F805C81CB58D9600289E11 /* EntitySyncHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */; };
+		34F805C91CB58D9600289E11 /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB641CAC5156003B5EDE /* EntityBaseSyncRules+CoreDataProperties.swift */; };
+		34F805CA1CB58D9600289E11 /* EntityBaseSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB651CAC5156003B5EDE /* EntityBaseSyncRules.swift */; };
+		34F805CB1CB58D9600289E11 /* EntityDailySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB661CAC5156003B5EDE /* EntityDailySyncRule+CoreDataProperties.swift */; };
+		34F805CC1CB58D9600289E11 /* EntityDailySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB671CAC5156003B5EDE /* EntityDailySyncRule.swift */; };
+		34F805CD1CB58D9600289E11 /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB681CAC5156003B5EDE /* EntityHourlySyncRule+CoreDataProperties.swift */; };
+		34F805CE1CB58D9600289E11 /* EntityHourlySyncRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */; };
+		34F805CF1CB58D9600289E11 /* DataSyncRules.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */; };
+		34F805D01CB58D9600289E11 /* DataSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */; };
+		34F805D11CB58D9600289E11 /* RoutingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF71CA877C60056B07C /* RoutingElement.swift */; };
+		34F805D21CB58D9600289E11 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C611CA5EAFA0056B07C /* NavigationRouter.swift */; };
+		34F805D31CB58D9600289E11 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CED1CA727020056B07C /* NSObjectExtensions.swift */; };
+		34F805D41CB58D9600289E11 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D041CA8D68C0056B07C /* UIImageExtensions.swift */; };
+		34F805D51CB58D9600289E11 /* UIViewControllerImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07D061CA8D9840056B07C /* UIViewControllerImageExtension.swift */; };
+		34F805D61CB58D9600289E11 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CBA1CA61ED40056B07C /* Logger.swift */; };
+		34F805D71CB58D9600289E11 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C631CA5EAFA0056B07C /* CoreDataStack.swift */; };
+		34F805D81CB58D9600289E11 /* FetcherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C751CA5EF150056B07C /* FetcherDataSource.swift */; };
+		34F805D91CB58D9600289E11 /* TableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CB71CA60F260056B07C /* TableViewCellPresenter.swift */; };
+		34F805DA1CB58D9600289E11 /* TableViewBlockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CF01CA7777B0056B07C /* TableViewBlockDelegate.swift */; };
+		34F805DB1CB58D9600289E11 /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CE71CA724300056B07C /* ViewComponent.swift */; };
+		34F805DC1CB58D9600289E11 /* BaseDataBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */; };
+		34F805DD1CB58D9600289E11 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C661CA5EAFA0056B07C /* BaseViewController.swift */; };
+		34F805DF1CB5AA2500289E11 /* TestClassicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805DE1CB5AA2500289E11 /* TestClassicTableViewController.swift */; };
+		34F805E11CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F805E01CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift */; };
 		BBAFFB341CAC1F64003B5EDE /* BaseDataBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB331CAC1F64003B5EDE /* BaseDataBasedViewController.swift */; };
 		BBAFFB4D1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4B1CAC39B9003B5EDE /* DataSyncRules.xcdatamodeld */; };
 		BBAFFB4F1CAC39DA003B5EDE /* DataSyncRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFFB4E1CAC39DA003B5EDE /* DataSyncRules.swift */; };
@@ -191,11 +222,17 @@
 		34F805871CB46C3700289E11 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		34F805881CB46C3700289E11 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		34F8058B1CB46D7900289E11 /* TestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TestStoryboard.storyboard; path = Storyboards/TestStoryboard.storyboard; sourceTree = "<group>"; };
-		34F8058F1CB4716900289E11 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
-		34F805911CB490E500289E11 /* TestBaseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewControllerTests.swift; sourceTree = "<group>"; };
-		34F805931CB4C04900289E11 /* BaseDataBasedViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataBasedViewControllerTests.swift; sourceTree = "<group>"; };
 		34F805951CB4C84700289E11 /* TestBaseDataBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseDataBasedViewController.swift; sourceTree = "<group>"; };
-		34F805971CB4C8F400289E11 /* TestBaseDataBasedViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseDataBasedViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805B61CB5882400289E11 /* TestBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewController.swift; sourceTree = "<group>"; };
+		34F805B91CB5894000289E11 /* BaseDataBasedViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataBasedViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805BA1CB5894000289E11 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805BB1CB5894000289E11 /* TestBaseDataBasedViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseDataBasedViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805BC1CB5894000289E11 /* TestBaseViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805C11CB5897A00289E11 /* BaseTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805C31CB5899900289E11 /* TestBaseTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805DE1CB5AA2500289E11 /* TestClassicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassicTableViewController.swift; sourceTree = "<group>"; };
+		34F805E01CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassicTableViewControllerTests.swift; sourceTree = "<group>"; };
+		34F805E41CB5B5B500289E11 /* GitHubSpy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpy-Bridging-Header.h"; sourceTree = "<group>"; };
 		34FCB2641CB227990074C86D /* pending-tests.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pending-tests.txt"; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -353,6 +390,7 @@
 				34D07C281CA5CBCC0056B07C /* Info.plist */,
 				34D07C201CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld */,
 				34D07CD31CA6396A0056B07C /* Localizable.strings */,
+				34F805E41CB5B5B500289E11 /* GitHubSpy-Bridging-Header.h */,
 			);
 			path = GitHubSpy;
 			sourceTree = "<group>";
@@ -646,6 +684,8 @@
 			children = (
 				34F805781CB4690B00289E11 /* TestBaseViewController.swift */,
 				34F805951CB4C84700289E11 /* TestBaseDataBasedViewController.swift */,
+				34F805B61CB5882400289E11 /* TestBaseTableViewController.swift */,
+				34F805DE1CB5AA2500289E11 /* TestClassicTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -700,15 +740,18 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		34F8058E1CB4714700289E11 /* TableViewControllers */ = {
+		34F805B81CB5894000289E11 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				34F8058F1CB4716900289E11 /* BaseViewControllerTests.swift */,
-				34F805911CB490E500289E11 /* TestBaseViewControllerTests.swift */,
-				34F805931CB4C04900289E11 /* BaseDataBasedViewControllerTests.swift */,
-				34F805971CB4C8F400289E11 /* TestBaseDataBasedViewControllerTests.swift */,
+				34F805BA1CB5894000289E11 /* BaseViewControllerTests.swift */,
+				34F805BC1CB5894000289E11 /* TestBaseViewControllerTests.swift */,
+				34F805B91CB5894000289E11 /* BaseDataBasedViewControllerTests.swift */,
+				34F805BB1CB5894000289E11 /* TestBaseDataBasedViewControllerTests.swift */,
+				34F805C11CB5897A00289E11 /* BaseTableViewControllerTests.swift */,
+				34F805C31CB5899900289E11 /* TestBaseTableViewControllerTests.swift */,
+				34F805E01CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift */,
 			);
-			path = TableViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		582FAF1603C9F2F2DB69E33B /* Frameworks */ = {
@@ -772,8 +815,8 @@
 				34BC4CD41CB00B910013A028 /* Persistence */,
 				BBAFFBA11CAC805C003B5EDE /* Presenter */,
 				34F805611CB4587600289E11 /* Views */,
-				34F8058E1CB4714700289E11 /* TableViewControllers */,
 				34BC4D1A1CB1BF1C0013A028 /* TableViewDelegate */,
+				34F805B81CB5894000289E11 /* ViewControllers */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1052,6 +1095,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F805E11CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift in Sources */,
+				34F805C51CB58D9600289E11 /* AppContextAwareProtocol.swift in Sources */,
+				34F805C61CB58D9600289E11 /* AppContext.swift in Sources */,
+				34F805C71CB58D9600289E11 /* EntitySyncHistory+CoreDataProperties.swift in Sources */,
+				34F805C81CB58D9600289E11 /* EntitySyncHistory.swift in Sources */,
+				34F805C91CB58D9600289E11 /* EntityBaseSyncRules+CoreDataProperties.swift in Sources */,
+				34F805CA1CB58D9600289E11 /* EntityBaseSyncRules.swift in Sources */,
+				34F805CB1CB58D9600289E11 /* EntityDailySyncRule+CoreDataProperties.swift in Sources */,
+				34F805CC1CB58D9600289E11 /* EntityDailySyncRule.swift in Sources */,
+				34F805CD1CB58D9600289E11 /* EntityHourlySyncRule+CoreDataProperties.swift in Sources */,
+				34F805CE1CB58D9600289E11 /* EntityHourlySyncRule.swift in Sources */,
+				34F805CF1CB58D9600289E11 /* DataSyncRules.xcdatamodeld in Sources */,
+				34F805D01CB58D9600289E11 /* DataSyncRules.swift in Sources */,
+				34F805D11CB58D9600289E11 /* RoutingElement.swift in Sources */,
+				34F805D21CB58D9600289E11 /* NavigationRouter.swift in Sources */,
+				34F805D31CB58D9600289E11 /* NSObjectExtensions.swift in Sources */,
+				34F805D41CB58D9600289E11 /* UIImageExtensions.swift in Sources */,
+				34F805D51CB58D9600289E11 /* UIViewControllerImageExtension.swift in Sources */,
+				34F805D61CB58D9600289E11 /* Logger.swift in Sources */,
+				34F805D71CB58D9600289E11 /* CoreDataStack.swift in Sources */,
+				34F805D81CB58D9600289E11 /* FetcherDataSource.swift in Sources */,
+				34F805D91CB58D9600289E11 /* TableViewCellPresenter.swift in Sources */,
+				34F805DA1CB58D9600289E11 /* TableViewBlockDelegate.swift in Sources */,
+				34F805DB1CB58D9600289E11 /* ViewComponent.swift in Sources */,
+				34F805DC1CB58D9600289E11 /* BaseDataBasedViewController.swift in Sources */,
+				34F805DD1CB58D9600289E11 /* BaseViewController.swift in Sources */,
+				34F805B51CB5874F00289E11 /* BaseTableViewController.swift in Sources */,
+				34F805C01CB5894000289E11 /* TestBaseViewControllerTests.swift in Sources */,
 				34F805991CB4CFCB00289E11 /* TestUtil.swift in Sources */,
 				34F8059A1CB4CFCB00289E11 /* FetchedResultsSectionInfo.swift in Sources */,
 				34F8059B1CB4CFCB00289E11 /* TestBaseViewController.swift in Sources */,
@@ -1059,26 +1130,29 @@
 				34F8059D1CB4CFCB00289E11 /* SimpleViewComponent.swift in Sources */,
 				34F8059E1CB4CFCB00289E11 /* TableViewCell.swift in Sources */,
 				34F8059F1CB4CFCB00289E11 /* AppContextTests.swift in Sources */,
+				34F805DF1CB5AA2500289E11 /* TestClassicTableViewController.swift in Sources */,
 				34F805A01CB4CFCB00289E11 /* EntitySyncHistoryTests.swift in Sources */,
 				34F805A11CB4CFCB00289E11 /* EntityDailySyncRuleTests.swift in Sources */,
 				34F805A21CB4CFCB00289E11 /* EntityHourlySyncRuleTests.swift in Sources */,
 				34F805A31CB4CFCB00289E11 /* EntityBaseSyncRulesTests.swift in Sources */,
 				34F805A41CB4CFCB00289E11 /* DataSyncHourlyRulesTests.swift in Sources */,
+				34F805BF1CB5894000289E11 /* TestBaseDataBasedViewControllerTests.swift in Sources */,
 				34F805A51CB4CFCB00289E11 /* DataSyncDailyRulesTests.swift in Sources */,
 				34F805A61CB4CFCB00289E11 /* RoutingElementTests.swift in Sources */,
 				34F805A71CB4CFCB00289E11 /* NavigationRouterTests.swift in Sources */,
 				34F805A81CB4CFCB00289E11 /* NSObjectExtensionsTests.swift in Sources */,
+				34F805BE1CB5894000289E11 /* BaseViewControllerTests.swift in Sources */,
 				34F805A91CB4CFCB00289E11 /* UIImageExtensionTests.swift in Sources */,
+				34F805B71CB5882400289E11 /* TestBaseTableViewController.swift in Sources */,
+				34F805C41CB5899900289E11 /* TestBaseTableViewControllerTests.swift in Sources */,
 				34F805AA1CB4CFCB00289E11 /* UIViewControllerImageExtensionTests.swift in Sources */,
 				34F805AB1CB4CFCB00289E11 /* LoggerTests.swift in Sources */,
+				34F805C21CB5897A00289E11 /* BaseTableViewControllerTests.swift in Sources */,
 				34F805AC1CB4CFCB00289E11 /* FetcherDataSourceTests.swift in Sources */,
 				34F805AD1CB4CFCB00289E11 /* CoreDataStackTests.swift in Sources */,
 				34F805AE1CB4CFCB00289E11 /* TableViewCellPresenterTests.swift in Sources */,
+				34F805BD1CB5894000289E11 /* BaseDataBasedViewControllerTests.swift in Sources */,
 				34F805AF1CB4CFCB00289E11 /* ViewComponentTests.swift in Sources */,
-				34F805B01CB4CFCB00289E11 /* BaseViewControllerTests.swift in Sources */,
-				34F805B11CB4CFCB00289E11 /* TestBaseViewControllerTests.swift in Sources */,
-				34F805B21CB4CFCB00289E11 /* BaseDataBasedViewControllerTests.swift in Sources */,
-				34F805B31CB4CFCB00289E11 /* TestBaseDataBasedViewControllerTests.swift in Sources */,
 				34F805B41CB4CFCB00289E11 /* TableViewBlockDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1223,10 +1297,13 @@
 			baseConfigurationReference = 5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GitHubSpy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpy/GitHubSpy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1235,10 +1312,12 @@
 			baseConfigurationReference = A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GitHubSpy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpy/GitHubSpy-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -24,7 +24,7 @@ class GitHubApiClient: NSObject {
             let manager = AFHTTPSessionManager(baseURL: url)
             let targetUrl = "search/repositories?q=language:Java&sort=stars&page={:page}"
                         .stringByReplacingOccurrencesOfString("{:page}", withString: "\(page)")
-            manager.GET(targetUrl, parameters: nil, success: successBlock, failure: failureBlock)
+            manager.GET(targetUrl, parameters: nil, progress: nil, success: successBlock, failure: failureBlock)
         }
     }
     
@@ -47,7 +47,7 @@ class GitHubApiClient: NSObject {
             let targetUrl = "repos/{:owner}/{:repository}/pulls?state=all"
                 .stringByReplacingOccurrencesOfString("{:owner}", withString: owner)
                 .stringByReplacingOccurrencesOfString("{:repository}", withString: repository)
-            manager.GET(targetUrl, parameters: nil, success: successBlock, failure: failureBlock)
+            manager.GET(targetUrl, parameters: nil, progress: nil, success: successBlock, failure: failureBlock)
         }
     }
     
