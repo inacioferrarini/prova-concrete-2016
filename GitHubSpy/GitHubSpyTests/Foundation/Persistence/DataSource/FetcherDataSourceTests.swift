@@ -48,6 +48,20 @@ class FetcherDataSourceTests: XCTestCase {
         return dataSource
     }
     
+    func createViewController() -> TestBaseTableViewController {
+        let appContext = TestUtil().appContext()
+        let navigationController = TestUtil().rootViewController()
+        let viewController = TestUtil().testBaseTableViewController(appContext)
+        
+        navigationController.pushViewController(viewController, animated: true)
+        
+        UIApplication.sharedApplication().keyWindow!.rootViewController = navigationController
+        
+        let _ = navigationController.view
+        let _ = viewController.view
+        
+        return viewController
+    }
     
     func test_refresh_mustSucceed() {
         let dataSource = self.createFetcherDataSource(sectionNameKeyPath: nil)
@@ -342,43 +356,41 @@ class FetcherDataSourceTests: XCTestCase {
     }
 
     func test_didChangeObject_forUpdate_mustNotCrash() {
-        let dataSource = self.createFetcherDataSource(sectionNameKeyPath: nil)
-        dataSource.presenter.canEditRowAtIndexPathBlock = { (indexPath:NSIndexPath) -> Bool in
-            return true
-        }
+        
+        let viewController = self.createViewController()
+        viewController.viewDidLoad()
         
         let tableViewCellNib = UINib(nibName: "TableViewCell", bundle: NSBundle(forClass: self.dynamicType))
-        self.tableView.registerNib(tableViewCellNib, forCellReuseIdentifier: "TableViewCell")
-        self.tableView.dataSource = dataSource
+        viewController.tableView!.registerNib(tableViewCellNib, forCellReuseIdentifier: "TableViewCell")
         
-        EntitySyncHistory.removeAll(inManagedObjectContext: self.managedObjectContext)
+        let context = viewController.appContext.coreDataStack.managedObjectContext
+        EntitySyncHistory.removeAll(inManagedObjectContext: context)
         
         let ruleName = TestUtil().randomRuleName()
         EntitySyncHistory.entityAutoSyncHistoryByName(ruleName,
             lastExecutionDate: nil,
-            inManagedObjectContext: self.managedObjectContext)
+            inManagedObjectContext: context)
         
         let ruleName2 = TestUtil().randomRuleName()
-        EntitySyncHistory.entityAutoSyncHistoryByName(ruleName2,
+        let entityRule = EntitySyncHistory.entityAutoSyncHistoryByName(ruleName2,
             lastExecutionDate: nil,
-            inManagedObjectContext: self.managedObjectContext)
+            inManagedObjectContext: context)
         
-        let ruleName3 = TestUtil().randomRuleName()
-        let entityRule = EntitySyncHistory.entityAutoSyncHistoryByName(ruleName3,
-            lastExecutionDate: nil,
-            inManagedObjectContext: self.managedObjectContext)
-        
+        let dataSource = viewController.dataSource as! FetcherDataSource<EntitySyncHistory>
         dataSource.refreshData()
-        tableView.reloadData()
+        viewController.tableView!.reloadData()
         
-        self.tableView.beginUpdates()
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        viewController.tableView!.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Top)
+        
+        viewController.tableView!.beginUpdates()
         dataSource.controller(dataSource.fetchedResultsController,
             didChangeObject: entityRule!,
             atIndexPath: NSIndexPath(forRow: 1, inSection: 0),
             forChangeType: .Update,
             newIndexPath: nil)
         dataSource.refreshData()
-        self.tableView.endUpdates()
+        viewController.tableView!.endUpdates()
     }
     
     func test_didChangeObject_forDelete_mustNotCrash() {
