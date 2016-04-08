@@ -33,4 +33,10 @@ class TestClassicTableViewControllerTests: XCTestCase {
         XCTAssertNil(self.viewController.createDelegate())
     }
     
+    func test_cellForRowAtIndexPath_mustReturnNotNil() {
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        let cell = self.viewController.tableView(self.viewController.tableView!, cellForRowAtIndexPath: indexPath)
+        XCTAssertNotNil(cell)
+    }
+    
 }
