@@ -31,7 +31,7 @@ class CoreDataStack: NSObject {
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
         } catch {
-            let nserror = error as NSError
+            let nserror = error as! NSError
             
             var dict = [String: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
