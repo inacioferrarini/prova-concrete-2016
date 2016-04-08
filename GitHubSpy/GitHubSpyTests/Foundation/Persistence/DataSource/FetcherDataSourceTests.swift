@@ -56,15 +56,10 @@ class FetcherDataSourceTests: XCTestCase {
     }
 
     
-    func test_refresh_mustCrash() {
+    func test_refresh_mustIgnoreExceptionCrash() {
         let dataSource = self.createFetcherDataSource(sectionNameKeyPath: nil)
-        do {
-            dataSource.sortDescriptors = [ NSSortDescriptor(key: "nonExistingField", ascending: true) ]
-            dataSource.refreshData()
-            XCTAssertTrue(false)
-        } catch {
-            XCTAssertTrue(true)
-        }
+        dataSource.sortDescriptors = [ NSSortDescriptor(key: "nonExistingField", ascending: true) ]
+        dataSource.refreshData()
     }
     
     
