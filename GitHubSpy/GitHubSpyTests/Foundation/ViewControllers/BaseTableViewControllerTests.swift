@@ -13,7 +13,6 @@ class BaseTableViewControllerTests: XCTestCase {
         
         UIApplication.sharedApplication().keyWindow!.rootViewController = navigationController
         
-        // The One Weird Trick!
         let _ = navigationController.view
         let _ = viewController.view
     }
