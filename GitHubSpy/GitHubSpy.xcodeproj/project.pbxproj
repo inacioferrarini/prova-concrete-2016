@@ -233,7 +233,6 @@
 		34F805DE1CB5AA2500289E11 /* TestClassicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassicTableViewController.swift; sourceTree = "<group>"; };
 		34F805E01CB5AA8F00289E11 /* TestClassicTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClassicTableViewControllerTests.swift; sourceTree = "<group>"; };
 		34F805E41CB5B5B500289E11 /* GitHubSpy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpy-Bridging-Header.h"; sourceTree = "<group>"; };
-		34FCB2641CB227990074C86D /* pending-tests.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pending-tests.txt"; sourceTree = "<group>"; };
 		3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubSpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8CFB9BC8B40BFFC3249912 /* Pods-GitHubSpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A4206F7B4AE948490299D761 /* Pods-GitHubSpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubSpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubSpy/Pods-GitHubSpy.release.xcconfig"; sourceTree = "<group>"; };
@@ -398,7 +397,6 @@
 		34D07C301CA5CBCC0056B07C /* GitHubSpyTests */ = {
 			isa = PBXGroup;
 			children = (
-				34FCB2641CB227990074C86D /* pending-tests.txt */,
 				34F805681CB4683600289E11 /* TestResources */,
 				BBAFFB741CAC696C003B5EDE /* Foundation */,
 				34BC4D151CB1AD2E0013A028 /* Resources */,
