@@ -25,29 +25,23 @@ class TestBaseTableViewControllerTests: XCTestCase {
 
     
     func test_viewWillDisappear_mustNotCrash() {
+        self.viewController.viewDidLoad()
+        let context = self.viewController.appContext.coreDataStack.managedObjectContext
+        EntitySyncHistory.removeAll(inManagedObjectContext: context)
         
-//        self.viewController.viewDidLoad()
-//        
-//        
-//        
-//        let context = self.viewController.appContext.coreDataStack.managedObjectContext
-//        EntitySyncHistory.removeAll(inManagedObjectContext: context)
-//        
-//        
-//        
-//        let ruleName = TestUtil().randomRuleName()
-//        EntitySyncHistory.entityAutoSyncHistoryByName(ruleName,
-//            lastExecutionDate: nil,
-//            inManagedObjectContext: context)
-//        
-//        let dataSource = self.viewController.dataSource as! FetcherDataSource<EntitySyncHistory>
-//        dataSource.refreshData()
-//        self.viewController.tableView!.reloadData()
-//        
-//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-//        self.viewController.tableView!.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Top)
-//        
-//        self.viewController.viewWillDisappear(true)
+        let ruleName = TestUtil().randomRuleName()
+        EntitySyncHistory.entityAutoSyncHistoryByName(ruleName,
+            lastExecutionDate: nil,
+            inManagedObjectContext: context)
+        
+        let dataSource = self.viewController.dataSource as! FetcherDataSource<EntitySyncHistory>
+        dataSource.refreshData()
+        self.viewController.tableView!.reloadData()
+
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.viewController.tableView!.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: .Top)
+
+        self.viewController.viewWillDisappear(true)
     }
     
     
@@ -55,9 +49,26 @@ class TestBaseTableViewControllerTests: XCTestCase {
         XCTAssertNotNil(self.viewController.createDataSource())
     }
     
+    func test_dataSource_checkPresenterConfigureCellBlock() {
+        self.viewController.viewDidLoad()
+        let dataSource = self.viewController.dataSource as! FetcherDataSource<EntitySyncHistory>
+        let coreDataStack = TestUtil().appContext().coreDataStack
+        let ctx = coreDataStack.managedObjectContext
+        let ruleName = TestUtil().randomRuleName()
+        let testEntity = EntitySyncHistory.entityAutoSyncHistoryByName(ruleName, lastExecutionDate: nil, inManagedObjectContext: ctx)
+        let cell = UITableViewCell()
+        dataSource.presenter.configureCellBlock(cell, testEntity!)
+    }
+    
     
     func test_createDelegate_mustReturnNotNil() {
         XCTAssertNotNil(self.viewController.createDelegate())
+    }
+    
+    func test_delegate_checkItemSelectionBlock() {
+        self.viewController.viewDidLoad()
+        let delegate = self.viewController.delegate as! TableViewBlockDelegate
+        delegate.itemSelectionBlock(indexPath: NSIndexPath(forRow: 0, inSection: 0))
     }
     
     
