@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		139859E10805E542D71A2B47 /* Pods_GitHubSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */; };
+		340948FB1CB9538D009882BB /* TryCatchFinally.m in Sources */ = {isa = PBXBuildFile; fileRef = 340948FA1CB9538D009882BB /* TryCatchFinally.m */; };
 		34BC4D171CB1AD2E0013A028 /* default-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 34BC4D161CB1AD2E0013A028 /* default-avatar.png */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
@@ -147,6 +148,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		340948F91CB9538D009882BB /* TryCatchFinally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryCatchFinally.h; sourceTree = "<group>"; };
+		340948FA1CB9538D009882BB /* TryCatchFinally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryCatchFinally.m; sourceTree = "<group>"; };
 		3460E4F81CACB6F600AD5392 /* EntitySyncHistoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySyncHistoryTests.swift; sourceTree = "<group>"; };
 		3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDailySyncRuleTests.swift; sourceTree = "<group>"; };
 		3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRuleTests.swift; sourceTree = "<group>"; };
@@ -280,6 +283,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340948F81CB950D6009882BB /* Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				340948F91CB9538D009882BB /* TryCatchFinally.h */,
+				340948FA1CB9538D009882BB /* TryCatchFinally.m */,
+			);
+			path = Exceptions;
+			sourceTree = "<group>";
+		};
 		3460E4F71CACB6D000AD5392 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,6 +432,7 @@
 				34D07C5D1CA5EAFA0056B07C /* Context */,
 				BBAFFB351CAC2E9A003B5EDE /* DataSyncRules */,
 				34D07C601CA5EAFA0056B07C /* DeepLinkingNavigation */,
+				340948F81CB950D6009882BB /* Exceptions */,
 				34D07CEC1CA726EE0056B07C /* Extensions */,
 				34D07CB91CA61EA70056B07C /* Logging */,
 				34D07C621CA5EAFA0056B07C /* Persistence */,
@@ -1060,6 +1073,7 @@
 				34D07C6B1CA5EAFA0056B07C /* CoreDataStack.swift in Sources */,
 				34D07CBB1CA61ED40056B07C /* Logger.swift in Sources */,
 				BBAFFB731CAC5156003B5EDE /* EntitySyncHistory.swift in Sources */,
+				340948FB1CB9538D009882BB /* TryCatchFinally.m in Sources */,
 				34D07C6D1CA5EAFA0056B07C /* BaseViewController.swift in Sources */,
 				34D07CEE1CA727020056B07C /* NSObjectExtensions.swift in Sources */,
 				34D07CE31CA6ED4F0056B07C /* AuthorInfoView.swift in Sources */,
