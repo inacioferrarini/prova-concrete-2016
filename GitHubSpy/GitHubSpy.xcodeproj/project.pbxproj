@@ -150,6 +150,7 @@
 /* Begin PBXFileReference section */
 		340948F91CB9538D009882BB /* TryCatchFinally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TryCatchFinally.h; sourceTree = "<group>"; };
 		340948FA1CB9538D009882BB /* TryCatchFinally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TryCatchFinally.m; sourceTree = "<group>"; };
+		3409490F1CB9CB40009882BB /* GitHubSpyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpyTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		3460E4F81CACB6F600AD5392 /* EntitySyncHistoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySyncHistoryTests.swift; sourceTree = "<group>"; };
 		3460E4FA1CACB96900AD5392 /* EntityDailySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityDailySyncRuleTests.swift; sourceTree = "<group>"; };
 		3460E4FC1CACC15900AD5392 /* EntityHourlySyncRuleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRuleTests.swift; sourceTree = "<group>"; };
@@ -250,7 +251,6 @@
 		BBAFFB691CAC5156003B5EDE /* EntityHourlySyncRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityHourlySyncRule.swift; sourceTree = "<group>"; };
 		BBAFFB6A1CAC5156003B5EDE /* EntitySyncHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EntitySyncHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BBAFFB6B1CAC5156003B5EDE /* EntitySyncHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitySyncHistory.swift; sourceTree = "<group>"; };
-		BBAFFB761CAC69FD003B5EDE /* GitHubSpyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpyTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		BBAFFB771CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncHourlyRulesTests.swift; sourceTree = "<group>"; };
 		BBAFFB791CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSyncDailyRulesTests.swift; sourceTree = "<group>"; };
 		BBAFFBA21CAC8077003B5EDE /* TableViewCellPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellPresenterTests.swift; sourceTree = "<group>"; };
@@ -409,6 +409,7 @@
 		34D07C301CA5CBCC0056B07C /* GitHubSpyTests */ = {
 			isa = PBXGroup;
 			children = (
+				3409490F1CB9CB40009882BB /* GitHubSpyTests-Bridging-Header.h */,
 				34F805681CB4683600289E11 /* TestResources */,
 				BBAFFB741CAC696C003B5EDE /* Foundation */,
 				34BC4D151CB1AD2E0013A028 /* Resources */,
@@ -836,7 +837,6 @@
 			isa = PBXGroup;
 			children = (
 				3460E4F71CACB6D000AD5392 /* Entities */,
-				BBAFFB761CAC69FD003B5EDE /* GitHubSpyTests-Bridging-Header.h */,
 				BBAFFB771CAC69FE003B5EDE /* DataSyncHourlyRulesTests.swift */,
 				BBAFFB791CAC6A9D003B5EDE /* DataSyncDailyRulesTests.swift */,
 			);
@@ -1342,7 +1342,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/Foundation/DataSyncRules/GitHubSpyTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/GitHubSpyTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSpy.app/GitHubSpy";
 			};
@@ -1357,7 +1357,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inacioferrarini.concrete.GitHubSpyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/Foundation/DataSyncRules/GitHubSpyTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitHubSpyTests/GitHubSpyTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubSpy.app/GitHubSpy";
 			};
 			name = Release;
