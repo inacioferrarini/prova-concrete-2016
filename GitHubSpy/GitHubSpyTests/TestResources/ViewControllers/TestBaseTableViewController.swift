@@ -1,5 +1,5 @@
 import UIKit
-import GitHubSpy
+@testable import GitHubSpy
 
 class TestBaseTableViewController: BaseTableViewController {
     

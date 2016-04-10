@@ -1,4 +1,5 @@
 import XCTest
+@testable import GitHubSpy
 
 class TestClassicTableViewControllerTests: XCTestCase {
    
@@ -20,16 +21,6 @@ class TestClassicTableViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_mustNotCrash() {
         self.viewController.viewDidLoad()
-    }
-    
-    
-    func test_createDataSource_mustReturnNil() {
-        XCTAssertNil(self.viewController.createDataSource())
-    }
-    
-    
-    func test_createDelegate_mustReturnNil() {
-        XCTAssertNil(self.viewController.createDelegate())
     }
     
     func test_cellForRowAtIndexPath_mustReturnNotNil() {

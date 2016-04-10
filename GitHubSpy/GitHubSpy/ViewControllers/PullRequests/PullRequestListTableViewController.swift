@@ -72,8 +72,8 @@ class PullRequestListTableViewController: BaseTableViewController {
                     let placeHolderImage = UIImage(named: "git star")!
                     cell.authorInfoView.userLoginLabel.text = owner.login ?? ""
                     cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"                    
-                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
-                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
+//                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
+//                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
                 }
                 
             }, cellReuseIdentifier: "PullRequestTableViewCell")

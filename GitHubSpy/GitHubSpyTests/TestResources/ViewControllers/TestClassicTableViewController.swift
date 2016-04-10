@@ -1,4 +1,5 @@
 import UIKit
+@testable import GitHubSpy
 
 class TestClassicTableViewController: BaseTableViewController, UITableViewDelegate, UITableViewDataSource {
     

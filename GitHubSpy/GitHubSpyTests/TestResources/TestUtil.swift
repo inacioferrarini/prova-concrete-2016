@@ -1,7 +1,7 @@
 import XCTest
 @testable import GitHubSpy
 
-class TestUtil: XCTestCase {
+class TestUtil: NSObject {
 
     static let modelFileName = "DataSyncRules"
     static let databaseFileName = "DataSyncRulesDB"
@@ -30,15 +30,7 @@ class TestUtil: XCTestCase {
         let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
         return storyBoard.instantiateInitialViewController() as! UINavigationController
     }
-
-    func baseViewController(appContext: AppContext!) -> BaseViewController {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
-        let viewController = storyBoard.instantiateViewControllerWithIdentifier("BaseViewController") as! BaseViewController
-        viewController.appContext = appContext
-        return viewController
-    }
-
+    
     func testBaseViewController(appContext: AppContext!) -> TestBaseViewController {
         let bundle = NSBundle(forClass: self.dynamicType)
         let storyBoard = UIStoryboard(name: "TestStoryboard", bundle: bundle)
