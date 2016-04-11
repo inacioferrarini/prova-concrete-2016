@@ -32,7 +32,7 @@ class EntityAuthor: NSManagedObject {
         
         var entityAuthor:EntityAuthor? = fetchEntityAuthorByLogin(login, inManagedObjectContext: context)
         if entityAuthor == nil {
-            let newEntityAuthor = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! EntityAuthor
+            let newEntityAuthor = NSEntityDescription.insertNewObjectForEntityForName(self.simpleClassName(), inManagedObjectContext: context) as! EntityAuthor
             newEntityAuthor.login = login
             entityAuthor = newEntityAuthor
         }

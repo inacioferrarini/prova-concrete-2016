@@ -9,7 +9,7 @@ class EntityRepository: NSManagedObject {
             return nil
         }
         
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         request.predicate = NSPredicate(format: "name = %@", name)
         
         let matches = (try! context.executeFetchRequest(request)) as! [EntityRepository]

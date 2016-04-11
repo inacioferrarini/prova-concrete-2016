@@ -73,7 +73,6 @@
 		34D07CD11CA6396A0056B07C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D07CD31CA6396A0056B07C /* Localizable.strings */; };
 		34D07CDA1CA63D320056B07C /* PullRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CD91CA63D320056B07C /* PullRequestTableViewCell.swift */; };
 		34D07CDC1CA63D550056B07C /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */; };
-		34D07CDF1CA6D1690056B07C /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */; };
 		34D07CE31CA6ED4F0056B07C /* AuthorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CE21CA6ED4F0056B07C /* AuthorInfoView.swift */; };
 		34D07CE51CA6ED9B0056B07C /* AuthorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D07CE41CA6ED9B0056B07C /* AuthorInfoView.xib */; };
 		34D07CE81CA724300056B07C /* ViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07CE71CA724300056B07C /* ViewComponent.swift */; };
@@ -195,7 +194,6 @@
 		34D07CD41CA6397C0056B07C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		34D07CD91CA63D320056B07C /* PullRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestTableViewCell.swift; sourceTree = "<group>"; };
 		34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
-		34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
 		34D07CE21CA6ED4F0056B07C /* AuthorInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorInfoView.swift; sourceTree = "<group>"; };
 		34D07CE41CA6ED9B0056B07C /* AuthorInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthorInfoView.xib; sourceTree = "<group>"; };
 		34D07CE71CA724300056B07C /* ViewComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewComponent.swift; sourceTree = "<group>"; };
@@ -607,7 +605,6 @@
 			isa = PBXGroup;
 			children = (
 				34D07CC41CA634F20056B07C /* Entities */,
-				34D07CDD1CA6D1690056B07C /* Extensions */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -657,14 +654,6 @@
 				34D07CDB1CA63D550056B07C /* RepositoryTableViewCell.swift */,
 			);
 			path = Repositories;
-			sourceTree = "<group>";
-		};
-		34D07CDD1CA6D1690056B07C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				34D07CDE1CA6D1690056B07C /* NSManagedObjectExtension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		34D07CE01CA6EC0E0056B07C /* Views */ = {
@@ -1046,7 +1035,6 @@
 				34D07CCB1CA635010056B07C /* EntityRepository+CoreDataProperties.swift in Sources */,
 				34D07CCD1CA635010056B07C /* EntityPullRequest+CoreDataProperties.swift in Sources */,
 				34D07CC21CA629AE0056B07C /* PullRequestListTableViewController.swift in Sources */,
-				34D07CDF1CA6D1690056B07C /* NSManagedObjectExtension.swift in Sources */,
 				34D07CDC1CA63D550056B07C /* RepositoryTableViewCell.swift in Sources */,
 				34D07CCF1CA635010056B07C /* EntityAuthor+CoreDataProperties.swift in Sources */,
 				34D07CD01CA635010056B07C /* EntityAuthor.swift in Sources */,

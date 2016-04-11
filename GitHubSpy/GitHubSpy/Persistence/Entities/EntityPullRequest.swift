@@ -32,7 +32,7 @@ class EntityPullRequest: NSManagedObject {
         
         var entityPullRequest:EntityPullRequest? = fetchEntityPullRequestByUid(uid, inManagedObjectContext: context)
         if entityPullRequest == nil {
-            let newEntityPullRequest = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! EntityPullRequest
+            let newEntityPullRequest = NSEntityDescription.insertNewObjectForEntityForName(self.simpleClassName(), inManagedObjectContext: context) as! EntityPullRequest
             newEntityPullRequest.uid = uid
             newEntityPullRequest.owner = owner
             newEntityPullRequest.repository = repository
