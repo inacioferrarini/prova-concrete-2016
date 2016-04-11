@@ -18,13 +18,13 @@ class FetcherDataSourceTests: XCTestCase {
     var configureCellBlockWasCalled:Bool = false
     
     
-    func createFetcherDataSource(sectionNameKeyPath nameKeyPath: String?) -> FetcherDataSource<EntitySyncHistory> {
+    func createFetcherDataSource(sectionNameKeyPath nameKeyPath: String?) -> FetcherDataSource<UITableViewCell, EntitySyncHistory> {
         let frame = CGRectMake(0, 0, 200, 200)
         let tableView = UITableView(frame: frame, style: .Plain)
         return self.createFetcherDataSource(sectionNameKeyPath: nameKeyPath, tableView: tableView)
     }
     
-    func createFetcherDataSource(sectionNameKeyPath nameKeyPath: String?, tableView: UITableView!) -> FetcherDataSource<EntitySyncHistory> {
+    func createFetcherDataSource(sectionNameKeyPath nameKeyPath: String?, tableView: UITableView!) -> FetcherDataSource<UITableViewCell, EntitySyncHistory> {
         self.tableView = tableView
         self.presenter = TableViewCellPresenter<UITableViewCell, EntitySyncHistory>(
             configureCellBlock: { (cell: UITableViewCell, entity:EntitySyncHistory) -> Void in

@@ -13,10 +13,10 @@ class TestBaseTableViewController: BaseTableViewController {
         let context = self.appContext.coreDataStack.managedObjectContext
         let logger = appContext.logger
         
-        let dataSource = FetcherDataSource<EntitySyncHistory>(
+        let dataSource = FetcherDataSource<UITableViewCell, EntitySyncHistory>(
             targetingTableView: self.tableView!,
             presenter: presenter,
-            entityName: EntitySyncHistory.entityName(),
+            entityName: EntitySyncHistory.simpleClassName(),
             sortDescriptors: sortDescriptors,
             managedObjectContext: context,
             logger: logger)
