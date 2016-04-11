@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
+class FetcherDataSource<CellType: UITableViewCell, EntityType: NSManagedObject>: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
     
     // MARK: - Properties
     
@@ -23,13 +23,13 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     var sectionNameKeyPath: String?
     var cacheName: String?
     let managedObjectContext:NSManagedObjectContext
-    private(set) var presenter:TableViewCellPresenter<UITableViewCell, EntityType>
+    private(set) var presenter:TableViewCellPresenter<CellType, EntityType>
     let logger:Logger
     
     // MARK: - Initialization
     
     init(targetingTableView tableView:UITableView,
-         presenter:TableViewCellPresenter<UITableViewCell, EntityType>,
+         presenter:TableViewCellPresenter<CellType, EntityType>,
          entityName: String,
          sortDescriptors: [NSSortDescriptor],
          managedObjectContext context:NSManagedObjectContext,
@@ -45,7 +45,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     }
     
     convenience init(targetingTableView tableView:UITableView,
-         presenter:TableViewCellPresenter<UITableViewCell, EntityType>,
+         presenter:TableViewCellPresenter<CellType, EntityType>,
          entityName: String,
          sortDescriptors: [NSSortDescriptor],
          managedObjectContext context:NSManagedObjectContext,
@@ -68,7 +68,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
     func refreshData() {
         
         TryCatchFinally.handleTryBlock({ () -> Void in
-                try! self._fetchedResultsController!.performFetch()
+                try! self.fetchedResultsController.performFetch()
                 self.tableView.reloadData()
             }) { (exception: NSException!) -> Void in
                 let error = NSError(domain: "", code: 9999, userInfo: exception.userInfo)
@@ -104,7 +104,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         let value = self.objectAtIndexPath(indexPath)
         
         let reuseIdentifier = self.presenter.cellReuseIdentifier
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CellType
 
         self.presenter.configureCellBlock(cell, value)
         
@@ -153,13 +153,6 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
-//        do {
-//            try _fetchedResultsController!.performFetch()
-//        } catch {
-//            let nserror = error as NSError
-//            self.logger.logError(nserror)
-//        }
-        
         return _fetchedResultsController!
     }
     var _fetchedResultsController: NSFetchedResultsController? = nil
@@ -187,7 +180,7 @@ class FetcherDataSource<EntityType: NSManagedObject>: NSObject, NSFetchedResults
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         case .Update:
             let value = self.objectAtIndexPath(indexPath!)
-            if let cell = tableView.cellForRowAtIndexPath(indexPath!) {
+            if let cell = tableView.cellForRowAtIndexPath(indexPath!) as? CellType {
                 self.presenter.configureCellBlock(cell, value)
             }
         case .Move:

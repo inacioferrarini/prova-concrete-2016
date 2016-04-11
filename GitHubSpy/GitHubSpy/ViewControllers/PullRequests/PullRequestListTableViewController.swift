@@ -60,11 +60,10 @@ class PullRequestListTableViewController: BaseTableViewController {
     }
        
     override func createDataSource() -> UITableViewDataSource? {
-        
-        let presenter = TableViewCellPresenter<UITableViewCell, EntityPullRequest>(
-            configureCellBlock: { (cell: UITableViewCell, entity:EntityPullRequest) -> Void in
+                         
+        let presenter = TableViewCellPresenter<PullRequestTableViewCell, EntityPullRequest>(
+            configureCellBlock: { (cell: PullRequestTableViewCell, entity:EntityPullRequest) -> Void in
 
-                let cell = cell as! PullRequestTableViewCell
                 cell.pullRequestTitleLabel.text = entity.title ?? ""
                 cell.pullRequestBodyLabel.text = entity.body ?? ""
                 
@@ -82,10 +81,10 @@ class PullRequestListTableViewController: BaseTableViewController {
         let context = self.appContext.coreDataStack.managedObjectContext
         let logger = appContext.logger
         
-        let dataSource = FetcherDataSource<EntityPullRequest>(
+        let dataSource = FetcherDataSource<PullRequestTableViewCell, EntityPullRequest>(
             targetingTableView: self.tableView!,
             presenter: presenter,
-            entityName: EntityPullRequest.entityName(),
+            entityName: EntityPullRequest.simpleClassName(),
             sortDescriptors: sortDescriptors,
             managedObjectContext: context,
             logger: logger)
@@ -94,13 +93,15 @@ class PullRequestListTableViewController: BaseTableViewController {
             dataSource.predicate = NSPredicate(format: "repository = %@", repository)
         }
         
+        dataSource.refreshData()
+        
         return dataSource
     }
 
     override func createDelegate() -> UITableViewDelegate? {
         
         let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
-            if let dataSource = self.dataSource as? FetcherDataSource<EntityPullRequest> {
+            if let dataSource = self.dataSource as? FetcherDataSource<PullRequestTableViewCell, EntityPullRequest> {
                 let selectedValue = dataSource.objectAtIndexPath(indexPath)
                 if let url = selectedValue.url {
                     self.appContext.router.navigateExternal(url)

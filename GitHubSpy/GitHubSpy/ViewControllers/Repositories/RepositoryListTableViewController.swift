@@ -32,10 +32,10 @@ class RepositoryListTableViewController: BaseTableViewController {
     
     override func createDataSource() -> UITableViewDataSource? {
         
-        let presenter = TableViewCellPresenter<UITableViewCell, EntityRepository>(
-            configureCellBlock: { (cell: UITableViewCell, entity:EntityRepository) -> Void in
+        let presenter = TableViewCellPresenter<RepositoryTableViewCell, EntityRepository> (
+            configureCellBlock: { (cell: RepositoryTableViewCell, entity:EntityRepository) -> Void in
                 
-                let cell = cell as! RepositoryTableViewCell
+                //let cell = cell as! RepositoryTableViewCell
                 cell.repositoryNameLabel.text = entity.name ?? ""
                 cell.repositoryDescriptionLabel.text = entity.descriptionText ?? ""
                 cell.branchCountLabel.text = "\(entity.forksCount ?? 0)"
@@ -55,13 +55,15 @@ class RepositoryListTableViewController: BaseTableViewController {
         let context = self.appContext.coreDataStack.managedObjectContext
         let logger = appContext.logger
         
-        let dataSource = FetcherDataSource<EntityRepository>(
+        let dataSource = FetcherDataSource<RepositoryTableViewCell, EntityRepository>(
             targetingTableView: self.tableView!,
             presenter: presenter,
-            entityName: EntityRepository.entityName(),
+            entityName: EntityRepository.simpleClassName(),
             sortDescriptors: sortDescriptors,
             managedObjectContext: context,
             logger: logger)
+        
+        dataSource.refreshData()
         
         return dataSource
     }
@@ -69,7 +71,7 @@ class RepositoryListTableViewController: BaseTableViewController {
     override func createDelegate() -> UITableViewDelegate? {
         
         let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
-            if let dataSource = self.dataSource as? FetcherDataSource<EntityRepository> {
+            if let dataSource = self.dataSource as? FetcherDataSource<RepositoryTableViewCell, EntityRepository> {
                 let selectedValue = dataSource.objectAtIndexPath(indexPath)
                 let ownerLogin = selectedValue.owner?.login ?? ""
                 let repositoryName = selectedValue.name ?? ""
