@@ -9,7 +9,7 @@ class EntityDailySyncRule: EntityBaseSyncRules {
             return nil
         }
         
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         request.predicate = NSPredicate(format: "name = %@", name)
         
         let matches = (try! context.executeFetchRequest(request)) as! [EntityDailySyncRule]
@@ -28,7 +28,7 @@ class EntityDailySyncRule: EntityBaseSyncRules {
         
         var entityDailySyncRule:EntityDailySyncRule? = fetchEntityDailySyncRuleByName(name, inManagedObjectContext: context)
         if entityDailySyncRule == nil {
-            let newEntityDailySyncRule = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! EntityDailySyncRule
+            let newEntityDailySyncRule = NSEntityDescription.insertNewObjectForEntityForName(self.simpleClassName(), inManagedObjectContext: context) as! EntityDailySyncRule
             newEntityDailySyncRule.name = name
             entityDailySyncRule = newEntityDailySyncRule
         }

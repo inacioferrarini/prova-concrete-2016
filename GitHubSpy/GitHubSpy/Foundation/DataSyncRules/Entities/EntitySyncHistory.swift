@@ -4,7 +4,7 @@ import CoreData
 class EntitySyncHistory: NSManagedObject {
     
     class func fetchAllEntitiesAutoSyncHistory(inManagedObjectContext context:NSManagedObjectContext) -> [EntitySyncHistory] {
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         return (try! context.executeFetchRequest(request)) as! [EntitySyncHistory]
     }
     
@@ -14,7 +14,7 @@ class EntitySyncHistory: NSManagedObject {
             return nil
         }
         
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         request.predicate = NSPredicate(format: "ruleName = %@", name)
         
         let matches = (try! context.executeFetchRequest(request)) as! [EntitySyncHistory]
@@ -33,7 +33,7 @@ class EntitySyncHistory: NSManagedObject {
         
         var entityAutoSyncHistory:EntitySyncHistory? = fetchEntityAutoSyncHistoryByName(name, inManagedObjectContext: context)
         if entityAutoSyncHistory == nil {
-            let newEntityAutoSyncHistory = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! EntitySyncHistory
+            let newEntityAutoSyncHistory = NSEntityDescription.insertNewObjectForEntityForName(self.simpleClassName(), inManagedObjectContext: context) as! EntitySyncHistory
             newEntityAutoSyncHistory.ruleName = name
             entityAutoSyncHistory = newEntityAutoSyncHistory
         }

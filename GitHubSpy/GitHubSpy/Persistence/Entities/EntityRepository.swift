@@ -32,7 +32,7 @@ class EntityRepository: NSManagedObject {
         
         var entityRepository:EntityRepository? = fetchEntityRepositoryByName(name, inManagedObjectContext: context)
         if entityRepository == nil {
-            let newEntityRepository = NSEntityDescription.insertNewObjectForEntityForName(self.entityName(), inManagedObjectContext: context) as! EntityRepository
+            let newEntityRepository = NSEntityDescription.insertNewObjectForEntityForName(self.simpleClassName(), inManagedObjectContext: context) as! EntityRepository
             newEntityRepository.name = name
             newEntityRepository.owner = owner
             entityRepository = newEntityRepository

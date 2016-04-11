@@ -9,7 +9,7 @@ class EntityAuthor: NSManagedObject {
             return nil
         }
         
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         request.predicate = NSPredicate(format: "login = %@", login)
         
         let matches = (try! context.executeFetchRequest(request)) as! [EntityAuthor]

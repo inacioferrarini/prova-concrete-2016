@@ -9,7 +9,7 @@ class EntityPullRequest: NSManagedObject {
             return nil
         }
         
-        let request:NSFetchRequest = NSFetchRequest(entityName: self.entityName())
+        let request:NSFetchRequest = NSFetchRequest(entityName: self.simpleClassName())
         request.predicate = NSPredicate(format: "uid = %@", uid)
         
         let matches = (try! context.executeFetchRequest(request)) as! [EntityPullRequest]
