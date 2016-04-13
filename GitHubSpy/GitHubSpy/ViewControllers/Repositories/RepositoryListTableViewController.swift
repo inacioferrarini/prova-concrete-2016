@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 class RepositoryListTableViewController: BaseTableViewController {
 
@@ -14,7 +15,7 @@ class RepositoryListTableViewController: BaseTableViewController {
         
         self.lastFetchedPage = self.lastFetchedPage + 1
         
-        GitHubApiClient().getRepositories(atPage: self.lastFetchedPage,
+        GitHubApiClient(appContext: self.appContext).getRepositories(atPage: self.lastFetchedPage,
             completionBlock: { (repositories:[Repository]?) -> Void in
                 
                 if let repositories = repositories {
@@ -42,11 +43,13 @@ class RepositoryListTableViewController: BaseTableViewController {
                 cell.starCountLabel.text = "\(entity.starsCount ?? 0)"
 
                 if let owner = entity.owner {
-                    let placeHolderImage = UIImage(named: "git star")!
+                    let placeHolderImage = UIImage(named: "default-avatar")!
                     cell.authorInfoView.userLoginLabel.text = owner.login ?? ""
                     cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"
-//                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
-//                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
+                    if let url = owner.avatarUrl,
+                        let avatarUrl = NSURL(string: url) {
+                            cell.authorInfoView.userAvatarImage.sd_setImageWithURL(avatarUrl, placeholderImage: placeHolderImage)
+                    }
                 }
                 
             }, cellReuseIdentifier: "RepositoryTableViewCell")

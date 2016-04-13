@@ -36,7 +36,7 @@ class PullRequestListTableViewController: BaseTableViewController {
             let owner = repository.owner,
             let ownerName = owner.login {
         
-                GitHubApiClient().getPullRequests(ownerName, repository: repositoryName,
+                GitHubApiClient(appContext: self.appContext).getPullRequests(ownerName, repository: repositoryName,
                     completionBlock: { (pullRequests: [PullRequest]?) -> Void in
                         
                         if let pullRequests = pullRequests {
@@ -68,11 +68,13 @@ class PullRequestListTableViewController: BaseTableViewController {
                 cell.pullRequestBodyLabel.text = entity.body ?? ""
                 
                 if let owner = entity.owner {
-                    let placeHolderImage = UIImage(named: "git star")!
+                    let placeHolderImage = UIImage(named: "default-avatar")!
                     cell.authorInfoView.userLoginLabel.text = owner.login ?? ""
-                    cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"                    
-//                    self.smallUserPhotoForUserUid(owner.login ?? "", url: owner.avatarUrl ?? "",
-//                        placeHolderImage: placeHolderImage, targetImageView: cell.authorInfoView.userAvatarImage)
+                    cell.authorInfoView.userNameLabel.text = "\(owner.firstName ?? "") \(owner.lastName ?? "")"
+                    if let url = owner.avatarUrl,
+                        let avatarUrl = NSURL(string: url) {
+                            cell.authorInfoView.userAvatarImage.sd_setImageWithURL(avatarUrl, placeholderImage: placeHolderImage)
+                    }
                 }
                 
             }, cellReuseIdentifier: "PullRequestTableViewCell")
