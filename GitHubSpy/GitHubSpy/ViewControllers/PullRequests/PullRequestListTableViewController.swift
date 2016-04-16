@@ -36,7 +36,7 @@ class PullRequestListTableViewController: BaseTableViewController {
             let ownerName = owner.login {
         
                 GitHubApiClient(appContext: self.appContext).getPullRequests(ownerName, repository: repository,
-                    completionBlock: { (pullRequests: [PullRequest]?) -> Void in
+                    completionBlock: { (pullRequests: [EntityPullRequest]?) -> Void in
                         self.appContext.coreDataStack.saveContext()
 
                         let ctx = self.appContext.coreDataStack.managedObjectContext

@@ -16,7 +16,7 @@ class RepositoryListTableViewController: BaseTableViewController {
         self.lastFetchedPage = self.lastFetchedPage + 1
         
         GitHubApiClient(appContext: self.appContext).getRepositories(atPage: self.lastFetchedPage,
-            completionBlock: { (repositories:[Repository]?) -> Void in                
+            completionBlock: { (repositories:[EntityRepository]?) -> Void in
                 self.appContext.coreDataStack.saveContext()
                 self.dataSyncCompleted()
             }) { (error: NSError) -> Void in
