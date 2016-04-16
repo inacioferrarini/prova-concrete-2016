@@ -1,7 +1,8 @@
 import Foundation
 import CoreData
+import EasyMapping
 
-class EntityPullRequest: NSManagedObject {
+class EntityPullRequest: EKManagedObjectModel {
     
     class func fetchEntityPullRequestByUid(uid: NSNumber, inManagedObjectContext context:NSManagedObjectContext) -> EntityPullRequest? {
         

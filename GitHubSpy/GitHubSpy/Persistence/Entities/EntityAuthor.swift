@@ -1,7 +1,8 @@
 import Foundation
 import CoreData
+import EasyMapping
 
-class EntityAuthor: NSManagedObject {
+class EntityAuthor: EKManagedObjectModel {
     
     class func fetchEntityAuthorByLogin(login: String, inManagedObjectContext context:NSManagedObjectContext) -> EntityAuthor? {
         

@@ -32,17 +32,11 @@ class PullRequestListTableViewController: BaseTableViewController {
     override func performDataSync() {
         
         if let repository = self.repository,
-            let repositoryName = repository.name,
             let owner = repository.owner,
             let ownerName = owner.login {
         
-                GitHubApiClient(appContext: self.appContext).getPullRequests(ownerName, repository: repositoryName,
+                GitHubApiClient(appContext: self.appContext).getPullRequests(ownerName, repository: repository,
                     completionBlock: { (pullRequests: [PullRequest]?) -> Void in
-                        
-                        if let pullRequests = pullRequests {
-                            self.processPullRequests(pullRequests)
-                        }
-                        
                         self.appContext.coreDataStack.saveContext()
 
                         let ctx = self.appContext.coreDataStack.managedObjectContext

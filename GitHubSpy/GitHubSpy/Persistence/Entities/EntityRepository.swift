@@ -1,7 +1,8 @@
 import Foundation
 import CoreData
+import EasyMapping
 
-class EntityRepository: NSManagedObject {
+class EntityRepository: EKManagedObjectModel {
 
     class func fetchEntityRepositoryByName(name: String, inManagedObjectContext context:NSManagedObjectContext) -> EntityRepository? {
         
