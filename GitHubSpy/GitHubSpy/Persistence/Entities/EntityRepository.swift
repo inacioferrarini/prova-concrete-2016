@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 import EasyMapping
+import York
 
 class EntityRepository: EKManagedObjectModel {
 

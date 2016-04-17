@@ -1,5 +1,6 @@
 import UIKit
 import EasyMapping
+import York
 
 class MapperManager: NSObject {
     

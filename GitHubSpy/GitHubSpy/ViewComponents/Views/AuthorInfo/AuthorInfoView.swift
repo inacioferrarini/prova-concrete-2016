@@ -1,4 +1,5 @@
 import UIKit
+import York
 
 class AuthorInfoView: ViewComponent {
    

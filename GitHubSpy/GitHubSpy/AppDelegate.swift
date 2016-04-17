@@ -1,5 +1,6 @@
 import UIKit
 import CoreData
+import York
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootNavigationController = window.rootViewController as! UINavigationController
             var firstViewController = rootNavigationController.topViewController as! AppContextAwareProtocol
             
+            let appBundle = NSBundle(forClass: self.dynamicType)
             let logger = Logger()
-            let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger)
+            let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger, bundle: appBundle)
             let router = NavigationRouter(schema: "GitHubSpy", logger: logger)
             let syncRulesStack = CoreDataStack(modelFileName: "DataSyncRules", databaseFileName: "DataSyncRules", logger: logger)
             let syncRules = DataSyncRules(coreDataStack: syncRulesStack)
