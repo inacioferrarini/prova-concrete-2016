@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var firstViewController = rootNavigationController.topViewController as! AppContextAwareProtocol
             
             let appBundle = NSBundle(forClass: self.dynamicType)
+            let podBundle = NSBundle(forClass: DataSyncRules.self)
             let logger = Logger()
             let stack = CoreDataStack(modelFileName: "GitHubSpy", databaseFileName: "GitHubSpy", logger: logger, bundle: appBundle)
             let router = NavigationRouter(schema: "GitHubSpy", logger: logger)
-            let syncRulesStack = CoreDataStack(modelFileName: "DataSyncRules", databaseFileName: "DataSyncRules", logger: logger)
+            let syncRulesStack = CoreDataStack(modelFileName: "DataSyncRules", databaseFileName: "DataSyncRules", logger: logger, bundle: podBundle)
             let syncRules = DataSyncRules(coreDataStack: syncRulesStack)
             
             self.appContext = AppContext(navigationController: rootNavigationController,
