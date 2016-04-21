@@ -24,29 +24,33 @@ PODS:
   - EasyMapping (0.16.1):
     - EasyMapping/Core (= 0.16.1)
   - EasyMapping/Core (0.16.1)
-  - JLRoutes (1.5.5)
+  - JLRoutes (1.6)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - York (0.1.5):
+  - York (0.2.1):
     - CocoaLumberjack/Swift (= 2.2.0)
-    - JLRoutes (= 1.5.5)
-    - York-Swift-Try-Catch (= 0.1.0)
-  - York-Swift-Try-Catch (0.1.0)
+    - JLRoutes (= 1.6)
+    - York-Swift-Try-Catch (= 0.1.1)
+  - York-Swift-Try-Catch (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - EasyMapping (= 0.16.1)
   - SDWebImage (= 3.7.5)
-  - York (= 0.1.5)
+  - York (from `~/Developer/Workspaces/Xcode/PODS/York`)
+
+EXTERNAL SOURCES:
+  York:
+    :path: ~/Developer/Workspaces/Xcode/PODS/York
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   EasyMapping: 6e0cdd966bf7e028378539ee10eaa7c792c990b4
-  JLRoutes: d191a496b820f60d70225202d04289582da962df
+  JLRoutes: 435d791422e96c9b9b5e1c4db1aedb3ae1b1a08f
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  York: 2803a11b370313dfdc57c31b54e1a05723883256
-  York-Swift-Try-Catch: 0f1e5032d9d3bd32715b42f02ec16f6c1985513e
+  York: a012bec6faa420e2e9f5c64ccb0f2f6fd5e432ec
+  York-Swift-Try-Catch: ac0d410504c56c181ee40404e95ea835a817e7b6
 
 COCOAPODS: 0.39.0

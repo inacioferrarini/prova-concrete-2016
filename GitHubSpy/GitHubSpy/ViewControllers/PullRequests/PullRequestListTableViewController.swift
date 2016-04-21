@@ -55,7 +55,11 @@ class PullRequestListTableViewController: BaseTableViewController {
     }
        
     override func createDataSource() -> UITableViewDataSource? {
-                         
+        
+        let cellReuseIdBlock: ((indexPath: NSIndexPath) -> String) = { (indexPath: NSIndexPath) -> String in
+            return "PullRequestTableViewCell"
+        }
+        
         let presenter = TableViewCellPresenter<PullRequestTableViewCell, EntityPullRequest>(
             configureCellBlock: { (cell: PullRequestTableViewCell, entity:EntityPullRequest) -> Void in
 
@@ -72,36 +76,40 @@ class PullRequestListTableViewController: BaseTableViewController {
                     }
                 }
                 
-            }, cellReuseIdentifier: "PullRequestTableViewCell")
+            }, cellReuseIdentifierBlock: cellReuseIdBlock)
         
         let sortDescriptors:[NSSortDescriptor] = [] // TODO: update
         let context = self.appContext.coreDataStack.managedObjectContext
         let logger = appContext.logger
         
-        let dataSource = FetcherDataSource<PullRequestTableViewCell, EntityPullRequest>(
+        let dataSource = TableViewFetcherDataSource<PullRequestTableViewCell, EntityPullRequest>(
             targetingTableView: self.tableView!,
             presenter: presenter,
             entityName: EntityPullRequest.simpleClassName(),
             sortDescriptors: sortDescriptors,
             managedObjectContext: context,
             logger: logger)
-        
+
         if let repository = self.repository {
             dataSource.predicate = NSPredicate(format: "repository = %@", repository)
         }
-        
-        dataSource.refreshData()
-        
+
+        do {
+            try dataSource.refreshData()
+        } catch let error as NSError {
+            self.appContext.logger.logError(error)
+        }
+
         return dataSource
     }
 
     override func createDelegate() -> UITableViewDelegate? {
         
         let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
-            if let dataSource = self.dataSource as? FetcherDataSource<PullRequestTableViewCell, EntityPullRequest> {
-                let selectedValue = dataSource.objectAtIndexPath(indexPath)
-                if let url = selectedValue.url {
-                    self.appContext.router.navigateExternal(url)
+            if let dataSource = self.dataSource as? TableViewFetcherDataSource<PullRequestTableViewCell, EntityPullRequest> {
+                if let selectedValue = dataSource.objectAtIndexPath(indexPath),
+                    let url = selectedValue.url {
+                        self.appContext.router.navigateExternal(url)
                 }
             }
         }

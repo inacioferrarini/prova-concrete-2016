@@ -28,11 +28,14 @@ class RepositoryListTableViewController: BaseTableViewController {
     }
     
     override func createDataSource() -> UITableViewDataSource? {
-        
+
+        let cellReuseIdBlock: ((indexPath: NSIndexPath) -> String) = { (indexPath: NSIndexPath) -> String in
+            return "RepositoryTableViewCell"
+        }
+
         let presenter = TableViewCellPresenter<RepositoryTableViewCell, EntityRepository> (
             configureCellBlock: { (cell: RepositoryTableViewCell, entity:EntityRepository) -> Void in
                 
-                //let cell = cell as! RepositoryTableViewCell
                 cell.repositoryNameLabel.text = entity.name ?? ""
                 cell.repositoryDescriptionLabel.text = entity.descriptionText ?? ""
                 cell.branchCountLabel.text = "\(entity.forksCount ?? 0)"
@@ -48,13 +51,13 @@ class RepositoryListTableViewController: BaseTableViewController {
                     }
                 }
                 
-            }, cellReuseIdentifier: "RepositoryTableViewCell")
+            }, cellReuseIdentifierBlock: cellReuseIdBlock)
         
         let sortDescriptors:[NSSortDescriptor] = [] // TODO: update
         let context = self.appContext.coreDataStack.managedObjectContext
         let logger = appContext.logger
         
-        let dataSource = FetcherDataSource<RepositoryTableViewCell, EntityRepository>(
+        let dataSource = TableViewFetcherDataSource<RepositoryTableViewCell, EntityRepository>(
             targetingTableView: self.tableView!,
             presenter: presenter,
             entityName: EntityRepository.simpleClassName(),
@@ -62,7 +65,11 @@ class RepositoryListTableViewController: BaseTableViewController {
             managedObjectContext: context,
             logger: logger)
         
-        dataSource.refreshData()
+        do {
+            try dataSource.refreshData()
+        } catch let error as NSError {
+            self.appContext.logger.logError(error)
+        }
         
         return dataSource
     }
@@ -70,13 +77,13 @@ class RepositoryListTableViewController: BaseTableViewController {
     override func createDelegate() -> UITableViewDelegate? {
         
         let itemSelectionBlock = { (indexPath:NSIndexPath) -> Void in
-            if let dataSource = self.dataSource as? FetcherDataSource<RepositoryTableViewCell, EntityRepository> {
-                let selectedValue = dataSource.objectAtIndexPath(indexPath)
-                let ownerLogin = selectedValue.owner?.login ?? ""
-                let repositoryName = selectedValue.name ?? ""
-                
-                let route = Routes().showPullRequestsUrl(ownerLogin, repositoryName: repositoryName)
-                self.appContext.router.navigateInternal(route)
+            if let dataSource = self.dataSource as? TableViewFetcherDataSource<RepositoryTableViewCell, EntityRepository> {
+                if let selectedValue = dataSource.objectAtIndexPath(indexPath) {
+                    let ownerLogin = selectedValue.owner?.login ?? ""
+                    let repositoryName = selectedValue.name ?? ""
+                    let route = Routes().showPullRequestsUrl(ownerLogin, repositoryName: repositoryName)
+                    self.appContext.router.navigateInternal(route)
+                }
             }
         }
         

@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'GitHubSpy' do
-pod 'York', '0.1.5'
+    pod 'York', :path => '~/Developer/Workspaces/Xcode/PODS/York'
 pod 'EasyMapping', '0.16.1'
 pod 'SDWebImage', '3.7.5'
 pod 'AFNetworking', '3.1.0'
