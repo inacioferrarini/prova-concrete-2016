@@ -14,13 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
-    - CocoaLumberjack/Default
-  - CocoaLumberjack/Swift (2.2.0):
-    - CocoaLumberjack/Extensions
   - EasyMapping (0.16.1):
     - EasyMapping/Core (= 0.16.1)
   - EasyMapping/Core (0.16.1)
@@ -28,8 +21,8 @@ PODS:
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
-  - York (0.2.1):
-    - CocoaLumberjack/Swift (= 2.2.0)
+  - XCGLogger (3.3)
+  - York (0.3.0):
     - JLRoutes (= 1.6)
     - York-Swift-Try-Catch (= 0.1.1)
   - York-Swift-Try-Catch (0.1.1)
@@ -38,19 +31,26 @@ DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - EasyMapping (= 0.16.1)
   - SDWebImage (= 3.7.5)
-  - York (from `~/Developer/Workspaces/Xcode/PODS/York`)
+  - XCGLogger (= 3.3)
+  - York (from `https://github.com/inacioferrarini/York`, branch `feature/version_0.3.0`)
 
 EXTERNAL SOURCES:
   York:
-    :path: ~/Developer/Workspaces/Xcode/PODS/York
+    :branch: feature/version_0.3.0
+    :git: https://github.com/inacioferrarini/York
+
+CHECKOUT OPTIONS:
+  York:
+    :commit: b5a5c58b74bad75e722f801b91b33cbe9760ea09
+    :git: https://github.com/inacioferrarini/York
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   EasyMapping: 6e0cdd966bf7e028378539ee10eaa7c792c990b4
   JLRoutes: 435d791422e96c9b9b5e1c4db1aedb3ae1b1a08f
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
-  York: a012bec6faa420e2e9f5c64ccb0f2f6fd5e432ec
+  XCGLogger: d6e196e78940ff6daab17d6917107876f973fa31
+  York: a94f0d2adc64ace39fa59fd31a389715917f07e7
   York-Swift-Try-Catch: ac0d410504c56c181ee40404e95ea835a817e7b6
 
 COCOAPODS: 0.39.0

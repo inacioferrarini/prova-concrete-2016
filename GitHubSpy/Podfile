@@ -4,7 +4,8 @@
 use_frameworks!
 
 target 'GitHubSpy' do
-    pod 'York', :path => '~/Developer/Workspaces/Xcode/PODS/York'
+pod 'York', :git => 'https://github.com/inacioferrarini/York', :branch => 'feature/version_0.3.0'
+pod 'XCGLogger', '3.3'
 pod 'EasyMapping', '0.16.1'
 pod 'SDWebImage', '3.7.5'
 pod 'AFNetworking', '3.1.0'
