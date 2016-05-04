@@ -65,11 +65,8 @@ class RepositoryListTableViewController: BaseTableViewController {
             managedObjectContext: context,
             logger: logger)
         
-        do {
-            try dataSource.refreshData()
-        } catch let error as NSError {
-            self.appContext.logger.logError(error)
-        }
+
+        dataSource.refreshData()
         
         return dataSource
     }
@@ -81,7 +78,7 @@ class RepositoryListTableViewController: BaseTableViewController {
                 if let selectedValue = dataSource.objectAtIndexPath(indexPath) {
                     let ownerLogin = selectedValue.owner?.login ?? ""
                     let repositoryName = selectedValue.name ?? ""
-                    let route = Routes().showPullRequestsUrl(ownerLogin, repositoryName: repositoryName)
+                    let route = Routes().showPullRequestsUrl(ownerLogin, repositoryName: repositoryName, presentationMode: .Modal)
                     self.appContext.router.navigateInternal(route)
                 }
             }

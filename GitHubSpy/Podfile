@@ -1,10 +1,10 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
-# Uncomment this line if you're using Swift
+platform :ios, '8.0'
 use_frameworks!
 
 target 'GitHubSpy' do
-pod 'York', :git => 'https://github.com/inacioferrarini/York', :branch => 'feature/version_0.3.0'
+pod 'York', '0.3.1'
+#pod 'York', :git => 'https://github.com/inacioferrarini/York.git', :branch => 'dev'
+#pod 'York', :path => '~/Developer/Workspaces/Xcode/PODS/York'
 pod 'XCGLogger', '3.3'
 pod 'EasyMapping', '0.16.1'
 pod 'SDWebImage', '3.7.5'

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		139859E10805E542D71A2B47 /* Pods_GitHubSpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5A071CAF174F03B939620D /* Pods_GitHubSpy.framework */; };
+		345EEB901CD6F6AE009FECEA /* AppLogProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345EEB8F1CD6F6AE009FECEA /* AppLogProvider.swift */; };
 		34C10BE41CBEA84B00DB5625 /* MapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C10BE31CBEA84B00DB5625 /* MapperManager.swift */; };
 		34D07C1A1CA5CBCC0056B07C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D07C191CA5CBCC0056B07C /* AppDelegate.swift */; };
 		34D07C1F1CA5CBCC0056B07C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D07C1D1CA5CBCC0056B07C /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		3409490F1CB9CB40009882BB /* GitHubSpyTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GitHubSpyTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		345EEB8F1CD6F6AE009FECEA /* AppLogProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogProvider.swift; sourceTree = "<group>"; };
 		34C10BE31CBEA84B00DB5625 /* MapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperManager.swift; sourceTree = "<group>"; };
 		34D07C161CA5CBCC0056B07C /* GitHubSpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D07C191CA5CBCC0056B07C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		346C8DEB1CD6EE4000F1F831 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				345EEB8F1CD6F6AE009FECEA /* AppLogProvider.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		34D07C0D1CA5CBCC0056B07C = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				34D07CC31CA634C00056B07C /* Persistence */,
 				34D07CD51CA63D0A0056B07C /* ViewComponents */,
 				34D07CF91CA8858F0056B07C /* Networking */,
+				346C8DEB1CD6EE4000F1F831 /* Logger */,
 				34D07C191CA5CBCC0056B07C /* AppDelegate.swift */,
 				34D07C1D1CA5CBCC0056B07C /* Main.storyboard */,
 				34D07C231CA5CBCC0056B07C /* Assets.xcassets */,
@@ -502,6 +513,7 @@
 				34D07C221CA5CBCC0056B07C /* GitHubSpy.xcdatamodeld in Sources */,
 				34D07CF61CA8727A0056B07C /* ViewControllerManager.swift in Sources */,
 				34D07CFB1CA8874B0056B07C /* GitHubApiClient.swift in Sources */,
+				345EEB901CD6F6AE009FECEA /* AppLogProvider.swift in Sources */,
 				34D07D0A1CA8E4DD0056B07C /* AuthorInfoViewHorizontal.swift in Sources */,
 				34D07CE31CA6ED4F0056B07C /* AuthorInfoView.swift in Sources */,
 				34D07CDA1CA63D320056B07C /* PullRequestTableViewCell.swift in Sources */,

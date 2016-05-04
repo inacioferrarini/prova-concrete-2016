@@ -94,11 +94,7 @@ class PullRequestListTableViewController: BaseTableViewController {
             dataSource.predicate = NSPredicate(format: "repository = %@", repository)
         }
 
-        do {
-            try dataSource.refreshData()
-        } catch let error as NSError {
-            self.appContext.logger.logError(error)
-        }
+        dataSource.refreshData()
 
         return dataSource
     }
